@@ -1,0 +1,13 @@
+<!doctype html><html lang="nl"><head><meta charset="utf-8"><title>Niet gevonden</title>
+<script>
+(function(){
+  var l = window.location;
+  var parts = l.pathname.split('/').filter(Boolean);
+  var spas = ['kaplan','rijlesbest','gaby'];
+  if (parts[0] === 'sites' && spas.indexOf(parts[1]) > -1) {
+    var base = '/' + parts.slice(0, 2).join('/') + '/';
+    var rest = '/' + parts.slice(2).join('/');
+    l.replace(l.origin + base + '?p=' + encodeURIComponent(rest + l.search + l.hash));
+  }
+})();
+</script></head><body>Pagina niet gevonden.</body></html>
