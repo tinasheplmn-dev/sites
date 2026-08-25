@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 64" fill="none">
+  <!-- Merk-pictogram: de bakwagen van het zwarte bord. Vervang dit bestand (en logo-wit.svg) om het definitieve logo te plaatsen. -->
+  <rect x="30" y="6" width="60" height="38" rx="4" fill="#16171B"/>
+  <rect x="34.5" y="10.5" width="51" height="29" rx="2" stroke="#F7F4EE" stroke-width="1.6" opacity="0.35"/>
+  <path d="M30 40 L8 46" stroke="#16171B" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="6" cy="47" r="4" fill="none" stroke="#16171B" stroke-width="3"/>
+  <circle cx="48" cy="52" r="8" fill="#16171B"/>
+  <circle cx="48" cy="52" r="3.4" fill="#F7F4EE"/>
+  <circle cx="70" cy="52" r="8" fill="#16171B"/>
+  <circle cx="70" cy="52" r="3.4" fill="#F7F4EE"/>
+  <rect x="26" y="42" width="8" height="4" rx="2" fill="#C1272D"/>
+</svg>
