@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /assets/img/bron/
+
+Sitemap: https://www.rijschoolerik.nl/sitemap.xml

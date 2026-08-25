@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 64" role="img" aria-label="Rijschool GP">
+  <!-- Vervangbaar wordmark: lever het definitieve logo aan als svg/png en
+       vervang alleen dit bestand. Overal op de site wordt dit bestand gebruikt. -->
+  <g font-family="'Bricolage','Schibsted',Arial,sans-serif">
+    <text x="0" y="44" font-size="30" font-weight="600" font-style="italic" letter-spacing="0.5" fill="#16293B">rijschool</text>
+    <text x="122" y="50" font-size="52" font-weight="800" font-style="italic" letter-spacing="-1" fill="#F0641A">GP</text>
+  </g>
+  <g transform="translate(218 8)">
+    <rect x="0" y="0" width="34" height="40" rx="7" fill="#16293B"/>
+    <path d="M10 8 v24 h15" stroke="#FBF8F2" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(262 30)" fill="#F0641A">
+    <circle cx="4" cy="4" r="3.2" opacity="0.9"/>
+    <circle cx="18" cy="4" r="3.2" opacity="0.55"/>
+    <circle cx="32" cy="4" r="3.2" opacity="0.25"/>
+  </g>
+</svg>

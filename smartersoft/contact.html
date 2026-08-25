@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact · plan een technische kennismaking | Smartersoft B.V. Eindhoven</title>
+  <meta name="description" content="Plan een technische kennismaking met Smartersoft. Bel +31 85 488 2620 (ma–vr 8:30–18:00), mail stephan@smartersoft.nl of bezoek ons aan de Kastanjelaan 400 in Eindhoven.">
+  <meta property="og:title" content="Contact · Smartersoft B.V.">
+  <meta property="og:description" content="Plan een technische kennismaking: in een half uur weten jullie waar je aan toe bent.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="nl_NL">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap header-in">
+      <a class="merk" href="index.html" aria-label="Smartersoft, home">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 23 H15 V9 H25" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="7" cy="23" r="3.2" fill="#E23B24"/><circle cx="25" cy="9" r="3.2" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>
+        smartersoft<span class="punt">.</span>
+      </a>
+      <nav class="hoofdnav" aria-label="Hoofdnavigatie">
+        <a href="api-ontwikkeling.html">API-ontwikkeling</a>
+        <a href="single-sign-on.html">Single sign-on</a>
+        <a href="devops.html">DevOps</a>
+        <a href="over-stephan.html">Over Stephan</a>
+        <a href="blog.html">Blog</a>
+        <a class="knop" href="contact.html">Plan een kennismaking <span class="pijl">→</span></a>
+        <button class="menu-knop" aria-expanded="false" aria-controls="menu-doek"><span class="bolletje"></span><span class="menu-label">menu</span></button>
+      </nav>
+    </div>
+  </header>
+
+  <div class="menu-doek" id="menu-doek">
+    <nav aria-label="Menu">
+      <a href="index.html"><span class="nr">/00</span> Home</a>
+      <a href="api-ontwikkeling.html"><span class="nr">/01</span> API-ontwikkeling</a>
+      <a href="single-sign-on.html"><span class="nr">/02</span> Single sign-on</a>
+      <a href="devops.html"><span class="nr">/03</span> DevOps</a>
+      <a href="over-stephan.html"><span class="nr">/04</span> Over Stephan</a>
+      <a href="blog.html"><span class="nr">/05</span> Blog</a>
+      <a href="contact.html"><span class="nr">/06</span> Contact</a>
+    </nav>
+    <div class="menu-voet">
+      <a href="tel:+31854882620">+31 85 488 2620</a>
+      <a href="mailto:stephan@smartersoft.nl">stephan@smartersoft.nl</a>
+      <span>Kastanjelaan 400 · Eindhoven</span>
+    </div>
+  </div>
+
+  <div class="scroll-voortgang" aria-hidden="true"></div>
+  <aside class="route-rail" aria-hidden="true">
+    <span class="kap">route</span>
+    <div class="spoor"><div class="vulling"></div><span class="pakket"></span></div>
+  </aside>
+
+  <main>
+
+    <section class="dienst-hero" data-halte="contact">
+      <div class="wrap">
+        <div class="sectie-kop reveal" style="margin-bottom:0">
+          <p class="kicker">contact · b2b</p>
+          <h1>Plan een technische kennismaking<span class="punt">.</span></h1>
+          <p class="lead">Een half uur, rechtstreeks met de architect. We kijken naar jullie situatie: wat er staat en wat er moet komen. Je krijgt meteen een eerlijk antwoord op de vraag of Smartersoft de juiste partij is. Reactie binnen één werkdag.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sectie sectie--strak" data-halte="formulier">
+      <div class="wrap contact-raster">
+
+        <form class="formulier reveal" id="contactformulier">
+          <div class="veld">
+            <span class="veld" style="display:block">
+              <span style="display:block; font-family:var(--mono); font-size:0.72rem; color:var(--inkt-2); letter-spacing:0.05em; margin-bottom:0.55rem">waar gaat het over? <span style="color:var(--inkt-3)">(meerdere mag)</span></span>
+            </span>
+            <div class="onderwerp-chips">
+              <input type="checkbox" id="ond-api" name="onderwerp" value="API-ontwikkeling"><label for="ond-api">API-ontwikkeling</label>
+              <input type="checkbox" id="ond-sso" name="onderwerp" value="Single sign-on / identity"><label for="ond-sso">Single sign-on / identity</label>
+              <input type="checkbox" id="ond-devops" name="onderwerp" value="DevOps / Azure"><label for="ond-devops">DevOps / Azure</label>
+              <input type="checkbox" id="ond-anders" name="onderwerp" value="Iets anders"><label for="ond-anders">Iets anders</label>
+            </div>
+          </div>
+          <div class="veld">
+            <label for="naam">naam <span class="vereist">*</span></label>
+            <input type="text" id="naam" name="naam" required autocomplete="name">
+          </div>
+          <div class="veld">
+            <label for="organisatie">organisatie</label>
+            <input type="text" id="organisatie" name="organisatie" autocomplete="organization">
+          </div>
+          <div class="veld">
+            <label for="email">e-mail <span class="vereist">*</span></label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+          </div>
+          <div class="veld">
+            <label for="telefoon">telefoon</label>
+            <input type="tel" id="telefoon" name="telefoon" autocomplete="tel">
+          </div>
+          <div class="veld">
+            <label for="bericht">waar lopen jullie tegenaan? <span class="vereist">*</span></label>
+            <textarea id="bericht" name="bericht" required placeholder="Bijv.: we willen data uit ons systeem delen met een partner, maar veilig. We hebben al Entra ID."></textarea>
+          </div>
+          <div class="hero-acties" style="margin-top:0.4rem">
+            <button class="knop knop--rood" type="submit">Verstuur aanvraag <span class="pijl">→</span></button>
+          </div>
+          <p class="form-status" role="status" aria-live="polite"></p>
+          <p class="prijs-noot" style="margin-top:0.2rem">// versturen opent je eigen e-mailprogramma · er wordt niets opgeslagen op deze site</p>
+        </form>
+
+        <aside class="contact-kaart reveal">
+          <div class="blok">
+            <p class="sleutel">bellen</p>
+            <p class="waarde"><a href="tel:+31854882620">+31 85 488 2620</a></p>
+            <p class="sub">ma–vr 8:30–18:00</p>
+          </div>
+          <div class="blok">
+            <p class="sleutel">mailen</p>
+            <p class="waarde"><a href="mailto:stephan@smartersoft.nl">stephan@smartersoft.nl</a></p>
+            <p class="sub">rechtstreeks bij Stephan, reactie binnen één werkdag</p>
+          </div>
+          <div class="blok">
+            <p class="sleutel">bezoeken</p>
+            <p class="waarde">Kastanjelaan 400</p>
+            <p class="sub">5616 LZ Eindhoven · Strijp-S · KVK 75707322</p>
+          </div>
+          <div class="kaartje" aria-label="Gestileerde kaart van Strijp-S in Eindhoven met de locatie van Smartersoft aan de Kastanjelaan 400">
+            <svg viewBox="0 0 320 180">
+              <rect width="320" height="180" fill="#EFEBE1"/>
+              <!-- spoorlijn -->
+              <path d="M-4 34 L324 18" stroke="#3B424B" stroke-width="3" fill="none"/>
+              <path d="M-4 34 L324 18" stroke="#EFEBE1" stroke-width="1.4" stroke-dasharray="7 7" fill="none"/>
+              <text x="238" y="14" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#6C7481">spoor ehv · bda</text>
+              <!-- straten -->
+              <path d="M-4 150 C80 132 200 120 324 128" stroke="#FCFBF7" stroke-width="10" fill="none"/>
+              <path d="M40 184 C60 120 84 76 118 40" stroke="#FCFBF7" stroke-width="14" fill="none"/>
+              <path d="M118 40 C170 60 240 78 324 84" stroke="#FCFBF7" stroke-width="9" fill="none"/>
+              <path d="M200 184 C204 140 212 108 228 82" stroke="#FCFBF7" stroke-width="7" fill="none"/>
+              <text x="66" y="118" font-family="JetBrains Mono, monospace" font-size="8" fill="#6C7481" transform="rotate(-62 66 118)">kastanjelaan</text>
+              <text x="196" y="102" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#6C7481" transform="rotate(8 196 102)">glaslaan</text>
+              <!-- gebouwen strijp-s -->
+              <g fill="#E0DBCE" stroke="#CDC7B7">
+                <rect x="126" y="52" width="44" height="20" rx="2" transform="rotate(10 148 62)"/>
+                <rect x="184" y="118" width="52" height="22" rx="2"/>
+                <rect x="66" y="140" width="46" height="20" rx="2" transform="rotate(-6 89 150)"/>
+                <rect x="252" y="46" width="40" height="18" rx="2" transform="rotate(4 272 55)"/>
+              </g>
+              <text x="192" y="133" font-family="JetBrains Mono, monospace" font-size="7" fill="#6C7481">strijp-s</text>
+              <!-- marker microlab -->
+              <g>
+                <circle cx="118" cy="62" r="16" fill="rgba(226,59,36,0.14)"/>
+                <circle cx="118" cy="62" r="6.5" fill="#E23B24"/>
+                <circle cx="118" cy="62" r="2.4" fill="#F7F5F0"/>
+              </g>
+              <g font-family="JetBrains Mono, monospace" font-size="8">
+                <rect x="132" y="78" width="112" height="16" rx="8" fill="#14181D"/>
+                <text x="188" y="89" text-anchor="middle" fill="#F7F5F0">kastanjelaan 400</text>
+              </g>
+              <!-- kompas -->
+              <g transform="translate(296 152)">
+                <circle r="11" fill="none" stroke="#CDC7B7"/>
+                <path d="M0 -7 L2.6 3 L0 1 L-2.6 3 Z" fill="#E23B24"/>
+                <text y="-14" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7" fill="#6C7481">N</text>
+              </g>
+            </svg>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+    <section class="cta-band sectie" data-halte="liever direct">
+      <div class="wrap reveal">
+        <p class="kicker">liever meteen schakelen</p>
+        <h2>Bellen mag ook gewoon<span class="punt">.</span></h2>
+        <p class="lead">Op werkdagen tussen 8:30 en 18:00 krijg je geen keuzemenu, maar een architect.</p>
+        <div class="hero-acties">
+          <a class="knop" href="tel:+31854882620">Bel +31 85 488 2620</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-boven">
+      <div>
+        <a class="merk" href="index.html">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 23 H15 V9 H25" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="7" cy="23" r="3.2" fill="#E23B24"/><circle cx="25" cy="9" r="3.2" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>
+          smartersoft<span class="punt">.</span>
+        </a>
+        <p class="merk-om">Veilige API's, single sign-on en geautomatiseerde uitrol. Gebouwd in Eindhoven door software architect Stephan van Rooij, Microsoft MVP in Security.</p>
+      </div>
+      <div>
+        <h4>Diensten</h4>
+        <ul>
+          <li><a href="api-ontwikkeling.html">API-ontwikkeling</a></li>
+          <li><a href="single-sign-on.html">Single sign-on</a></li>
+          <li><a href="devops.html">DevOps met Azure</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Bedrijf</h4>
+        <ul>
+          <li><a href="over-stephan.html">Over Stephan</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+31854882620">+31 85 488 2620</a></li>
+          <li><a href="mailto:stephan@smartersoft.nl">stephan@smartersoft.nl</a></li>
+          <li>Kastanjelaan 400<br>5616 LZ Eindhoven</li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer-onder">
+      <span>© 2026 Smartersoft B.V. · Eindhoven</span>
+      <span>KVK 75707322 · ma–vr 8:30–18:00</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

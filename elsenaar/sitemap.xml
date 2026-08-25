@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://rijschoolelsenaar.nl/</loc><priority>1.0</priority></url>
+  <url><loc>https://rijschoolelsenaar.nl/rijlessen</loc><priority>0.9</priority></url>
+  <url><loc>https://rijschoolelsenaar.nl/theorie</loc><priority>0.8</priority></url>
+  <url><loc>https://rijschoolelsenaar.nl/tarieven</loc><priority>0.9</priority></url>
+  <url><loc>https://rijschoolelsenaar.nl/team</loc><priority>0.7</priority></url>
+  <url><loc>https://rijschoolelsenaar.nl/reviews</loc><priority>0.8</priority></url>
+  <url><loc>https://rijschoolelsenaar.nl/aanmelden</loc><priority>0.9</priority></url>
+</urlset>

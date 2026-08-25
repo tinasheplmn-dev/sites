@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <!-- Eigen iconenset Rijschool Elsenaar. 24x24, stroke 1.8, ronde uiteinden. -->
+  <symbol id="ic-stuur" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="9"/>
+    <circle cx="12" cy="12" r="2.6"/>
+    <path d="M3.4 10.5 C7 12 9 12 9.6 11.3 M20.6 10.5 C17 12 15 12 14.4 11.3 M12 14.6 L12 20.8"/>
+  </symbol>
+  <symbol id="ic-route" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 20 L13 20 C17 20 17 14.5 13 14.5 L9.5 14.5 C5.5 14.5 5.5 9 9.5 9 L14 9"/>
+    <circle cx="18" cy="6.2" r="2.6"/>
+    <circle cx="5" cy="20" r="1.1" fill="currentColor" stroke="none"/>
+  </symbol>
+  <symbol id="ic-app" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="7" y="2.8" width="10" height="18.4" rx="2.6"/>
+    <path d="M10 6 L14 6 M9.4 13.4 L11.3 15.2 L14.8 11.2"/>
+  </symbol>
+  <symbol id="ic-ster" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+    <path d="M12 2.6 L14.8 8.5 L21.2 9.3 L16.5 13.7 L17.7 20.1 L12 17 L6.3 20.1 L7.5 13.7 L2.8 9.3 L9.2 8.5 Z"/>
+  </symbol>
+  <symbol id="ic-hart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 20.2 C6 16 3.2 12.6 3.2 9.2 C3.2 6.6 5.2 4.6 7.8 4.6 C9.6 4.6 11.2 5.6 12 7.1 C12.8 5.6 14.4 4.6 16.2 4.6 C18.8 4.6 20.8 6.6 20.8 9.2 C20.8 12.6 18 16 12 20.2 Z"/>
+  </symbol>
+  <symbol id="ic-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 6.4 C4 4.9 5.2 3.8 6.6 3.8 L17.4 3.8 C18.8 3.8 20 4.9 20 6.4 L20 14 C20 15.5 18.8 16.6 17.4 16.6 L9.5 16.6 L5.4 20.2 L5.4 16.6 C4.6 16.4 4 15.3 4 14 Z"/>
+    <path d="M8.4 8.6 L15.6 8.6 M8.4 11.8 L13.2 11.8"/>
+  </symbol>
+  <symbol id="ic-euro" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16.8 5.2 C15.6 4.2 14.1 3.6 12.5 3.6 C8.6 3.6 5.5 7.4 5.5 12 C5.5 16.6 8.6 20.4 12.5 20.4 C14.1 20.4 15.6 19.8 16.8 18.8"/>
+    <path d="M3.6 10 L13 10 M3.6 14 L11.8 14"/>
+  </symbol>
+  <symbol id="ic-boek" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 6.2 C10.4 4.6 8 4 4.4 4 L4.4 18.4 C8 18.4 10.4 19 12 20.6 C13.6 19 16 18.4 19.6 18.4 L19.6 4 C16 4 13.6 4.6 12 6.2 Z"/>
+    <path d="M12 6.2 L12 20.6"/>
+  </symbol>
+  <symbol id="ic-vlag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 21 L6 3.4 M6 4.2 L17.8 4.2 L14.6 8.3 L17.8 12.4 L6 12.4"/>
+  </symbol>
+  <symbol id="ic-klok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="8.6"/>
+    <path d="M12 7 L12 12 L15.4 14"/>
+  </symbol>
+  <symbol id="ic-pijl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 12 L20 12 M14 6 L20 12 L14 18"/>
+  </symbol>
+  <symbol id="ic-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 21.4 C12 21.4 19 15.4 19 10 C19 6.1 15.9 3 12 3 C8.1 3 5 6.1 5 10 C5 15.4 12 21.4 12 21.4 Z"/>
+    <circle cx="12" cy="10" r="2.6"/>
+  </symbol>
+  <symbol id="ic-schild" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 2.8 L19.6 5.6 L19.6 11.2 C19.6 16.2 16.4 19.7 12 21.2 C7.6 19.7 4.4 16.2 4.4 11.2 L4.4 5.6 Z"/>
+    <path d="M8.8 11.6 L11 13.8 L15.2 9.6"/>
+  </symbol>
+  <symbol id="ic-tel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M7.2 3.6 L9.6 3.6 L11 8 L8.9 9.6 C9.9 11.9 12.1 14.1 14.4 15.1 L16 13 L20.4 14.4 L20.4 16.8 C20.4 18.4 19.1 19.8 17.4 19.6 C10.4 18.8 5.2 13.6 4.4 6.6 C4.2 4.9 5.6 3.6 7.2 3.6 Z"/>
+  </symbol>
+  <symbol id="ic-whatsapp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3.4 C7.3 3.4 3.4 7.2 3.4 11.9 C3.4 13.6 3.9 15.1 4.8 16.4 L3.8 20.2 L7.8 19.2 C9 19.9 10.5 20.4 12 20.4 C16.7 20.4 20.6 16.6 20.6 11.9 C20.6 7.2 16.7 3.4 12 3.4 Z"/>
+    <path d="M9 9.4 C9 13 11.5 15.2 14.8 15.2 L15.4 13.4 L13.6 12.4 L12.6 13 C11.6 12.4 11.2 12 10.8 11.1 L11.4 10.2 L10.6 8.4 Z" fill="currentColor" stroke="none"/>
+  </symbol>
+  <symbol id="ic-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3.4" y="5.4" width="17.2" height="13.2" rx="2.4"/>
+    <path d="M4.4 7 L12 12.6 L19.6 7"/>
+  </symbol>
+  <symbol id="ic-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4.4 12.4 L5.8 8 C6.1 7 7 6.4 8 6.4 L16 6.4 C17 6.4 17.9 7 18.2 8 L19.6 12.4 M4.4 12.4 C3.6 12.6 3 13.4 3 14.2 L3 16.8 L4.8 16.8 M4.4 12.4 L19.6 12.4 M19.6 12.4 C20.4 12.6 21 13.4 21 14.2 L21 16.8 L19.2 16.8"/>
+    <circle cx="7.4" cy="16.8" r="1.9"/>
+    <circle cx="16.6" cy="16.8" r="1.9"/>
+    <path d="M9.3 16.8 L14.7 16.8"/>
+  </symbol>
+  <symbol id="ic-kompas" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="8.6"/>
+    <path d="M15.4 8.6 L13.4 13.4 L8.6 15.4 L10.6 10.6 Z"/>
+  </symbol>
+</svg>

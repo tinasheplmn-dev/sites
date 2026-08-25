@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="248" height="44" viewBox="0 0 248 44" role="img" aria-label="Marco Pas Autorijschool">
+  <!-- Donkere variant voor de footer. Vervang dit bestand door het definitieve logo. -->
+  <g font-family="'Helvetica Neue', Arial, sans-serif">
+    <text x="0" y="24" font-size="26" font-weight="800" letter-spacing="1.5" fill="#F7EEDF">MARCO<tspan fill="#F19A3E">PAS</tspan></text>
+    <text x="1" y="39" font-size="9.5" font-weight="600" letter-spacing="5.2" fill="#F7EEDF" opacity="0.82">AUTORIJSCHOOL</text>
+    <g fill="#F19A3E">
+      <rect x="152" y="34" width="14" height="3" rx="1.5"/>
+      <rect x="172" y="34" width="14" height="3" rx="1.5"/>
+      <rect x="192" y="34" width="14" height="3" rx="1.5"/>
+    </g>
+  </g>
+</svg>

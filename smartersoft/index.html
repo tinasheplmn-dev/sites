@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smartersoft B.V. · API's, identity en DevOps door een Microsoft MVP | Eindhoven</title>
+  <meta name="description" content="Smartersoft bouwt veilige API's, single sign-on en geautomatiseerde software-uitrol. Senior werk van software architect Stephan van Rooij, Microsoft MVP in Security. Eindhoven.">
+  <meta property="og:title" content="Smartersoft B.V. · API's, identity en DevOps door een Microsoft MVP">
+  <meta property="og:description" content="Veilige API's, single sign-on en Azure DevOps. Je schakelt direct met de architect: 14+ jaar ervaring, Microsoft MVP in Security.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://smartersoft.nl/">
+  <meta property="og:locale" content="nl_NL">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Smartersoft B.V.",
+    "description": "API-ontwikkeling, single sign-on en Azure DevOps door een Microsoft MVP in Security.",
+    "url": "https://smartersoft.nl/",
+    "telephone": "+31854882620",
+    "email": "stephan@smartersoft.nl",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Kastanjelaan 400",
+      "postalCode": "5616 LZ",
+      "addressLocality": "Eindhoven",
+      "addressCountry": "NL"
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Stephan van Rooij",
+      "jobTitle": "Software Architect",
+      "award": "Microsoft MVP in Security"
+    },
+    "openingHours": "Mo-Fr 08:30-18:00",
+    "identifier": { "@type": "PropertyValue", "propertyID": "KVK", "value": "75707322" }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- opening: boot-sequence (1x per sessie) -->
+  <div class="opening" id="opening" aria-hidden="true">
+    <div class="opening-in">
+      <span class="opening-regel">$ smartersoft <span class="accent">--init</span></span><br>
+      <span class="opening-regel">identity <span class="ok">✓</span>&nbsp;&nbsp;api <span class="ok">✓</span>&nbsp;&nbsp;pipeline <span class="ok">✓</span></span><br>
+      <span class="opening-regel"><span class="ok">200 OK</span> · systeem draait.</span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="wrap header-in">
+      <a class="merk" href="index.html" aria-label="Smartersoft, home">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 23 H15 V9 H25" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="7" cy="23" r="3.2" fill="#E23B24"/><circle cx="25" cy="9" r="3.2" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>
+        smartersoft<span class="punt">.</span>
+      </a>
+      <nav class="hoofdnav" aria-label="Hoofdnavigatie">
+        <a href="api-ontwikkeling.html">API-ontwikkeling</a>
+        <a href="single-sign-on.html">Single sign-on</a>
+        <a href="devops.html">DevOps</a>
+        <a href="over-stephan.html">Over Stephan</a>
+        <a href="blog.html">Blog</a>
+        <a class="knop" href="contact.html">Plan een kennismaking <span class="pijl">→</span></a>
+        <button class="menu-knop" aria-expanded="false" aria-controls="menu-doek"><span class="bolletje"></span><span class="menu-label">menu</span></button>
+      </nav>
+    </div>
+  </header>
+
+  <div class="menu-doek" id="menu-doek">
+    <nav aria-label="Menu">
+      <a href="index.html"><span class="nr">/00</span> Home</a>
+      <a href="api-ontwikkeling.html"><span class="nr">/01</span> API-ontwikkeling</a>
+      <a href="single-sign-on.html"><span class="nr">/02</span> Single sign-on</a>
+      <a href="devops.html"><span class="nr">/03</span> DevOps</a>
+      <a href="over-stephan.html"><span class="nr">/04</span> Over Stephan</a>
+      <a href="blog.html"><span class="nr">/05</span> Blog</a>
+      <a href="contact.html"><span class="nr">/06</span> Contact</a>
+    </nav>
+    <div class="menu-voet">
+      <a href="tel:+31854882620">+31 85 488 2620</a>
+      <a href="mailto:stephan@smartersoft.nl">stephan@smartersoft.nl</a>
+      <span>Kastanjelaan 400 · Eindhoven</span>
+    </div>
+  </div>
+
+  <div class="scroll-voortgang" aria-hidden="true"></div>
+  <aside class="route-rail" aria-hidden="true">
+    <span class="kap">route</span>
+    <div class="spoor"><div class="vulling"></div><span class="pakket"></span></div>
+  </aside>
+
+  <main>
+
+    <!-- ========== hero ========== -->
+    <section class="hero" data-halte="start">
+      <div class="wrap hero-raster">
+        <div>
+          <p class="kicker">smartersoft b.v. · eindhoven</p>
+          <h1>
+            <span class="onthul-regel"><span>API's, identity</span></span>
+            <span class="onthul-regel"><span>en DevOps.</span></span>
+            <span class="onthul-regel"><span>Door een Microsoft MVP<span class="punt">.</span></span></span>
+          </h1>
+          <p class="lead">Smartersoft bouwt veilige API's, single sign-on en geautomatiseerde uitrol voor organisaties die het in één keer goed willen. Geen laagje sales ertussen: je schakelt direct met de software architect.</p>
+          <div class="hero-acties">
+            <a class="knop knop--rood" href="contact.html">Plan een technische kennismaking <span class="pijl">→</span></a>
+            <a class="knop knop--lijn" href="#diensten">Bekijk de diensten</a>
+          </div>
+          <p class="hero-status" data-regels='["&gt; <span class=\"methode\">POST</span> /v1/kennismaking HTTP/1.1", "&lt; <span class=\"ok\">200 OK</span> · reactie binnen één werkdag"]'></p>
+          <ul class="tech-chips" aria-label="Technologie" style="list-style:none">
+            <li class="chip">C# / .NET</li>
+            <li class="chip">Azure</li>
+            <li class="chip">Microsoft Entra ID</li>
+            <li class="chip">Graph API</li>
+            <li class="chip">OAuth2 / OIDC</li>
+            <li class="chip">Azure DevOps</li>
+          </ul>
+        </div>
+        <div class="diagram-vlak">
+          <span class="diagram-label">fig. 01 · <b>het systeem</b> · live</span>
+          <canvas data-diagram="home" aria-label="Levend systeemdiagram: client, Entra ID, API, Graph API, data en Azure DevOps verbonden door datastromen"></canvas>
+          <div class="diagram-fallback" aria-hidden="true">
+            <svg viewBox="0 0 200 160">
+              <path class="d-lijn d-lijn--zacht" d="M56 30 H108 M132 42 V62 M100 88 H144 M100 88 H56 V118 M132 88 V118"/>
+              <rect class="d-doos" x="16" y="18" width="40" height="24" rx="5"/><text class="d-tekst" x="36" y="32" text-anchor="middle">client</text>
+              <rect class="d-doos" x="108" y="18" width="48" height="24" rx="5"/><text class="d-tekst" x="132" y="32" text-anchor="middle">entra id</text>
+              <rect class="d-doos d-doos--accent" x="76" y="74" width="48" height="26" rx="5"/><text class="d-tekst d-tekst--licht" x="100" y="89" text-anchor="middle">api</text>
+              <rect class="d-doos" x="144" y="76" width="44" height="22" rx="5"/><text class="d-tekst" x="166" y="89" text-anchor="middle">graph</text>
+              <rect class="d-doos" x="36" y="118" width="40" height="22" rx="5"/><text class="d-tekst" x="56" y="131" text-anchor="middle">data</text>
+              <rect class="d-doos" x="106" y="118" width="52" height="22" rx="5"/><text class="d-tekst" x="132" y="131" text-anchor="middle">devops</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== vertrouwen ========== -->
+    <section class="vertrouwen reveal">
+      <div class="wrap">
+        <span class="label">// vertrouwd door o.a.</span>
+        <div class="namen">
+          <span class="naam">Friesland College <small>MBO · ONDERWIJS</small></span>
+          <span class="naam">Fontys Hogeschool ICT <small>HBO · ONDERWIJS</small></span>
+          <span class="naam">Roostersync <small>EIGEN PRODUCT · SAAS</small></span>
+        </div>
+        <span class="label">microsoft mvp · security</span>
+      </div>
+    </section>
+
+    <!-- ========== diensten ========== -->
+    <section class="sectie" id="diensten" data-halte="diensten">
+      <div class="wrap">
+        <div class="sectie-kop reveal">
+          <p class="kicker">01 · diensten</p>
+          <h2>Drie dingen.<br>Heel goed<span class="punt">.</span></h2>
+          <p class="lead">Geen bureau met twintig smaken. Smartersoft doet precies dat waar je een senior specialist voor wilt: data veilig ontsluiten, identiteit goed regelen en software automatisch uitrollen.</p>
+        </div>
+
+        <a class="dienst-rij reveal" href="api-ontwikkeling.html">
+          <span class="nr">/01</span>
+          <div class="dienst-tekst">
+            <h3>API-ontwikkeling</h3>
+            <p>De data in jullie applicatie is goud waard: voor partners, koppelingen en jullie eigen apps. Wij bouwen de API die dat veilig ontsluit: gedocumenteerd, getest en met jullie als baas over de toegang.</p>
+            <div class="lever">
+              <span>REST · OpenAPI</span><span>JWT-authenticatie</span><span>C# / .NET</span><span>vanaf €3.000</span>
+            </div>
+          </div>
+          <span class="mini-diagram" aria-hidden="true">
+            <svg viewBox="0 0 160 84">
+              <path class="d-lijn d-lijn--zacht" d="M52 42 H66 M102 42 H116 M116 42 V22 H130 M116 42 H130 M116 42 V62 H130"/>
+              <rect class="d-doos" x="12" y="29" width="40" height="26" rx="5"/><text class="d-tekst" x="32" y="44" text-anchor="middle">jullie app</text>
+              <rect class="d-doos d-doos--accent" x="66" y="29" width="36" height="26" rx="5"/><text class="d-tekst d-tekst--licht" x="84" y="44" text-anchor="middle">api</text>
+              <rect class="d-doos" x="130" y="13" width="22" height="17" rx="4"/><text class="d-tekst" x="141" y="23.5" text-anchor="middle">app</text>
+              <rect class="d-doos" x="130" y="33.5" width="22" height="17" rx="4"/><text class="d-tekst" x="141" y="44" text-anchor="middle">crm</text>
+              <rect class="d-doos" x="130" y="54" width="22" height="17" rx="4"/><text class="d-tekst" x="141" y="64.5" text-anchor="middle">web</text>
+              <circle r="2.6" fill="#E23B24"><animateMotion dur="3.4s" repeatCount="indefinite" path="M32 42 H84 H141"/></circle>
+            </svg>
+          </span>
+          <span class="meer">bekijk aanpak →</span>
+        </a>
+
+        <a class="dienst-rij reveal" href="single-sign-on.html">
+          <span class="nr">/02</span>
+          <div class="dienst-tekst">
+            <h3>Single sign-on</h3>
+            <p>Eén keer inloggen, veilig toegang tot alles, ook externe systemen. Wij richten identity management in met Microsoft Entra ID: centraal beleid, MFA en geen wachtwoord-briefjes meer.</p>
+            <div class="lever">
+              <span>Entra ID / ADFS</span><span>SAML · OIDC</span><span>MFA & beleid</span><span>op projectbasis</span>
+            </div>
+          </div>
+          <span class="mini-diagram" aria-hidden="true">
+            <svg viewBox="0 0 160 84">
+              <path class="d-lijn d-lijn--zacht" d="M50 42 H64 M102 42 H116 M116 42 V22 H130 M116 42 H130 M116 42 V62 H130"/>
+              <rect class="d-doos" x="12" y="29" width="38" height="26" rx="5"/><text class="d-tekst" x="31" y="44" text-anchor="middle">collega</text>
+              <rect class="d-doos d-doos--accent" x="64" y="27" width="38" height="30" rx="5"/>
+              <path d="M76 36 l5 -2.4 5 2.4 v5.2 q0 4.4 -5 6.4 q-5 -2 -5 -6.4 z" fill="none" stroke="#E23B24" stroke-width="1.4"/>
+              <text class="d-tekst d-tekst--licht" x="83" y="52.5" text-anchor="middle">sso</text>
+              <rect class="d-doos" x="130" y="13" width="22" height="17" rx="4"/><text class="d-tekst" x="141" y="23.5" text-anchor="middle">crm</text>
+              <rect class="d-doos" x="130" y="33.5" width="22" height="17" rx="4"/><text class="d-tekst" x="141" y="44" text-anchor="middle">erp</text>
+              <rect class="d-doos" x="130" y="54" width="22" height="17" rx="4"/><text class="d-tekst" x="141" y="64.5" text-anchor="middle">git</text>
+              <circle r="2.6" fill="#E23B24"><animateMotion dur="4s" repeatCount="indefinite" path="M31 42 H83 H116 V22 H141"/></circle>
+            </svg>
+          </span>
+          <span class="meer">bekijk aanpak →</span>
+        </a>
+
+        <a class="dienst-rij reveal" href="devops.html">
+          <span class="nr">/03</span>
+          <div class="dienst-tekst">
+            <h3>DevOps met Azure</h3>
+            <p>Handmatig uitrollen is traag en foutgevoelig. Wij zetten Azure DevOps op: repositories, pipelines en automatische deployment naar elke omgeving, van eerste commit tot productie.</p>
+            <div class="lever">
+              <span>Azure DevOps</span><span>CI/CD-pipelines</span><span>Automatisch testen</span><span>op projectbasis</span>
+            </div>
+          </div>
+          <span class="mini-diagram" aria-hidden="true">
+            <svg viewBox="0 0 160 84">
+              <path class="d-lijn d-lijn--zacht" d="M40 42 H46 M80 42 H86 M120 42 H126"/>
+              <rect class="d-doos" x="8" y="30" width="32" height="24" rx="5"/><text class="d-tekst" x="24" y="44" text-anchor="middle">commit</text>
+              <rect class="d-doos" x="46" y="30" width="34" height="24" rx="5"/><text class="d-tekst" x="63" y="44" text-anchor="middle">build</text>
+              <rect class="d-doos" x="86" y="30" width="34" height="24" rx="5"/><text class="d-tekst" x="103" y="44" text-anchor="middle">test</text>
+              <rect class="d-doos d-doos--accent" x="126" y="30" width="28" height="24" rx="5"/><text class="d-tekst d-tekst--licht" x="140" y="44" text-anchor="middle">live</text>
+              <text class="d-tekst d-tekst--rood" x="63" y="66" text-anchor="middle">✓</text>
+              <text class="d-tekst d-tekst--rood" x="103" y="66" text-anchor="middle">✓</text>
+              <circle r="2.6" fill="#E23B24"><animateMotion dur="3s" repeatCount="indefinite" path="M24 42 H140"/></circle>
+            </svg>
+          </span>
+          <span class="meer">bekijk aanpak →</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ========== waarom (spec-sheet) ========== -->
+    <section class="sectie sectie--strak" data-halte="waarom">
+      <div class="wrap">
+        <div class="spec-blok reveal">
+          <p class="kicker">02 · waarom smartersoft</p>
+          <h2>Specificaties van de specialist<span class="punt">.</span></h2>
+          <p class="lead">Als je software laat bouwen, wil je weten wie er aan de knoppen zit. Dit is wat je krijgt.</p>
+          <dl class="spec-lijst">
+            <div class="spec-rij">
+              <dt>ervaring</dt>
+              <dd><span class="waarde">14+ jaar full-stack development</span><p>Van datamodel tot deploy-pipeline. Geen junior die "er wel uitkomt", maar een architect die het al vaak heeft opgelost.</p></dd>
+              <span class="status">✓ senior</span>
+            </div>
+            <div class="spec-rij">
+              <dt>erkenning</dt>
+              <dd><span class="waarde">Microsoft MVP in Security</span><p>Een erkenning die Microsoft jaarlijks toekent aan een kleine groep experts die hun kennis actief delen. Op security-gebied telt Nederland er maar een handvol.</p></dd>
+              <span class="status">✓ geverifieerd</span>
+            </div>
+            <div class="spec-rij">
+              <dt>stack</dt>
+              <dd><span class="waarde">C# · Azure · Entra ID · Graph API</span><p>Diep in het Microsoft-ecosysteem, met open standaarden als fundament: OAuth2, OIDC, SAML en OpenAPI.</p></dd>
+              <span class="status">✓ productie</span>
+            </div>
+            <div class="spec-rij">
+              <dt>werkwijze</dt>
+              <dd><span class="waarde">Projectbasis, afspraken vooraf</span><p>Heldere offerte voordat we starten. Geen verrassingen achteraf, geen uurtje-factuurtje zonder einde.</p></dd>
+            <span class="status">✓ vaste prijs</span>
+            </div>
+            <div class="spec-rij">
+              <dt>referenties</dt>
+              <dd><span class="waarde">Friesland College · Fontys Hogeschool ICT</span><p>Onderwijsinstellingen met duizenden gebruikers vertrouwen op integraties en identity-oplossingen van Smartersoft.</p></dd>
+              <span class="status">✓ live</span>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== stephan ========== -->
+    <section class="sectie" data-halte="de architect">
+      <div class="wrap profiel">
+        <div class="portret reveal">
+          <span class="mvp-zegel" aria-hidden="true">
+            <svg viewBox="0 0 104 104">
+              <defs><path id="zegelpad" d="M52 12 a40 40 0 1 1 -0.01 0"/></defs>
+              <circle cx="52" cy="52" r="50" fill="#F7F5F0" stroke="#CDC7B7"/>
+              <circle cx="52" cy="52" r="27" fill="none" stroke="#E23B24" stroke-width="1.2"/>
+              <path d="M52 40 l8 -3.8 8 3.8 v8.4 q0 7 -8 10.2 q-8 -3.2 -8 -10.2 z" transform="translate(-8 -1)" fill="none" stroke="#14181D" stroke-width="1.6"/>
+              <text font-family="JetBrains Mono, monospace" font-size="9.5" letter-spacing="2.4" fill="#14181D"><textPath href="#zegelpad">MICROSOFT MVP · SECURITY ·&#160;</textPath></text>
+            </svg>
+          </span>
+          <div class="kader"><img src="assets/stephan.webp" alt="Stephan van Rooij, software architect en eigenaar van Smartersoft" width="400" height="400" loading="lazy"></div>
+          <span class="annotatie">stephan van rooij · <b>software architect</b></span>
+        </div>
+        <div class="reveal">
+          <p class="kicker">03 · de architect</p>
+          <h2>Je schakelt direct met Stephan<span class="punt">.</span></h2>
+          <p class="lead">Software architect met ruim 14 jaar full-stack ervaring en een specialisatie in security, identity en cloud. Bouwt met C#, Azure, Microsoft Entra ID en Graph API, en deelt die kennis actief als Microsoft MVP.</p>
+          <blockquote class="stephan-quote">"Ik haal energie uit complexe technische uitdagingen, en uit oplossingen die daarna gewoon jaren blijven draaien."</blockquote>
+          <div class="profiel-feiten">
+            <div class="feit"><span class="cijfer">14<span class="punt">+</span></span><small>jaar full-stack ervaring</small></div>
+            <div class="feit"><span class="cijfer">MVP</span><small>Microsoft MVP in Security</small></div>
+            <div class="feit"><span class="cijfer">2<span class="punt">×</span></span><small>oprichter: Smartersoft & Roostersync</small></div>
+          </div>
+          <div class="hero-acties">
+            <a class="knop" href="over-stephan.html">Lees over Stephan <span class="pijl">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== code ========== -->
+    <section class="sectie sectie--strak" data-halte="het werk">
+      <div class="wrap profiel">
+        <div class="reveal">
+          <p class="kicker">04 · het werk</p>
+          <h2>Zo ziet zorgvuldig eruit<span class="punt">.</span></h2>
+          <p class="lead">Veiligheid zit niet in een sticker, maar in de architectuur. Authenticatie via Entra ID, autorisatie per endpoint, documentatie die zichzelf genereert. Dit is geen demo-code. Dit is hoe elke Smartersoft-API begint.</p>
+          <div class="hero-acties">
+            <a class="knop knop--lijn" href="api-ontwikkeling.html">Zo bouwen wij API's <span class="pijl">→</span></a>
+          </div>
+        </div>
+        <div class="codevenster reveal" aria-label="Voorbeeld van C#-code: minimal API met Entra ID-authenticatie">
+          <div class="balk"><span class="stip"></span><span class="stip"></span><span class="stip"></span><span class="bestand">Program.cs · rooster-api</span></div>
+          <pre><code><span class="c-comm">// Minimal API, beveiligd met Microsoft Entra ID</span>
+<span class="c-sleutel">var</span> builder = <span class="c-type">WebApplication</span>.<span class="c-methode">CreateBuilder</span>(args);
+
+builder.Services
+    .<span class="c-methode">AddAuthentication</span>(<span class="c-type">JwtBearerDefaults</span>.AuthenticationScheme)
+    .<span class="c-methode">AddMicrosoftIdentityWebApi</span>(builder.Configuration, <span class="c-str">"AzureAd"</span>);
+
+builder.Services.<span class="c-methode">AddAuthorization</span>();
+
+<span class="c-sleutel">var</span> app = builder.<span class="c-methode">Build</span>();
+app.<span class="c-methode">UseAuthentication</span>();
+app.<span class="c-methode">UseAuthorization</span>();
+
+app.<span class="c-methode">MapGet</span>(<span class="c-str">"/v1/rooster/{klas}"</span>,
+        <span class="c-sleutel">async</span> (<span class="c-type">string</span> klas, <span class="c-type">IRoosterService</span> rooster) =&gt;
+            <span class="c-type">Results</span>.<span class="c-methode">Ok</span>(<span class="c-sleutel">await</span> rooster.<span class="c-methode">GetWeekAsync</span>(klas)))
+    .<span class="c-methode">RequireAuthorization</span>(<span class="c-str">"Rooster.Read"</span>);
+
+app.<span class="c-methode">Run</span>(); <span class="c-comm">// → 200 OK</span></code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== cases ========== -->
+    <section class="sectie sectie--strak" data-halte="cases">
+      <div class="wrap">
+        <div class="sectie-kop reveal">
+          <p class="kicker">05 · cases</p>
+          <h2>Uit het dossier<span class="punt">.</span></h2>
+          <p class="lead">Onderwijsinstellingen met duizenden gebruikers rekenen op werk van Smartersoft. Twee voorbeelden van hoe zo'n traject eruitziet.</p>
+        </div>
+        <div class="case-raster">
+          <article class="case-kaart reveal">
+            <div class="case-meta"><span>klant · <b>Friesland College</b></span><span>domein · <b>identity & integraties</b></span></div>
+            <h3>Eén login voor een groeiend applicatielandschap</h3>
+            <div class="case-stappen">
+              <div><span class="k">vraag</span><span>Steeds meer applicaties, elk met eigen accounts en wachtwoorden. Beheer en beveiliging werden onoverzichtelijk.</span></div>
+              <div><span class="k">oplossing</span><span>Centrale identity als fundament, applicaties stap voor stap aangesloten via open standaarden.</span></div>
+              <div><span class="k">resultaat</span><span>Eén inlogmoment voor medewerkers en studenten, en toegang die centraal aan en uit kan.</span></div>
+            </div>
+            <span class="voorbeeld-badge">voorbeeldcase · echte projectdetails volgen van Stephan</span>
+          </article>
+          <article class="case-kaart reveal">
+            <div class="case-meta"><span>klant · <b>Fontys Hogeschool ICT</b></span><span>domein · <b>api & koppelingen</b></span></div>
+            <h3>Data veilig ontsloten voor eigen bouwers</h3>
+            <div class="case-stappen">
+              <div><span class="k">vraag</span><span>Waardevolle data in een bronsysteem, en teams die daar veilig op willen doorbouwen.</span></div>
+              <div><span class="k">oplossing</span><span>Een gedocumenteerde API met JWT-beveiliging op de bestaande identity provider.</span></div>
+              <div><span class="k">resultaat</span><span>Afnemers sluiten zelfstandig aan via de OpenAPI-documentatie, met rechten per afnemer.</span></div>
+            </div>
+            <span class="voorbeeld-badge">voorbeeldcase · echte projectdetails volgen van Stephan</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== reviews ========== -->
+    <section class="sectie sectie--strak" data-halte="reviews">
+      <div class="wrap">
+        <div class="sectie-kop reveal">
+          <p class="kicker">06 · wat opdrachtgevers zeggen</p>
+          <h2>Review-log<span class="punt">.</span></h2>
+          <p class="lead">Deze plek staat klaar voor echte reviews. De kaarten hieronder zijn voorbeelden en worden vervangen zodra de eerste reacties binnen zijn.</p>
+        </div>
+        <div class="review-raster">
+          <article class="review-kaart reveal">
+            <div class="review-sterren" aria-label="5 van 5"><span></span><span></span><span></span><span></span><span></span></div>
+            <blockquote>"Stephan denkt mee op architectuurniveau en levert daarna precies wat is afgesproken. Het draait al jaren zonder omkijken."</blockquote>
+            <p class="wie">[naam] · [functie]<br>onderwijsinstelling</p>
+            <span class="voorbeeld-badge">voorbeeldreview</span>
+          </article>
+          <article class="review-kaart reveal">
+            <div class="review-sterren" aria-label="5 van 5"><span></span><span></span><span></span><span></span><span></span></div>
+            <blockquote>"Eindelijk iemand die security niet als sticker verkoopt, maar als ontwerp. Onze SSO-uitrol verliep zonder één dag verstoring."</blockquote>
+            <p class="wie">[naam] · [functie]<br>it-organisatie</p>
+            <span class="voorbeeld-badge">voorbeeldreview</span>
+          </article>
+          <article class="review-kaart reveal">
+            <div class="review-sterren" aria-label="5 van 5"><span></span><span></span><span></span><span></span><span></span></div>
+            <blockquote>"Vaste prijs, heldere afspraken en documentatie waar ons eigen team direct mee verder kon."</blockquote>
+            <p class="wie">[naam] · [functie]<br>softwarebedrijf</p>
+            <span class="voorbeeld-badge">voorbeeldreview</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== blog ========== -->
+    <section class="sectie" data-halte="kennis">
+      <div class="wrap">
+        <div class="sectie-kop reveal">
+          <p class="kicker">07 · kennis delen</p>
+          <h2>Uit de praktijk<span class="punt">.</span></h2>
+          <p class="lead">Een MVP word je niet door stil te zitten. Stephan schrijft over identity, security en het Microsoft-ecosysteem.</p>
+        </div>
+        <div class="post-lijst reveal">
+          <a class="post-item" href="blog.html">
+            <span class="datum">nov 2017</span>
+            <span><h3>Configure SSO with GitLab</h3><p>Stapsgewijs single sign-on inrichten voor GitLab met ADFS: van claims tot werkende login.</p></span>
+            <span class="tag">single sign-on</span>
+          </a>
+          <a class="post-item" href="blog.html">
+            <span class="datum">okt 2017</span>
+            <span><h3>Waarom je single sign-on zou moeten willen</h3><p>Hoe één inlogmoment de beveiliging verhoogt én het wachtwoord-briefje de deur uit doet.</p></span>
+            <span class="tag">identity</span>
+          </a>
+          <a class="post-item" href="blog.html">
+            <span class="datum">aug 2017</span>
+            <span><h3>Office 365 licentie-script</h3><p>Licenties automatisch toewijzen op basis van security groups, met een PowerShell-script dat het gat in Azure dicht.</p></span>
+            <span class="tag">automation</span>
+          </a>
+        </div>
+        <div class="hero-acties reveal">
+          <a class="knop knop--lijn" href="blog.html">Naar de blog <span class="pijl">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== cta ========== -->
+    <section class="cta-band sectie" data-halte="contact">
+      <div class="wrap reveal">
+        <p class="kicker">08 · kennismaken</p>
+        <h2>Plan een technische kennismaking<span class="punt">.</span></h2>
+        <p class="lead">Geen verkooppraatje. In een half uur kijken we naar jullie situatie: wat er staat, wat er moet komen en of Smartersoft de juiste partij is. Daarna weet je het. En wij ook.</p>
+        <div class="hero-acties">
+          <a class="knop" href="contact.html">Plan een gesprek <span class="pijl">→</span></a>
+          <a class="knop knop--lijn" href="tel:+31854882620">Bel +31 85 488 2620</a>
+        </div>
+        <div class="cta-meta">
+          <span>ma–vr 8:30–18:00</span>
+          <a href="mailto:stephan@smartersoft.nl">stephan@smartersoft.nl</a>
+          <span>Kastanjelaan 400, Eindhoven</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-boven">
+      <div>
+        <a class="merk" href="index.html">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 23 H15 V9 H25" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="7" cy="23" r="3.2" fill="#E23B24"/><circle cx="25" cy="9" r="3.2" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>
+          smartersoft<span class="punt">.</span>
+        </a>
+        <p class="merk-om">Veilige API's, single sign-on en geautomatiseerde uitrol. Gebouwd in Eindhoven door software architect Stephan van Rooij, Microsoft MVP in Security.</p>
+      </div>
+      <div>
+        <h4>Diensten</h4>
+        <ul>
+          <li><a href="api-ontwikkeling.html">API-ontwikkeling</a></li>
+          <li><a href="single-sign-on.html">Single sign-on</a></li>
+          <li><a href="devops.html">DevOps met Azure</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Bedrijf</h4>
+        <ul>
+          <li><a href="over-stephan.html">Over Stephan</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+31854882620">+31 85 488 2620</a></li>
+          <li><a href="mailto:stephan@smartersoft.nl">stephan@smartersoft.nl</a></li>
+          <li>Kastanjelaan 400<br>5616 LZ Eindhoven</li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer-onder">
+      <span>© 2026 Smartersoft B.V. · Eindhoven</span>
+      <span>KVK 75707322 · ma–vr 8:30–18:00</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

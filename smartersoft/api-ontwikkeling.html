@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API-ontwikkeling · veilige API's in C#/.NET vanaf €3.000 | Smartersoft B.V.</title>
+  <meta name="description" content="Smartersoft bouwt de API voor jullie data: REST met OpenAPI-documentatie, JWT-beveiliging via jullie identity provider en een vaste prijs vooraf. Vanaf €3.000.">
+  <meta property="og:title" content="API-ontwikkeling · Smartersoft B.V.">
+  <meta property="og:description" content="Jullie data, veilig gedeeld. REST-API's in C#/.NET met OpenAPI en JWT, vaste prijs vooraf.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="nl_NL">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Wat kost een API?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Een Basis-API kost €3.000, een Uitgebreide API €7.000 (beide excl. btw). Voor specifieke wensen maken we een custom offerte. Altijd een vaste prijs vooraf, dus geen verrassingen achteraf."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kunnen jullie aansluiten op onze bestaande identity provider?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. We koppelen de API aan Microsoft Entra ID, ADFS, Auth0 of Okta. Jullie beheren zelf wie toegang krijgt, per afnemer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Van wie is de code na oplevering?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Volledig van jullie: broncode, deploy-pipeline en documentatie. Inclusief overdracht aan jullie eigen ontwikkelaars, zodat je nergens aan vastzit."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Onze data staat in een verouderd systeem. Kan dat?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Juist dan is een API waardevol: het oude systeem blijft staan, de API vormt de nette, veilige voordeur ervoor."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Hoe lang duurt het bouwen van een API?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dat hangt af van het aantal bronnen en de rechtenstructuur. Na het verkennende gesprek krijg je bij de offerte ook een concrete planning."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap header-in">
+      <a class="merk" href="index.html" aria-label="Smartersoft, home">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 23 H15 V9 H25" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="7" cy="23" r="3.2" fill="#E23B24"/><circle cx="25" cy="9" r="3.2" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>
+        smartersoft<span class="punt">.</span>
+      </a>
+      <nav class="hoofdnav" aria-label="Hoofdnavigatie">
+        <a href="api-ontwikkeling.html" aria-current="page">API-ontwikkeling</a>
+        <a href="single-sign-on.html">Single sign-on</a>
+        <a href="devops.html">DevOps</a>
+        <a href="over-stephan.html">Over Stephan</a>
+        <a href="blog.html">Blog</a>
+        <a class="knop" href="contact.html">Plan een kennismaking <span class="pijl">→</span></a>
+        <button class="menu-knop" aria-expanded="false" aria-controls="menu-doek"><span class="bolletje"></span><span class="menu-label">menu</span></button>
+      </nav>
+    </div>
+  </header>
+
+  <div class="menu-doek" id="menu-doek">
+    <nav aria-label="Menu">
+      <a href="index.html"><span class="nr">/00</span> Home</a>
+      <a href="api-ontwikkeling.html"><span class="nr">/01</span> API-ontwikkeling</a>
+      <a href="single-sign-on.html"><span class="nr">/02</span> Single sign-on</a>
+      <a href="devops.html"><span class="nr">/03</span> DevOps</a>
+      <a href="over-stephan.html"><span class="nr">/04</span> Over Stephan</a>
+      <a href="blog.html"><span class="nr">/05</span> Blog</a>
+      <a href="contact.html"><span class="nr">/06</span> Contact</a>
+    </nav>
+    <div class="menu-voet">
+      <a href="tel:+31854882620">+31 85 488 2620</a>
+      <a href="mailto:stephan@smartersoft.nl">stephan@smartersoft.nl</a>
+      <span>Kastanjelaan 400 · Eindhoven</span>
+    </div>
+  </div>
+
+  <div class="scroll-voortgang" aria-hidden="true"></div>
+  <aside class="route-rail" aria-hidden="true">
+    <span class="kap">route</span>
+    <div class="spoor"><div class="vulling"></div><span class="pakket"></span></div>
+  </aside>
+
+  <main>
+
+    <section class="dienst-hero" data-halte="api">
+      <div class="wrap hero-raster">
+        <div>
+          <p class="kicker">dienst /01 · api-ontwikkeling</p>
+          <h1>Jullie data,<br>veilig gedeeld<span class="punt">.</span></h1>
+          <p class="lead">De gegevens in jullie applicatie zijn waardevol: voor partners, voor koppelingen, voor jullie eigen apps. Wij bouwen de API die dat mogelijk maakt. Gedocumenteerd, getest, en met jullie als baas over wie toegang krijgt.</p>
+          <div class="hero-acties">
+            <a class="knop knop--rood" href="contact.html">Bespreek jullie API <span class="pijl">→</span></a>
+            <a class="knop knop--lijn" href="#prijzen">Bekijk de prijzen</a>
+          </div>
+          <p class="prijs-noot">→ Basis-API vanaf <b>€3.000</b> · vaste prijs vóór de start</p>
+        </div>
+        <div class="diagram-vlak">
+          <span class="diagram-label">fig. 02 · <b>api-flow</b> · live</span>
+          <canvas data-diagram="api" aria-label="Diagram: jullie applicatie ontsluit data via een API naar partners, mobiele apps en koppelingen"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <section class="sectie sectie--strak" data-halte="probleem">
+      <div class="wrap profiel">
+        <div class="reveal">
+          <p class="kicker">het probleem</p>
+          <h2>Waardevolle data, opgesloten in één systeem<span class="punt">.</span></h2>
+        </div>
+        <div class="reveal">
+          <p class="lead">Het begint klein: een partner die "even een exportje" vraagt. Een Excel die wekelijks wordt rondgemaild. Een koppeling die iemand ooit met de database heeft geknutseld, en die niemand meer durft aan te raken.</p>
+          <p style="margin-top:1rem; color:var(--inkt-2)">Zo lekt er tijd, en erger: controle. Wie kan er eigenlijk bij jullie data? Een goede API draait dat om. Andere applicaties kunnen aansluiten via één nette, gedocumenteerde voordeur, en jullie bepalen per afnemer wat die mag zien. Ook voor open data en mobiele apps is dat de enige route die schaalbaar én veilig is.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sectie" data-halte="aanpak">
+      <div class="wrap">
+        <div class="sectie-kop reveal">
+          <p class="kicker">de aanpak</p>
+          <h2>Contract eerst, code daarna<span class="punt">.</span></h2>
+        </div>
+        <div class="stappen reveal">
+          <div class="stap"><h3>Verkennen</h3><p>Welke data moet naar buiten, wie zijn de afnemers en welke identity provider gebruiken jullie al? Eén sessie, daarna ligt de scope vast, met prijs.</p></div>
+          <div class="stap"><h3>Ontwerpen</h3><p>We ontwerpen het API-contract vóór er code staat: endpoints, datamodellen, rechten. Als OpenAPI-specificatie, zodat jullie team kan meelezen en afnemers vast kunnen bouwen.</p></div>
+          <div class="stap"><h3>Bouwen</h3><p>De API in C#/.NET, beveiligd met JWT-tokens via jullie eigen identity provider. Elke endpoint getest, documentatie die automatisch meegroeit met de code.</p></div>
+          <div class="stap"><h3>Overdragen</h3><p>Deploy-pipeline, broncode en documentatie: alles is van jullie. Inclusief overdracht aan jullie ontwikkelaars, zodat je niet aan ons vastzit.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sectie sectie--strak" data-halte="deliverables">
+      <div class="wrap">
+        <div class="sectie-kop reveal">
+          <p class="kicker">wat je krijgt</p>
+          <h2>Deliverables<span class="punt">.</span></h2>
+        </div>
+        <div class="lever-raster reveal">
+          <div class="lever-kaart"><h3>REST-API in C#/.NET</h3><p>Modern .NET, LTS-versies, klaar voor jaren productie. Geen framework-experimenten met jullie data.</p></div>
+          <div class="lever-kaart"><h3>OpenAPI-documentatie</h3><p>Automatisch gegenereerd uit de code, dus altijd actueel. Afnemers kunnen direct aan de slag.</p></div>
+          <div class="lever-kaart"><h3>JWT-beveiliging via jullie provider</h3><p>Aansluiting op Microsoft Entra ID, ADFS, Auth0 of Okta. Jullie beheren de toegang, per afnemer.</p></div>
+          <div class="lever-kaart"><h3>Pipeline & broncode</h3><p>Automatische uitrol via Azure DevOps en volledige eigendom van de code. Vertrek-garantie inbegrepen.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sectie sectie--strak" data-halte="techniek">
+      <div class="wrap">
+        <div class="sectie-kop reveal">
+          <p class="kicker">onder de motorkap</p>
+          <h2>Techniek<span class="punt">.</span></h2>
+        </div>
+        <div class="tech-tabel reveal">
+          <div class="rij"><span class="sleutel">taal & runtime</span><div>C# op .NET<small>Long-term-support versies, onderhoudbaar voor elk .NET-team.</small></div></div>
+          <div class="rij"><span class="sleutel">authenticatie</span><div>OAuth2 met JWT-tokens<small>Via Microsoft Entra ID, ADFS, Auth0 of Okta, geen eigen wachtwoorddatabase.</small></div></div>
+          <div class="rij"><span class="sleutel">documentatie</span><div>OpenAPI / Swagger<small>Gegenereerd uit de code, interactief te verkennen door afnemers.</small></div></div>
+          <div class="rij"><span class="sleutel">hosting</span><div>Azure, of jullie eigen omgeving<small>Wij richten de uitrol in; draaien kan overal waar .NET draait.</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sectie" id="prijzen" data-halte="prijzen">
+      <div class="wrap">
+        <div class="sectie-kop reveal">
+          <p class="kicker">investering</p>
+          <h2>Vaste prijs, vooraf<span class="punt">.</span></h2>
+          <p class="lead">Geen uurtje-factuurtje zonder einde. Je weet wat het kost voordat we beginnen.</p>
+        </div>
+        <div class="prijs-raster reveal">
+          <div class="prijs-kaart">
+            <span class="naam">basis-api</span>
+            <span class="bedrag">€3.000 <small>excl. btw</small></span>
+            <ul>
+              <li>REST-API in C#/.NET</li>
+              <li>Automatische OpenAPI-documentatie</li>
+              <li>Aansluiting op jullie identity provider</li>
+              <li>1 externe databron</li>
+            </ul>
+            <a class="knop knop--lijn knop--klein" href="contact.html">Start hiermee</a>
+          </div>
+          <div class="prijs-kaart uitgelicht">
+            <span class="naam">uitgebreide api</span>
+            <span class="bedrag">€7.000 <small>excl. btw</small></span>
+            <ul>
+              <li>Alles uit Basis</li>
+              <li>Tot 3 externe databronnen</li>
+              <li>Meedenken over datamodel & rechten</li>
+              <li>Deploy-pipeline inbegrepen</li>
+            </ul>
+            <a class="knop knop--klein" href="contact.html">Meest gekozen</a>
+          </div>
+          <div class="prijs-kaart">
+            <span class="naam">custom api</span>
+            <span class="bedrag">op aanvraag</span>
+            <ul>
+              <li>Specifieke integraties of volumes</li>
+              <li>Meerdere afnemers & omgevingen</li>
+              <li>Architectuur-advies inbegrepen</li>
+              <li>Offerte na één verkennend gesprek</li>
+            </ul>
+            <a class="knop knop--lijn knop--klein" href="contact.html">Vraag een offerte</a>
+          </div>
+        </div>
+        <p class="prijs-noot-onder">// alle prijzen excl. btw · vaste prijs in de offerte, geen verrassingen achteraf</p>
+      </div>
+    </section>
+
+    <section class="sectie sectie--strak" data-halte="faq">
+      <div class="wrap">
+        <div class="sectie-kop reveal">
+          <p class="kicker">veelgestelde vragen</p>
+          <h2>Eerst nog even dit<span class="punt">.</span></h2>
+        </div>
+        <div class="faq-lijst reveal">
+          <details class="faq-item"><summary>Wat kost een API?</summary><div class="faq-antwoord"><p>Een Basis-API kost €3.000, een Uitgebreide API €7.000 (beide excl. btw). Voor specifieke wensen maken we een custom offerte. Altijd een vaste prijs vooraf, dus geen verrassingen achteraf.</p></div></details>
+          <details class="faq-item"><summary>Kunnen jullie aansluiten op onze bestaande identity provider?</summary><div class="faq-antwoord"><p>Ja. We koppelen de API aan Microsoft Entra ID, ADFS, Auth0 of Okta. Jullie beheren zelf wie toegang krijgt, per afnemer.</p></div></details>
+          <details class="faq-item"><summary>Van wie is de code na oplevering?</summary><div class="faq-antwoord"><p>Volledig van jullie: broncode, deploy-pipeline en documentatie. Inclusief overdracht aan jullie eigen ontwikkelaars, zodat je nergens aan vastzit.</p></div></details>
+          <details class="faq-item"><summary>Onze data staat in een verouderd systeem. Kan dat?</summary><div class="faq-antwoord"><p>Ja. Juist dan is een API waardevol: het oude systeem blijft staan, de API vormt de nette, veilige voordeur ervoor.</p></div></details>
+          <details class="faq-item"><summary>Hoe lang duurt het bouwen van een API?</summary><div class="faq-antwoord"><p>Dat hangt af van het aantal bronnen en de rechtenstructuur. Na het verkennende gesprek krijg je bij de offerte ook een concrete planning.</p></div></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="sectie sectie--strak" data-halte="review">
+      <div class="wrap">
+        <article class="review-kaart review-kaart--breed reveal">
+          <div class="review-sterren" aria-label="5 van 5"><span></span><span></span><span></span><span></span><span></span></div>
+          <blockquote>"De OpenAPI-documentatie was zo compleet dat onze partner zonder één vraag kon aansluiten."</blockquote>
+          <p class="wie">[naam] · [functie] · [organisatie]</p>
+          <span class="voorbeeld-badge">voorbeeldreview · wordt vervangen door een echte reactie</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta-band sectie" data-halte="contact">
+      <div class="wrap reveal">
+        <p class="kicker">volgende stap</p>
+        <h2>Vertel wat er open moet<span class="punt">.</span></h2>
+        <p class="lead">In een half uur weten we welke API jullie nodig hebben, en wat die kost. Plan een technische kennismaking met Stephan.</p>
+        <div class="hero-acties">
+          <a class="knop" href="contact.html">Plan een gesprek <span class="pijl">→</span></a>
+          <a class="knop knop--lijn" href="tel:+31854882620">Bel +31 85 488 2620</a>
+        </div>
+        <div class="cta-meta">
+          <span>ma–vr 8:30–18:00</span>
+          <a href="mailto:stephan@smartersoft.nl">stephan@smartersoft.nl</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-boven">
+      <div>
+        <a class="merk" href="index.html">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 23 H15 V9 H25" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="7" cy="23" r="3.2" fill="#E23B24"/><circle cx="25" cy="9" r="3.2" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>
+          smartersoft<span class="punt">.</span>
+        </a>
+        <p class="merk-om">Veilige API's, single sign-on en geautomatiseerde uitrol. Gebouwd in Eindhoven door software architect Stephan van Rooij, Microsoft MVP in Security.</p>
+      </div>
+      <div>
+        <h4>Diensten</h4>
+        <ul>
+          <li><a href="api-ontwikkeling.html">API-ontwikkeling</a></li>
+          <li><a href="single-sign-on.html">Single sign-on</a></li>
+          <li><a href="devops.html">DevOps met Azure</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Bedrijf</h4>
+        <ul>
+          <li><a href="over-stephan.html">Over Stephan</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+31854882620">+31 85 488 2620</a></li>
+          <li><a href="mailto:stephan@smartersoft.nl">stephan@smartersoft.nl</a></li>
+          <li>Kastanjelaan 400<br>5616 LZ Eindhoven</li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer-onder">
+      <span>© 2026 Smartersoft B.V. · Eindhoven</span>
+      <span>KVK 75707322 · ma–vr 8:30–18:00</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

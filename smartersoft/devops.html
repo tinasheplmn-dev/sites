@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevOps met Azure DevOps · geautomatiseerde software-uitrol | Smartersoft B.V.</title>
+  <meta name="description" content="Van commit naar productie, automatisch. Smartersoft richt Azure DevOps in: repositories, CI/CD-pipelines, automatische tests en uitrol naar elke omgeving.">
+  <meta property="og:title" content="DevOps met Azure · Smartersoft B.V.">
+  <meta property="og:description" content="Van commit naar productie. Automatisch. Azure DevOps ingericht door een senior architect.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="nl_NL">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "We hebben nog geen geautomatiseerde tests. Heeft een pipeline dan zin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. De pipeline dwingt structuur af vanaf dag één; tests groeien daarna mee. Elke nieuwe test die erbij komt, draait voortaan automatisch bij elke wijziging."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Werkt dit ook als we niet naar Azure uitrollen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Azure DevOps kan ook uitrollen naar on-premise servers of andere omgevingen. De pipeline-structuur blijft hetzelfde."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Moet ons team Azure DevOps al kennen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nee. De overdracht hoort bij het traject: we leggen uit hoe build en uitrol geconfigureerd zijn, zodat het team zelf verder kan."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Welk project kiezen we als eerste?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Samen kiezen we een project dat groot genoeg is om van te leren en klein genoeg om snel live te zijn. Daarna volgt de rest hetzelfde patroon."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wat kost het inrichten van DevOps?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We werken op projectbasis: heldere offerte vooraf, zonder verborgen kosten."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap header-in">
+      <a class="merk" href="index.html" aria-label="Smartersoft, home">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 23 H15 V9 H25" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="7" cy="23" r="3.2" fill="#E23B24"/><circle cx="25" cy="9" r="3.2" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>
+        smartersoft<span class="punt">.</span>
+      </a>
+      <nav class="hoofdnav" aria-label="Hoofdnavigatie">
+        <a href="api-ontwikkeling.html">API-ontwikkeling</a>
+        <a href="single-sign-on.html">Single sign-on</a>
+        <a href="devops.html" aria-current="page">DevOps</a>
+        <a href="over-stephan.html">Over Stephan</a>
+        <a href="blog.html">Blog</a>
+        <a class="knop" href="contact.html">Plan een kennismaking <span class="pijl">→</span></a>
+        <button class="menu-knop" aria-expanded="false" aria-controls="menu-doek"><span class="bolletje"></span><span class="menu-label">menu</span></button>
+      </nav>
+    </div>
+  </header>
+
+  <div class="menu-doek" id="menu-doek">
+    <nav aria-label="Menu">
+      <a href="index.html"><span class="nr">/00</span> Home</a>
+      <a href="api-ontwikkeling.html"><span class="nr">/01</span> API-ontwikkeling</a>
+      <a href="single-sign-on.html"><span class="nr">/02</span> Single sign-on</a>
+      <a href="devops.html"><span class="nr">/03</span> DevOps</a>
+      <a href="over-stephan.html"><span class="nr">/04</span> Over Stephan</a>
+      <a href="blog.html"><span class="nr">/05</span> Blog</a>
+      <a href="contact.html"><span class="nr">/06</span> Contact</a>
+    </nav>
+    <div class="menu-voet">
+      <a href="tel:+31854882620">+31 85 488 2620</a>
+      <a href="mailto:stephan@smartersoft.nl">stephan@smartersoft.nl</a>
+      <span>Kastanjelaan 400 · Eindhoven</span>
+    </div>
+  </div>
+
+  <div class="scroll-voortgang" aria-hidden="true"></div>
+  <aside class="route-rail" aria-hidden="true">
+    <span class="kap">route</span>
+    <div class="spoor"><div class="vulling"></div><span class="pakket"></span></div>
+  </aside>
+
+  <main>
+
+    <section class="dienst-hero" data-halte="devops">
+      <div class="wrap hero-raster">
+        <div>
+          <p class="kicker">dienst /03 · devops met azure</p>
+          <h1>Van commit naar productie<span class="punt">.</span><br>Automatisch<span class="punt">.</span></h1>
+          <p class="lead">Software die handmatig wordt uitgerold, wordt te weinig uitgerold. Wij zetten Azure DevOps voor jullie op: broncode, pipelines, automatische tests en een uitrol die elke keer hetzelfde werkt, zonder vrijdagmiddag-spanning.</p>
+          <div class="hero-acties">
+            <a class="knop knop--rood" href="contact.html">Bespreek jullie pipeline <span class="pijl">→</span></a>
+            <a class="knop knop--lijn" href="#aanpak">Bekijk de aanpak</a>
+          </div>
+          <p class="prijs-noot">→ Op projectbasis · <b>heldere offerte vooraf</b>, geen verborgen kosten</p>
+        </div>
+        <div class="diagram-vlak">
+          <span class="diagram-label">fig. 04 · <b>pipeline</b> · live</span>
+          <canvas data-diagram="devops" aria-label="Diagram: commit gaat door build en tests, via release naar staging en productie op Azure"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <section class="sectie sectie--strak" data-halte="probleem">
+      <div class="wrap profiel">
+        <div class="reveal">
+          <p class="kicker">het probleem</p>
+          <h2>"Even snel live zetten" is nooit even snel<span class="punt">.</span></h2>
+        </div>
+        <div class="reveal">
+          <p class="lead">Eén collega weet hoe de uitrol werkt. De testomgeving loopt drie versies achter. En elke release is een middag klikken, kopiëren en duimen. Dus stellen jullie releases uit, en groeit elke release in omvang én risico.</p>
+          <p style="margin-top:1rem; color:var(--inkt-2)">DevOps draait die spiraal om. Elke wijziging wordt automatisch gebouwd en getest vóór hij gemerged mag worden. Elke release volgt exact dezelfde, controleerbare route naar staging en productie. Kleinere stappen, minder risico, sneller resultaat. En niemand meer die 's avonds handmatig bestanden staat te kopiëren.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sectie" id="aanpak" data-halte="aanpak">
+      <div class="wrap">
+        <div class="sectie-kop reveal">
+          <p class="kicker">de aanpak</p>
+          <h2>Eerst één project goed<span class="punt">.</span></h2>
+        </div>
+        <div class="stappen reveal">
+          <div class="stap"><h3>Plannen</h3><p>We kiezen samen het project dat als eerste door de pipeline gaat: groot genoeg om ervan te leren, klein genoeg om snel live te zijn.</p></div>
+          <div class="stap"><h3>Inrichten</h3><p>Azure DevOps opgezet zoals het hoort: private repositories, branch-beleid, boards voor features en prioriteiten, rechten die kloppen.</p></div>
+          <div class="stap"><h3>Automatiseren</h3><p>Build- en testpipeline bij elke pull request; pas als alle tests slagen kan er gemerged worden. Daarna automatische uitrol naar de omgevingen die jullie kiezen.</p></div>
+          <div class="stap"><h3>Overdragen</h3><p>We leggen jullie team uit hoe build en uitrol geconfigureerd zijn, zodat elk volgend project hetzelfde patroon volgt, zonder ons.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sectie sectie--strak" data-halte="deliverables">
+      <div class="wrap">
+        <div class="sectie-kop reveal">
+          <p class="kicker">wat je krijgt</p>
+          <h2>Deliverables<span class="punt">.</span></h2>
+        </div>
+        <div class="lever-raster reveal">
+          <div class="lever-kaart"><h3>Ingerichte Azure DevOps-omgeving</h3><p>Onbeperkt private repositories, branch-beleid en een board waarop wensen en prioriteiten samenkomen.</p></div>
+          <div class="lever-kaart"><h3>CI-pipeline met tests</h3><p>Elke pull request automatisch gebouwd en getest. Falende tests? Dan gaat de merge niet door.</p></div>
+          <div class="lever-kaart"><h3>Automatische uitrol (CD)</h3><p>Eén overzichtelijke flow van build naar staging en productie, met goedkeuringsstappen waar jullie die willen.</p></div>
+          <div class="lever-kaart"><h3>Werkend voorbeeldproject</h3><p>Jullie eigen applicatie als eerste door de pipeline, plus uitleg zodat het team zelf verder kan.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sectie sectie--strak" data-halte="techniek">
+      <div class="wrap">
+        <div class="sectie-kop reveal">
+          <p class="kicker">onder de motorkap</p>
+          <h2>Techniek<span class="punt">.</span></h2>
+        </div>
+        <div class="tech-tabel reveal">
+          <div class="rij"><span class="sleutel">platform</span><div>Azure DevOps<small>Repos, Pipelines, Boards en Artifacts: één omgeving voor het hele proces.</small></div></div>
+          <div class="rij"><span class="sleutel">pipelines</span><div>YAML · pipeline as code<small>Versiebeheerd naast de broncode; reproduceerbaar en reviewbaar.</small></div></div>
+          <div class="rij"><span class="sleutel">omgevingen</span><div>Staging · acceptatie · productie<small>Uitrol naar Azure, maar ook on-premise of elders is prima in te richten.</small></div></div>
+          <div class="rij"><span class="sleutel">kwaliteit</span><div>Automatische tests & branch-beleid<small>Geen merge zonder geslaagde tests en review: kwaliteit afgedwongen, niet afgesproken.</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sectie sectie--strak" data-halte="faq">
+      <div class="wrap">
+        <div class="sectie-kop reveal">
+          <p class="kicker">veelgestelde vragen</p>
+          <h2>Eerst nog even dit<span class="punt">.</span></h2>
+        </div>
+        <div class="faq-lijst reveal">
+          <details class="faq-item"><summary>We hebben nog geen geautomatiseerde tests. Heeft een pipeline dan zin?</summary><div class="faq-antwoord"><p>Ja. De pipeline dwingt structuur af vanaf dag één; tests groeien daarna mee. Elke nieuwe test die erbij komt, draait voortaan automatisch bij elke wijziging.</p></div></details>
+          <details class="faq-item"><summary>Werkt dit ook als we niet naar Azure uitrollen?</summary><div class="faq-antwoord"><p>Ja. Azure DevOps kan ook uitrollen naar on-premise servers of andere omgevingen. De pipeline-structuur blijft hetzelfde.</p></div></details>
+          <details class="faq-item"><summary>Moet ons team Azure DevOps al kennen?</summary><div class="faq-antwoord"><p>Nee. De overdracht hoort bij het traject: we leggen uit hoe build en uitrol geconfigureerd zijn, zodat het team zelf verder kan.</p></div></details>
+          <details class="faq-item"><summary>Welk project kiezen we als eerste?</summary><div class="faq-antwoord"><p>Samen kiezen we een project dat groot genoeg is om van te leren en klein genoeg om snel live te zijn. Daarna volgt de rest hetzelfde patroon.</p></div></details>
+          <details class="faq-item"><summary>Wat kost het inrichten van DevOps?</summary><div class="faq-antwoord"><p>We werken op projectbasis: heldere offerte vooraf, zonder verborgen kosten.</p></div></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="sectie sectie--strak" data-halte="review">
+      <div class="wrap">
+        <article class="review-kaart review-kaart--breed reveal">
+          <div class="review-sterren" aria-label="5 van 5"><span></span><span></span><span></span><span></span><span></span></div>
+          <blockquote>"Releases waren middagen werk met gekruiste vingers. Nu is het een druk op de knop."</blockquote>
+          <p class="wie">[naam] · [functie] · [organisatie]</p>
+          <span class="voorbeeld-badge">voorbeeldreview · wordt vervangen door een echte reactie</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta-band sectie" data-halte="contact">
+      <div class="wrap reveal">
+        <p class="kicker">volgende stap</p>
+        <h2>Nooit meer handmatig uitrollen<span class="punt">.</span></h2>
+        <p class="lead">We werken op projectbasis: heldere offerte vooraf, geen verborgen kosten. Plan een technische kennismaking en we kijken welk project als eerste door de pipeline kan.</p>
+        <div class="hero-acties">
+          <a class="knop" href="contact.html">Plan een gesprek <span class="pijl">→</span></a>
+          <a class="knop knop--lijn" href="tel:+31854882620">Bel +31 85 488 2620</a>
+        </div>
+        <div class="cta-meta">
+          <span>ma–vr 8:30–18:00</span>
+          <a href="mailto:stephan@smartersoft.nl">stephan@smartersoft.nl</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-boven">
+      <div>
+        <a class="merk" href="index.html">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 23 H15 V9 H25" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="7" cy="23" r="3.2" fill="#E23B24"/><circle cx="25" cy="9" r="3.2" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>
+          smartersoft<span class="punt">.</span>
+        </a>
+        <p class="merk-om">Veilige API's, single sign-on en geautomatiseerde uitrol. Gebouwd in Eindhoven door software architect Stephan van Rooij, Microsoft MVP in Security.</p>
+      </div>
+      <div>
+        <h4>Diensten</h4>
+        <ul>
+          <li><a href="api-ontwikkeling.html">API-ontwikkeling</a></li>
+          <li><a href="single-sign-on.html">Single sign-on</a></li>
+          <li><a href="devops.html">DevOps met Azure</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Bedrijf</h4>
+        <ul>
+          <li><a href="over-stephan.html">Over Stephan</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+31854882620">+31 85 488 2620</a></li>
+          <li><a href="mailto:stephan@smartersoft.nl">stephan@smartersoft.nl</a></li>
+          <li>Kastanjelaan 400<br>5616 LZ Eindhoven</li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer-onder">
+      <span>© 2026 Smartersoft B.V. · Eindhoven</span>
+      <span>KVK 75707322 · ma–vr 8:30–18:00</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

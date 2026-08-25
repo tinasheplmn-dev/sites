@@ -1,0 +1,23 @@
+{
+  "name": "hazendonk",
+  "version": 2,
+  "buildCommand": "",
+  "devCommand": "node server.js",
+  "installCommand": "",
+  "env": {},
+  "envPrefix": "",
+  "framework": null,
+  "nodeVersion": "20.x",
+  "functions": {
+    "server.js": {
+      "memory": 1024,
+      "maxDuration": 60
+    }
+  },
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ]
+}

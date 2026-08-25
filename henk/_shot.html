@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<!-- Tijdelijk hulpbestand voor visuele verificatie (headless screenshots met scroll-offset). Niet deployen. -->
+<html><head><meta charset="utf-8"><style>html,body{margin:0;overflow:hidden;background:#0b0c0e;height:100%}iframe{border:0;width:100vw;height:100vh;display:block}</style></head>
+<body>
+<iframe id="f"></iframe>
+<script>
+  const p = new URLSearchParams(location.search);
+  const f = document.getElementById('f');
+  const y = parseInt(p.get('y') || '0', 10);
+  f.src = (p.get('page') || 'index.html');
+  f.addEventListener('load', () => {
+    const w = f.contentWindow;
+    w.scrollTo({ top: y, behavior: 'instant' });
+    setTimeout(() => w.scrollTo({ top: y, behavior: 'instant' }), 300);
+  });
+</script>
+</body></html>

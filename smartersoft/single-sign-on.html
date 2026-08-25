@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Single sign-on · identity management met Microsoft Entra ID | Smartersoft B.V.</title>
+  <meta name="description" content="Eén keer inloggen, veilig toegang tot alle systemen. Smartersoft richt single sign-on en identity management in met Microsoft Entra ID, MFA en centraal beleid, ook voor applicaties zonder SSO-ondersteuning.">
+  <meta property="og:title" content="Single sign-on · Smartersoft B.V.">
+  <meta property="og:description" content="Eén login. Alles veilig. Identity management door een Microsoft MVP in Security.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="nl_NL">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Werkt SSO ook met applicaties die het niet ondersteunen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Voor applicaties zonder ingebouwde SSO-ondersteuning bouwen we een maatwerk-integratie in C#/.NET, zodat ze tóch veilig aansluiten op het centrale inlogsysteem."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wat merken medewerkers ervan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Vooral gemak: één keer inloggen (met MFA) en daarna toegang tot alle gekoppelde applicaties. Geen losse wachtwoorden meer per systeem."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Moeten we alles tegelijk omzetten?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nee. We rollen gefaseerd uit, applicatie voor applicatie. Er is geen big bang en geen dag zonder toegang."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Welke identity provider raden jullie aan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In een Microsoft 365-omgeving is dat meestal Microsoft Entra ID. Maar het advies volgt uit jullie landschap, niet andersom; ook ADFS, Auth0 en Okta behoren tot de mogelijkheden."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wat kost een SSO-traject?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We werken op projectbasis: na de inventarisatie krijg je een heldere offerte vooraf, zonder verborgen kosten."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap header-in">
+      <a class="merk" href="index.html" aria-label="Smartersoft, home">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 23 H15 V9 H25" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="7" cy="23" r="3.2" fill="#E23B24"/><circle cx="25" cy="9" r="3.2" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>
+        smartersoft<span class="punt">.</span>
+      </a>
+      <nav class="hoofdnav" aria-label="Hoofdnavigatie">
+        <a href="api-ontwikkeling.html">API-ontwikkeling</a>
+        <a href="single-sign-on.html" aria-current="page">Single sign-on</a>
+        <a href="devops.html">DevOps</a>
+        <a href="over-stephan.html">Over Stephan</a>
+        <a href="blog.html">Blog</a>
+        <a class="knop" href="contact.html">Plan een kennismaking <span class="pijl">→</span></a>
+        <button class="menu-knop" aria-expanded="false" aria-controls="menu-doek"><span class="bolletje"></span><span class="menu-label">menu</span></button>
+      </nav>
+    </div>
+  </header>
+
+  <div class="menu-doek" id="menu-doek">
+    <nav aria-label="Menu">
+      <a href="index.html"><span class="nr">/00</span> Home</a>
+      <a href="api-ontwikkeling.html"><span class="nr">/01</span> API-ontwikkeling</a>
+      <a href="single-sign-on.html"><span class="nr">/02</span> Single sign-on</a>
+      <a href="devops.html"><span class="nr">/03</span> DevOps</a>
+      <a href="over-stephan.html"><span class="nr">/04</span> Over Stephan</a>
+      <a href="blog.html"><span class="nr">/05</span> Blog</a>
+      <a href="contact.html"><span class="nr">/06</span> Contact</a>
+    </nav>
+    <div class="menu-voet">
+      <a href="tel:+31854882620">+31 85 488 2620</a>
+      <a href="mailto:stephan@smartersoft.nl">stephan@smartersoft.nl</a>
+      <span>Kastanjelaan 400 · Eindhoven</span>
+    </div>
+  </div>
+
+  <div class="scroll-voortgang" aria-hidden="true"></div>
+  <aside class="route-rail" aria-hidden="true">
+    <span class="kap">route</span>
+    <div class="spoor"><div class="vulling"></div><span class="pakket"></span></div>
+  </aside>
+
+  <main>
+
+    <section class="dienst-hero" data-halte="sso">
+      <div class="wrap hero-raster">
+        <div>
+          <p class="kicker">dienst /02 · single sign-on</p>
+          <h1>Eén login.<br>Alles veilig<span class="punt">.</span></h1>
+          <p class="lead">Voor elke dienst een apart account betekent: overal wachtwoorden, nergens overzicht. Met single sign-on logt iedereen één keer in. Toegang, beleid en MFA regelen jullie op één centrale plek. Dit is het specialisme waar Stephan zijn MVP-titel aan dankt.</p>
+          <div class="hero-acties">
+            <a class="knop knop--rood" href="contact.html">Bespreek jullie situatie <span class="pijl">→</span></a>
+            <a class="knop knop--lijn" href="#aanpak">Bekijk de aanpak</a>
+          </div>
+          <p class="prijs-noot">→ Op projectbasis · <b>heldere offerte vooraf</b>, geen verborgen kosten</p>
+        </div>
+        <div class="diagram-vlak">
+          <span class="diagram-label">fig. 03 · <b>identity-flow</b> · live</span>
+          <canvas data-diagram="sso" aria-label="Diagram: een collega logt één keer in bij Entra ID en krijgt met tokens toegang tot CRM, intranet en GitLab"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <section class="sectie sectie--strak" data-halte="probleem">
+      <div class="wrap profiel">
+        <div class="reveal">
+          <p class="kicker">het probleem</p>
+          <h2>Wachtwoorden zijn jullie zwakste plek<span class="punt">.</span></h2>
+        </div>
+        <div class="reveal">
+          <p class="lead">Tien applicaties, tien accounts, tien wachtwoorden. Dus kiezen mensen overal hetzelfde, of plakken het op een briefje onder het toetsenbord. En als iemand uit dienst gaat: weet je zeker dat álle accounts dicht zijn?</p>
+          <p style="margin-top:1rem; color:var(--inkt-2)">Single sign-on lost dit structureel op. Alle applicaties vertrouwen op één centraal inlogsysteem. Daar dwing je sterke wachtwoorden en multi-factor-authenticatie af, daar zie je wie waar inlogt, en daar zet je een vertrekkende medewerker in één keer overal uit. Nieuwe collega's kunnen bovendien direct aan de slag, zonder wachtrij aan accountaanvragen.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sectie" id="aanpak" data-halte="aanpak">
+      <div class="wrap">
+        <div class="sectie-kop reveal">
+          <p class="kicker">de aanpak</p>
+          <h2>Van inventarisatie tot uitrol<span class="punt">.</span></h2>
+        </div>
+        <div class="stappen reveal">
+          <div class="stap"><h3>Adviseren</h3><p>We brengen jullie applicatielandschap in kaart: wat ondersteunt SSO al, wat heeft een duwtje nodig en wat is de beste identity provider voor jullie situatie.</p></div>
+          <div class="stap"><h3>Inrichten</h3><p>De centrale identity provider, meestal Microsoft Entra ID, goed neergezet: MFA, wachtwoordbeleid, conditional access en groepen die kloppen met jullie organisatie.</p></div>
+          <div class="stap"><h3>Koppelen</h3><p>Applicatie voor applicatie aangesloten via SAML of OpenID Connect. Ondersteunt een applicatie geen SSO? Dan bouwen wij de maatwerk-oplossing die het tóch mogelijk maakt.</p></div>
+          <div class="stap"><h3>Uitrollen</h3><p>Gefaseerd live, met documentatie en instructie voor beheer en collega's. Geen big bang, geen dag zonder toegang.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sectie sectie--strak" data-halte="deliverables">
+      <div class="wrap">
+        <div class="sectie-kop reveal">
+          <p class="kicker">wat je krijgt</p>
+          <h2>Deliverables<span class="punt">.</span></h2>
+        </div>
+        <div class="lever-raster reveal">
+          <div class="lever-kaart"><h3>Centrale login met MFA</h3><p>Eén inlogmoment voor alle systemen, beschermd met multi-factor-authenticatie en centraal beleid.</p></div>
+          <div class="lever-kaart"><h3>Koppelingen per applicatie</h3><p>SAML 2.0 of OpenID Connect per systeem, netjes gedocumenteerd, ook voor externe leveranciers.</p></div>
+          <div class="lever-kaart"><h3>Maatwerk voor lastige gevallen</h3><p>Applicatie zonder SSO-ondersteuning? Wij ontwikkelen de integratie die het alsnog veilig aansluit.</p></div>
+          <div class="lever-kaart"><h3>Offboarding in één klik</h3><p>Medewerker uit dienst = account dicht, overal tegelijk. Plus inzicht in wie waar inlogt.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sectie sectie--strak" data-halte="techniek">
+      <div class="wrap">
+        <div class="sectie-kop reveal">
+          <p class="kicker">onder de motorkap</p>
+          <h2>Techniek<span class="punt">.</span></h2>
+        </div>
+        <div class="tech-tabel reveal">
+          <div class="rij"><span class="sleutel">identity provider</span><div>Microsoft Entra ID · ADFS<small>Ook Auth0 en Okta. We kiezen wat bij jullie omgeving past.</small></div></div>
+          <div class="rij"><span class="sleutel">protocollen</span><div>SAML 2.0 · OpenID Connect · OAuth2<small>Open standaarden, geen vendor lock-in in de koppelingen.</small></div></div>
+          <div class="rij"><span class="sleutel">beveiliging</span><div>MFA · conditional access · centraal beleid<small>Wachtwoordsterkte en lockout op één plek geregeld.</small></div></div>
+          <div class="rij"><span class="sleutel">maatwerk</span><div>Custom integraties in C#/.NET<small>Voor legacy-applicaties die SSO niet van huis uit spreken.</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sectie sectie--strak" data-halte="faq">
+      <div class="wrap">
+        <div class="sectie-kop reveal">
+          <p class="kicker">veelgestelde vragen</p>
+          <h2>Eerst nog even dit<span class="punt">.</span></h2>
+        </div>
+        <div class="faq-lijst reveal">
+          <details class="faq-item"><summary>Werkt SSO ook met applicaties die het niet ondersteunen?</summary><div class="faq-antwoord"><p>Ja. Voor applicaties zonder ingebouwde SSO-ondersteuning bouwen we een maatwerk-integratie in C#/.NET, zodat ze tóch veilig aansluiten op het centrale inlogsysteem.</p></div></details>
+          <details class="faq-item"><summary>Wat merken medewerkers ervan?</summary><div class="faq-antwoord"><p>Vooral gemak: één keer inloggen (met MFA) en daarna toegang tot alle gekoppelde applicaties. Geen losse wachtwoorden meer per systeem.</p></div></details>
+          <details class="faq-item"><summary>Moeten we alles tegelijk omzetten?</summary><div class="faq-antwoord"><p>Nee. We rollen gefaseerd uit, applicatie voor applicatie. Er is geen big bang en geen dag zonder toegang.</p></div></details>
+          <details class="faq-item"><summary>Welke identity provider raden jullie aan?</summary><div class="faq-antwoord"><p>In een Microsoft 365-omgeving is dat meestal Microsoft Entra ID. Maar het advies volgt uit jullie landschap, niet andersom; ook ADFS, Auth0 en Okta behoren tot de mogelijkheden.</p></div></details>
+          <details class="faq-item"><summary>Wat kost een SSO-traject?</summary><div class="faq-antwoord"><p>We werken op projectbasis: na de inventarisatie krijg je een heldere offerte vooraf, zonder verborgen kosten.</p></div></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="sectie sectie--strak" data-halte="review">
+      <div class="wrap">
+        <article class="review-kaart review-kaart--breed reveal">
+          <div class="review-sterren" aria-label="5 van 5"><span></span><span></span><span></span><span></span><span></span></div>
+          <blockquote>"Een vertrekkende collega stond vroeger weken in tien systemen. Nu is het één klik."</blockquote>
+          <p class="wie">[naam] · [functie] · [organisatie]</p>
+          <span class="voorbeeld-badge">voorbeeldreview · wordt vervangen door een echte reactie</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta-band sectie" data-halte="contact">
+      <div class="wrap reveal">
+        <p class="kicker">volgende stap</p>
+        <h2>Weg met de wachtwoord-briefjes<span class="punt">.</span></h2>
+        <p class="lead">We werken op projectbasis: je krijgt vooraf een heldere offerte, zonder verborgen kosten. Plan een technische kennismaking en ontdek wat er in jullie landschap mogelijk is.</p>
+        <div class="hero-acties">
+          <a class="knop" href="contact.html">Plan een gesprek <span class="pijl">→</span></a>
+          <a class="knop knop--lijn" href="tel:+31854882620">Bel +31 85 488 2620</a>
+        </div>
+        <div class="cta-meta">
+          <span>ma–vr 8:30–18:00</span>
+          <a href="mailto:stephan@smartersoft.nl">stephan@smartersoft.nl</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-boven">
+      <div>
+        <a class="merk" href="index.html">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 23 H15 V9 H25" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="7" cy="23" r="3.2" fill="#E23B24"/><circle cx="25" cy="9" r="3.2" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>
+          smartersoft<span class="punt">.</span>
+        </a>
+        <p class="merk-om">Veilige API's, single sign-on en geautomatiseerde uitrol. Gebouwd in Eindhoven door software architect Stephan van Rooij, Microsoft MVP in Security.</p>
+      </div>
+      <div>
+        <h4>Diensten</h4>
+        <ul>
+          <li><a href="api-ontwikkeling.html">API-ontwikkeling</a></li>
+          <li><a href="single-sign-on.html">Single sign-on</a></li>
+          <li><a href="devops.html">DevOps met Azure</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Bedrijf</h4>
+        <ul>
+          <li><a href="over-stephan.html">Over Stephan</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+31854882620">+31 85 488 2620</a></li>
+          <li><a href="mailto:stephan@smartersoft.nl">stephan@smartersoft.nl</a></li>
+          <li>Kastanjelaan 400<br>5616 LZ Eindhoven</li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer-onder">
+      <span>© 2026 Smartersoft B.V. · Eindhoven</span>
+      <span>KVK 75707322 · ma–vr 8:30–18:00</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

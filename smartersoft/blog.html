@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog · identity, security & het Microsoft-ecosysteem | Smartersoft B.V.</title>
+  <meta name="description" content="Artikelen van Stephan van Rooij (Microsoft MVP in Security) over single sign-on, OAuth2, applicatiebeveiliging en het Microsoft-ecosysteem.">
+  <meta property="og:title" content="Blog · Smartersoft B.V.">
+  <meta property="og:description" content="Kennis uit de praktijk: identity, security en het Microsoft-ecosysteem.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="nl_NL">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap header-in">
+      <a class="merk" href="index.html" aria-label="Smartersoft, home">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 23 H15 V9 H25" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="7" cy="23" r="3.2" fill="#E23B24"/><circle cx="25" cy="9" r="3.2" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>
+        smartersoft<span class="punt">.</span>
+      </a>
+      <nav class="hoofdnav" aria-label="Hoofdnavigatie">
+        <a href="api-ontwikkeling.html">API-ontwikkeling</a>
+        <a href="single-sign-on.html">Single sign-on</a>
+        <a href="devops.html">DevOps</a>
+        <a href="over-stephan.html">Over Stephan</a>
+        <a href="blog.html" aria-current="page">Blog</a>
+        <a class="knop" href="contact.html">Plan een kennismaking <span class="pijl">→</span></a>
+        <button class="menu-knop" aria-expanded="false" aria-controls="menu-doek"><span class="bolletje"></span><span class="menu-label">menu</span></button>
+      </nav>
+    </div>
+  </header>
+
+  <div class="menu-doek" id="menu-doek">
+    <nav aria-label="Menu">
+      <a href="index.html"><span class="nr">/00</span> Home</a>
+      <a href="api-ontwikkeling.html"><span class="nr">/01</span> API-ontwikkeling</a>
+      <a href="single-sign-on.html"><span class="nr">/02</span> Single sign-on</a>
+      <a href="devops.html"><span class="nr">/03</span> DevOps</a>
+      <a href="over-stephan.html"><span class="nr">/04</span> Over Stephan</a>
+      <a href="blog.html"><span class="nr">/05</span> Blog</a>
+      <a href="contact.html"><span class="nr">/06</span> Contact</a>
+    </nav>
+    <div class="menu-voet">
+      <a href="tel:+31854882620">+31 85 488 2620</a>
+      <a href="mailto:stephan@smartersoft.nl">stephan@smartersoft.nl</a>
+      <span>Kastanjelaan 400 · Eindhoven</span>
+    </div>
+  </div>
+
+  <div class="scroll-voortgang" aria-hidden="true"></div>
+  <aside class="route-rail" aria-hidden="true">
+    <span class="kap">route</span>
+    <div class="spoor"><div class="vulling"></div><span class="pakket"></span></div>
+  </aside>
+
+  <main>
+
+    <section class="dienst-hero" data-halte="blog">
+      <div class="wrap">
+        <div class="sectie-kop reveal" style="margin-bottom:0">
+          <p class="kicker">blog · kennis uit de praktijk</p>
+          <h1>Wat een MVP zoal opschrijft<span class="punt">.</span></h1>
+          <p class="lead">Identity, security en het Microsoft-ecosysteem, uitgelegd zoals Stephan het zelf had willen lezen: concreet, met code, zonder omwegen.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sectie sectie--strak" data-halte="artikelen">
+      <div class="wrap">
+        <div class="post-lijst reveal">
+          <article class="post-item">
+            <span class="datum">nov 2017</span>
+            <span><h3>Configure SSO with GitLab</h3><p>Stapsgewijs single sign-on inrichten voor een eigen GitLab-server met ADFS 2012 R2 / 2016: van claims-configuratie tot een werkende login voor het hele team.</p></span>
+            <span class="tag">single sign-on</span>
+          </article>
+          <article class="post-item">
+            <span class="datum">okt 2017</span>
+            <span><h3>Waarom je single sign-on zou moeten willen</h3><p>Eén keer inloggen voor alle systemen: waarom dat niet alleen makkelijker is, maar vooral veiliger. Over wachtwoordmoeheid, gecentraliseerd beleid en het briefje onder het toetsenbord.</p></span>
+            <span class="tag">identity</span>
+          </article>
+          <article class="post-item">
+            <span class="datum">aug 2017</span>
+            <span><h3>Office 365 licentie-script</h3><p>Licenties automatisch toewijzen aan leden van een security group, met een PowerShell-script dat de gaten in Microsofts eigen group-based licensing dicht.</p></span>
+            <span class="tag">automation</span>
+          </article>
+        </div>
+        <p class="prijs-noot-onder reveal">// dit archief verhuist mee naar de nieuwe site · nieuwe artikelen over OAuth2, Entra ID en Graph API verschijnen hier</p>
+      </div>
+    </section>
+
+    <section class="cta-band sectie" data-halte="contact">
+      <div class="wrap reveal">
+        <p class="kicker">liever maatwerk-antwoord</p>
+        <h2>Vraag het de schrijver zelf<span class="punt">.</span></h2>
+        <p class="lead">Een identity-vraagstuk dat je in geen enkel artikel terugvindt? Plan een technische kennismaking: dan wordt jullie situatie het onderwerp.</p>
+        <div class="hero-acties">
+          <a class="knop" href="contact.html">Plan een gesprek <span class="pijl">→</span></a>
+          <a class="knop knop--lijn" href="tel:+31854882620">Bel +31 85 488 2620</a>
+        </div>
+        <div class="cta-meta">
+          <span>ma–vr 8:30–18:00</span>
+          <a href="mailto:stephan@smartersoft.nl">stephan@smartersoft.nl</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-boven">
+      <div>
+        <a class="merk" href="index.html">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 23 H15 V9 H25" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="7" cy="23" r="3.2" fill="#E23B24"/><circle cx="25" cy="9" r="3.2" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>
+          smartersoft<span class="punt">.</span>
+        </a>
+        <p class="merk-om">Veilige API's, single sign-on en geautomatiseerde uitrol. Gebouwd in Eindhoven door software architect Stephan van Rooij, Microsoft MVP in Security.</p>
+      </div>
+      <div>
+        <h4>Diensten</h4>
+        <ul>
+          <li><a href="api-ontwikkeling.html">API-ontwikkeling</a></li>
+          <li><a href="single-sign-on.html">Single sign-on</a></li>
+          <li><a href="devops.html">DevOps met Azure</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Bedrijf</h4>
+        <ul>
+          <li><a href="over-stephan.html">Over Stephan</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+31854882620">+31 85 488 2620</a></li>
+          <li><a href="mailto:stephan@smartersoft.nl">stephan@smartersoft.nl</a></li>
+          <li>Kastanjelaan 400<br>5616 LZ Eindhoven</li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer-onder">
+      <span>© 2026 Smartersoft B.V. · Eindhoven</span>
+      <span>KVK 75707322 · ma–vr 8:30–18:00</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

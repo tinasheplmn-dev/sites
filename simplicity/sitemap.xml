@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://www.rijschoolsimplicity.nl/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.rijschoolsimplicity.nl/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.rijschoolsimplicity.nl/en/"/>
+  </url>
+  <url><loc>https://www.rijschoolsimplicity.nl/rijlessen</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.rijschoolsimplicity.nl/rijlessen"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.rijschoolsimplicity.nl/en/lessons"/>
+  </url>
+  <url><loc>https://www.rijschoolsimplicity.nl/engelse-rijlessen</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.rijschoolsimplicity.nl/engelse-rijlessen"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.rijschoolsimplicity.nl/en/english-lessons"/>
+  </url>
+  <url><loc>https://www.rijschoolsimplicity.nl/tarieven</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.rijschoolsimplicity.nl/tarieven"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.rijschoolsimplicity.nl/en/prices"/>
+  </url>
+  <url><loc>https://www.rijschoolsimplicity.nl/reviews</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.rijschoolsimplicity.nl/reviews"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.rijschoolsimplicity.nl/en/reviews"/>
+  </url>
+  <url><loc>https://www.rijschoolsimplicity.nl/proefles</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.rijschoolsimplicity.nl/proefles"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.rijschoolsimplicity.nl/en/trial-lesson"/>
+  </url>
+  <url><loc>https://www.rijschoolsimplicity.nl/en/</loc></url>
+  <url><loc>https://www.rijschoolsimplicity.nl/en/lessons</loc></url>
+  <url><loc>https://www.rijschoolsimplicity.nl/en/english-lessons</loc></url>
+  <url><loc>https://www.rijschoolsimplicity.nl/en/prices</loc></url>
+  <url><loc>https://www.rijschoolsimplicity.nl/en/reviews</loc></url>
+  <url><loc>https://www.rijschoolsimplicity.nl/en/trial-lesson</loc></url>
+</urlset>
