@@ -199,10 +199,15 @@ body.nav-open .mobiel-nav a:nth-child(7) { transition-delay: .3s; }
 /* ---------- hero ---------- */
 .hero {
   position: relative;
-  background: linear-gradient(165deg, var(--petrol-950), var(--petrol-800) 62%, var(--petrol-700));
+  background: var(--petrol-950);
   color: var(--linnen);
   overflow: hidden;
   padding: clamp(4.5rem, 11vh, 8rem) 0 clamp(5rem, 12vh, 9rem);
+}
+.hero-home { display: flex; align-items: center; min-height: min(80svh, 52rem); }
+.hero-foto {
+  position: absolute; inset: 0; z-index: 0;
+  width: 100%; height: 100%; object-fit: cover; object-position: center 62%;
 }
 .hero .maat { position: relative; z-index: 2; }
 .hero-route {
@@ -215,9 +220,15 @@ body.nav-open .mobiel-nav a:nth-child(7) { transition-delay: .3s; }
   .hero-route { opacity: .55; }
 }
 .hero-gloed {
-  position: absolute; z-index: 0; width: 60vmax; height: 60vmax; border-radius: 50%;
-  background: radial-gradient(circle, rgba(192,107,54,.22), transparent 60%);
-  top: -18vmax; right: -18vmax; filter: blur(10px);
+  position: absolute; inset: 0; z-index: 1;
+  background:
+    linear-gradient(rgba(8, 33, 34, .58), rgba(8, 33, 34, .58)),
+    linear-gradient(to top, rgba(8, 33, 34, .78) 0%, rgba(8, 33, 34, 0) 50%);
+}
+@media (max-width: 700px) {
+  .hero-gloed {
+    background: linear-gradient(to top, rgba(8, 33, 34, .94) 0%, rgba(8, 33, 34, .68) 55%, rgba(8, 33, 34, .45) 100%);
+  }
 }
 
 .hero-chip {

@@ -639,3 +639,10 @@ section{position:relative;}
 .hero-punten { list-style: none; padding: 0; display: grid; gap: 0.55rem; }
 .hero-punten li { display: flex; align-items: flex-start; gap: 0.6rem; }
 .hero-punten svg { width: 1.05em; height: 1.05em; flex: none; margin-top: 0.28em; color: var(--fire); }
+
+
+/* review-marquee: gecentreerd, ook als de animatie niet draait */
+.review-marquee{max-width:var(--wrap);margin-inline:auto;}
+@media (prefers-reduced-motion:reduce){
+  .review-track{justify-content:center;width:auto;padding-inline:var(--gutter);}
+}
