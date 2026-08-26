@@ -667,7 +667,7 @@ body.nav-open .mobiel-nav a:nth-child(7) { transition-delay: .3s; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .rv { opacity: 1; transform: none; }
-  .review-baan { animation: none; flex-wrap: wrap; width: auto; }
+  .review-baan { animation: none; flex-wrap: wrap; width: auto; justify-content: center; padding-inline: 1.2rem; }
   .hero h1 .w > span { transform: none; animation: none; }
 }
 
@@ -684,3 +684,23 @@ body.nav-open .mobiel-nav a:nth-child(7) { transition-delay: .3s; }
 .hero-punten { list-style: none; padding: 0; display: grid; gap: 0.55rem; }
 .hero-punten li { display: flex; align-items: flex-start; gap: 0.6rem; }
 .hero-punten svg { width: 1.05em; height: 1.05em; flex: none; margin-top: 0.28em; color: var(--koper); }
+
+
+/* ---------- reviewbanner boven het menu ---------- */
+.review-banner { background: var(--petrol-950); color: var(--linnen); }
+.review-banner-binnen {
+  display: flex; align-items: center; justify-content: center; gap: .7rem;
+  min-height: 2.5rem; padding-block: .4rem;
+  text-decoration: none; color: inherit; font-size: .87rem;
+}
+.review-banner .sterren { display: inline-flex; gap: .12rem; color: var(--ster); }
+.review-banner .sterren .ic { width: 1em; height: 1em; }
+.rb-score b { font-weight: 700; }
+.rb-link { display: inline-flex; align-items: center; gap: .3rem; color: var(--koper-licht); font-weight: 600; }
+.rb-link .ic { width: .95em; height: .95em; transition: transform .25s; }
+.review-banner-binnen:hover .rb-link { text-decoration: underline; text-underline-offset: 3px; }
+.review-banner-binnen:hover .rb-link .ic { transform: translateX(3px); }
+@media (max-width: 560px) {
+  .rb-link { display: none; }
+  .review-banner-binnen { font-size: .82rem; }
+}
