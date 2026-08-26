@@ -936,7 +936,7 @@ blockquote.stephan-quote {
 .veld textarea { min-height: 150px; resize: vertical; }
 
 .onderwerp-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-.onderwerp-chips input { position: absolute; opacity: 0; pointer-events: none; }
+.onderwerp-chips input { position: absolute; opacity: 0; pointer-events: none; width: 1px; height: 1px; left: 0; }
 .onderwerp-chips label {
   font-family: var(--mono);
   font-size: 0.78rem;
