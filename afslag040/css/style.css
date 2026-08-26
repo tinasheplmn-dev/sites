@@ -1161,3 +1161,9 @@ body.menu-open .mobiel-menu a.m-link:nth-child(4) { transition-delay: 0.18s; }
   .wrap { padding-left: calc(var(--rail) + 10px); }
   .header-in { padding-left: calc(var(--rail) + 10px); }
 }
+
+
+/* ---------- hero-bulletpoints (verving de grijze introtekst) ---------- */
+.hero-punten { list-style: none; padding: 0; display: grid; gap: 0.55rem; }
+.hero-punten li { display: flex; align-items: flex-start; gap: 0.6rem; }
+.hero-punten svg { width: 1.05em; height: 1.05em; flex: none; margin-top: 0.28em; color: var(--goud); }

@@ -1154,3 +1154,9 @@ button { font: inherit; cursor: pointer; }
 }
 .skip-link:focus { left: 10px; color: #fff; }
 :focus-visible { outline: 3px solid var(--red); outline-offset: 2px; }
+
+
+/* ---------- hero-bulletpoints (verving de grijze introtekst) ---------- */
+.hero-punten { list-style: none; padding: 0; display: grid; gap: 0.55rem; }
+.hero-punten li { display: flex; align-items: flex-start; gap: 0.6rem; }
+.hero-punten svg { width: 1.05em; height: 1.05em; flex: none; margin-top: 0.28em; color: var(--red); }

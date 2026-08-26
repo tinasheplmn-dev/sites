@@ -158,7 +158,7 @@ section { position: relative; }
 
 /* ---------- Navigatie ---------- */
 .nav {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
@@ -174,7 +174,7 @@ section { position: relative; }
   -webkit-backdrop-filter: blur(14px);
   box-shadow: 0 1px 0 var(--line-soft);
 }
-.nav.nav-dark:not(.scrolled) { color: var(--cream); }
+.nav.nav-dark:not(.scrolled) { color: var(--cream); background: var(--ink); }
 .nav-inner {
   width: 100%;
   max-width: var(--wrap);
@@ -309,11 +309,10 @@ body.menu-open .mobile-menu-foot { opacity: 1; }
   position: relative;
   background: var(--ink);
   color: var(--cream);
-  min-height: 100svh;
+  min-height: calc(100svh - var(--nav-h));
   display: flex;
   align-items: center;
   overflow: hidden;
-  padding-top: var(--nav-h);
 }
 .hero-bg-dial {
   position: absolute;
@@ -622,7 +621,7 @@ body.menu-open .mobile-menu-foot { opacity: 1; }
 .page-hero {
   background: var(--ink);
   color: var(--cream);
-  padding-top: calc(var(--nav-h) + clamp(50px, 9vh, 100px));
+  padding-top: clamp(50px, 9vh, 100px);
   padding-bottom: clamp(60px, 9vh, 110px);
   position: relative;
   overflow: hidden;
@@ -834,3 +833,9 @@ body.menu-open .mobile-menu-foot { opacity: 1; }
   background: var(--paper-deep);
 }
 .geslaagd-strip img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+
+/* ---------- hero-bulletpoints (verving de grijze introtekst) ---------- */
+.hero-punten { list-style: none; padding: 0; display: grid; gap: 0.55rem; }
+.hero-punten li { display: flex; align-items: flex-start; gap: 0.6rem; }
+.hero-punten svg { width: 1.05em; height: 1.05em; flex: none; margin-top: 0.28em; color: var(--copper); }

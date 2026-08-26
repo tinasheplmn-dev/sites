@@ -586,3 +586,9 @@ html.js .komt.zichtbaar { opacity: 1; transform: none; }
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
   .komt, .hero h1 .w > span, .hero-sub, .hero .kicker, .hero .knopgroep, .hero-bewijs { opacity: 1 !important; transform: none !important; }
 }
+
+
+/* ---------- hero-bulletpoints (verving de grijze introtekst) ---------- */
+.hero-punten { list-style: none; padding: 0; display: grid; gap: 0.55rem; }
+.hero-punten li { display: flex; align-items: flex-start; gap: 0.6rem; }
+.hero-punten svg { width: 1.05em; height: 1.05em; flex: none; margin-top: 0.28em; color: var(--blauw-diep); }

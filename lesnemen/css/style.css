@@ -1523,3 +1523,9 @@ a.strip-cel:hover { background: var(--wash); }
   text-decoration: none;
 }
 @media (max-width: 760px) { .wa-zweef { display: grid; } }
+
+
+/* ---------- hero-bulletpoints (verving de grijze introtekst) ---------- */
+.hero-punten { list-style: none; padding: 0; display: grid; gap: 0.55rem; }
+.hero-punten li { display: flex; align-items: flex-start; gap: 0.6rem; }
+.hero-punten svg { width: 1.05em; height: 1.05em; flex: none; margin-top: 0.28em; color: var(--blauw); }

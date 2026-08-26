@@ -572,3 +572,9 @@ a.strip-item:hover { background: var(--inkt-2); }
 }
 .stappen-lijst h3 { margin-bottom: 0.35rem; }
 .stappen-lijst p { color: rgba(234, 244, 241, 0.75); max-width: 40rem; }
+
+
+/* ---------- hero-bulletpoints (verving de grijze introtekst) ---------- */
+.hero-punten { list-style: none; padding: 0; display: grid; gap: 0.55rem; }
+.hero-punten li { display: flex; align-items: flex-start; gap: 0.6rem; }
+.hero-punten svg { width: 1.05em; height: 1.05em; flex: none; margin-top: 0.28em; color: var(--munt); }

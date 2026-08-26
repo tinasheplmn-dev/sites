@@ -792,3 +792,9 @@ body.menu-open .menu-overlay a.groot:nth-child(4) { transition-delay: .24s; }
   .reveal { opacity: 1; transform: none; }
   .teken svg [class~="t"] { stroke-dasharray: none !important; stroke-dashoffset: 0 !important; }
 }
+
+
+/* ---------- hero-bulletpoints (verving de grijze introtekst) ---------- */
+.hero-punten { list-style: none; padding: 0; display: grid; gap: 0.55rem; }
+.hero-punten li { display: flex; align-items: flex-start; gap: 0.6rem; }
+.hero-punten svg { width: 1.05em; height: 1.05em; flex: none; margin-top: 0.28em; color: var(--gold); }

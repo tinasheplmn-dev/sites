@@ -573,3 +573,9 @@ main>#route-laag{z-index:0}
   .reveal{opacity:1;transform:none}
   #route-auto{display:none}
 }
+
+
+/* ---------- hero-bulletpoints (verving de grijze introtekst) ---------- */
+.hero-punten { list-style: none; padding: 0; display: grid; gap: 0.55rem; }
+.hero-punten li { display: flex; align-items: flex-start; gap: 0.6rem; }
+.hero-punten svg { width: 1.05em; height: 1.05em; flex: none; margin-top: 0.28em; color: var(--geel-diep); }

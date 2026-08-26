@@ -1343,3 +1343,9 @@ body.menu-open .menu-doek nav a { opacity: 1; transform: none; }
 }
 
 :focus-visible { outline: 3px solid var(--roze); outline-offset: 3px; border-radius: 4px; }
+
+
+/* ---------- hero-bulletpoints (verving de grijze introtekst) ---------- */
+.hero-punten { list-style: none; padding: 0; display: grid; gap: 0.55rem; }
+.hero-punten li { display: flex; align-items: flex-start; gap: 0.6rem; }
+.hero-punten svg { width: 1.05em; height: 1.05em; flex: none; margin-top: 0.28em; color: var(--roze); }

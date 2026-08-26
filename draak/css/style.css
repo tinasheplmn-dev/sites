@@ -819,3 +819,9 @@ body.menu-open { overflow: hidden; }
 .bron-noot { font-size: 0.84rem; color: var(--zand); }
 .bron-noot a { color: var(--zand); text-decoration: underline; text-underline-offset: 3px; }
 .bron-noot a:hover { color: var(--goud); }
+
+
+/* ---------- hero-bulletpoints (verving de grijze introtekst) ---------- */
+.hero-punten { list-style: none; padding: 0; display: grid; gap: 0.55rem; }
+.hero-punten li { display: flex; align-items: flex-start; gap: 0.6rem; }
+.hero-punten svg { width: 1.05em; height: 1.05em; flex: none; margin-top: 0.28em; color: var(--goud); }

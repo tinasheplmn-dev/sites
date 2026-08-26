@@ -566,3 +566,9 @@ body { padding-bottom: 0; }
 @media (min-width: 1100px) {
   .hero h1 { font-size: 74px; }
 }
+
+
+/* ---------- hero-bulletpoints (verving de grijze introtekst) ---------- */
+.hero-punten { list-style: none; padding: 0; display: grid; gap: 0.55rem; }
+.hero-punten li { display: flex; align-items: flex-start; gap: 0.6rem; }
+.hero-punten svg { width: 1.05em; height: 1.05em; flex: none; margin-top: 0.28em; color: var(--red); }
