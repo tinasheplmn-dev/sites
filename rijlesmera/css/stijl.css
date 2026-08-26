@@ -555,3 +555,50 @@ body.anim .zweefkaart { opacity: 0; transform: translateY(14px); }
   .mobiel-menu, .mobiel-menu ul a { transition: none; }
   * { animation-duration: .01ms !important; transition-duration: .15s !important; }
 }
+
+/* ================= topbalk ================= */
+.topbalk { background: var(--petrol-950); color: var(--room-op-donker); font-size: .84rem; }
+.topbalk-binnen {
+  width: var(--maat); margin-inline: auto;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  min-height: 2.4rem; padding-block: .3rem;
+}
+.topbalk-plek { opacity: .82; letter-spacing: .01em; }
+.topbalk-acties { display: flex; align-items: center; gap: 1.4rem; }
+.topbalk-acties a { display: inline-flex; align-items: center; gap: .45rem; color: inherit; text-decoration: none; opacity: .92; transition: opacity .2s; }
+.topbalk-acties a:hover { opacity: 1; text-decoration: underline; text-underline-offset: 3px; }
+.topbalk-acties svg { width: 1rem; height: 1rem; color: var(--honing-fel); }
+@media (max-width: 700px) {
+  .topbalk-plek { display: none; }
+  .topbalk-binnen { justify-content: center; }
+  .topbalk-acties { gap: 1rem; }
+}
+
+/* ================= beeldvullende held ================= */
+.held-vullend { position: relative; padding: 0; display: flex; align-items: center; min-height: min(88svh, 56rem); overflow: clip; }
+.held-achtergrond { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 58% 55%; }
+.held-gloed {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(to right, rgba(11, 42, 46, .88) 0%, rgba(11, 42, 46, .62) 44%, rgba(11, 42, 46, .18) 78%, rgba(11, 42, 46, .1) 100%),
+    linear-gradient(to top, rgba(11, 42, 46, .55) 0%, rgba(11, 42, 46, 0) 32%);
+}
+.held-vullend-binnen { width: var(--maat); margin-inline: auto; display: flex; align-items: center; padding-block: clamp(3rem, 7vw, 5.5rem); position: relative; z-index: 1; }
+.held-vullend .held-tekst { max-width: 34rem; }
+.held-vullend .kicker { color: var(--honing-fel); }
+.held-vullend h1 { color: var(--room-op-donker); }
+.held-vullend h1 .accent { color: var(--honing-fel); }
+.held-vullend .intro { color: rgba(246, 239, 223, .88); margin-bottom: 1.5rem; }
+.held-punten { list-style: none; padding: 0; margin: 0 0 1.9rem; display: grid; gap: .65rem; }
+.held-punten li { display: flex; align-items: center; gap: .7rem; color: rgba(246, 239, 223, .95); font-size: 1.02rem; }
+.held-punten svg { width: 1.15rem; height: 1.15rem; flex: none; color: var(--honing-fel); }
+.knop-lijn-licht { color: var(--room-op-donker); border-color: rgba(246, 239, 223, .45); }
+.knop-lijn-licht:hover { border-color: var(--room-op-donker); background: rgba(246, 239, 223, .1); color: var(--room-op-donker); }
+@media (max-width: 700px) {
+  .held-gloed {
+    background:
+      linear-gradient(to top, rgba(11, 42, 46, .92) 0%, rgba(11, 42, 46, .55) 55%, rgba(11, 42, 46, .3) 100%);
+  }
+  .held-vullend-binnen { align-items: flex-end; }
+  .held-achtergrond { object-position: 62% 30%; }
+}

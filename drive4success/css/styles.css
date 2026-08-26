@@ -86,7 +86,7 @@ section{position:relative;}
 
 /* ---------- header ---------- */
 .site-header{
-  position:fixed;inset-inline:0;top:0;z-index:60;
+  position:sticky;inset-inline:0;top:0;z-index:60;background:var(--ink);
   transition:background .4s,box-shadow .4s,transform .4s var(--ease);
 }
 .site-header.scrolled{background:rgba(10,39,37,.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(246,239,226,.08);}
@@ -96,7 +96,7 @@ section{position:relative;}
 }
 .logo{display:flex;align-items:center;text-decoration:none;}
 .logo img{height:30px;width:auto;}
-.main-nav{display:flex;align-items:center;gap:34px;}
+.main-nav{display:flex;align-items:center;gap:24px;white-space:nowrap;}
 .main-nav a{
   color:var(--cream);text-decoration:none;font-weight:500;font-size:15.5px;
   position:relative;padding:6px 0;
@@ -132,7 +132,7 @@ section{position:relative;}
   pointer-events:none;z-index:1;transform:translate(-50%,-50%);
   transition:opacity .5s;
 }
-.hero-home{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:150px 0 120px;}
+.hero-home{min-height:calc(100svh - 110px);display:flex;flex-direction:column;justify-content:center;padding:90px 0 110px;}
 .hero-home h1{
   font-size:clamp(52px,9.5vw,124px);font-weight:700;letter-spacing:-.03em;
   max-width:12ch;
@@ -165,18 +165,10 @@ section{position:relative;}
 .proof-sep{width:1px;height:34px;background:var(--line-light);align-self:center;}
 
 /* draaiende badge */
-.spin-badge{
-  position:absolute;right:clamp(16px,7vw,110px);bottom:clamp(26px,6vw,70px);z-index:3;
-  width:clamp(110px,14vw,160px);height:clamp(110px,14vw,160px);
-  opacity:0;animation:fadeUp 1s var(--ease) 1s forwards;
-}
-.spin-badge svg{width:100%;height:100%;animation:spin 22s linear infinite;}
 @keyframes spin{to{transform:rotate(360deg);}}
 @media (prefers-reduced-motion:reduce){
-  .spin-badge svg{animation:none;}
-  .hero-home h1 .line>span{animation-duration:.01s;}
-  .hero-sub,.hero-cta,.hero-proof,.spin-badge{animation-duration:.01s;animation-delay:0s;}
-}
+    .hero-home h1 .line>span{animation-duration:.01s;}
+  .hero-sub,.hero-cta,.hero-proof,}
 
 /* ---------- succeslijn (het motion-concept) ---------- */
 .route-wrap{position:relative;}
@@ -577,6 +569,8 @@ section{position:relative;}
 @media (max-width:820px){
   .split{grid-template-columns:1fr;}
   .split .media-first{order:-1;}
+}
+@media (max-width:1080px){
   .nav-toggle{display:block;}
   .main-nav{
     position:fixed;inset:0;background:var(--ink);z-index:65;
@@ -595,11 +589,10 @@ section{position:relative;}
   .stats-band{grid-template-columns:1fr;}
   .review-wall{columns:1;}
   .choice-row{grid-template-columns:1fr 1fr;}
-  .hero-home{padding:130px 0 90px;min-height:auto;}
+  .hero-home{padding:70px 0 80px;min-height:auto;}
   .hero-proof{gap:16px 22px;}
   .proof-sep{display:none;}
-  .spin-badge{position:relative;right:auto;bottom:auto;margin-top:40px;}
-  .route-step{grid-template-columns:48px 1fr;gap:16px;}
+    .route-step{grid-template-columns:48px 1fr;gap:16px;}
   .route-step .marker .num{width:44px;height:44px;font-size:17px;}
   .route-step .marker::after{top:44px;}
   .footer-grid{grid-template-columns:1fr;gap:30px;}
@@ -609,3 +602,34 @@ section{position:relative;}
   .hero-cta{flex-direction:column;align-items:stretch;}
   .hero-cta .btn{width:100%;justify-content:center;}
 }
+
+/* ============ topbalk ============ */
+.topbalk{background:var(--ink,#12251d);color:#F6EFE2;font-size:14px;border-bottom:1px solid rgba(246,239,226,.08);}
+.topbalk-binnen{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:38px;padding-block:5px;}
+.topbalk-plek{opacity:.8;}
+.topbalk-acties{display:flex;align-items:center;gap:22px;}
+.topbalk-acties a{color:inherit;text-decoration:none;opacity:.92;display:inline-flex;align-items:center;gap:7px;}
+.topbalk-acties a:hover{opacity:1;text-decoration:underline;text-underline-offset:3px;}
+.topbalk-ster{color:var(--fire,#FF4D1C);}
+@media (max-width:700px){
+  .topbalk-plek{display:none;}
+  .topbalk-binnen{justify-content:center;}
+  .topbalk-acties{gap:14px;flex-wrap:wrap;justify-content:center;}
+}
+
+/* ============ voordelen op een rij ============ */
+.voordelen-grid{grid-template-columns:1fr 1fr;gap:14px 40px;max-width:960px;}
+.voordelen-slot{margin-top:28px;font-size:19px;color:var(--ink-soft,#41544a);}
+.voordelen-slot strong{color:var(--fire,#FF4D1C);}
+@media (max-width:700px){.voordelen-grid{grid-template-columns:1fr;}}
+
+/* ============ actie: gratis rijles ============ */
+.promo-card{
+  display:flex;align-items:center;justify-content:space-between;gap:36px;
+  background:#fff;border:1px solid rgba(18,37,29,.1);border-radius:18px;
+  padding:clamp(28px,4vw,48px);box-shadow:0 24px 60px -30px rgba(18,37,29,.25);
+}
+.promo-card h2{font-size:clamp(28px,3.6vw,42px);margin-top:10px;}
+.promo-card p{margin-top:14px;max-width:56ch;color:var(--ink-soft,#41544a);font-size:17px;}
+.promo-card .btn{flex:none;}
+@media (max-width:820px){.promo-card{flex-direction:column;align-items:flex-start;}}

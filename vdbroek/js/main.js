@@ -7,6 +7,18 @@
 
   document.documentElement.classList.add("js");
 
+  /* Actie-banner sluiten */
+  var banner = document.querySelector(".actie-banner");
+  if (banner) {
+    document.querySelector(".actie-close").addEventListener("click", function () {
+      document.body.classList.add("actie-hidden");
+      localStorage.setItem("actie-hidden-20260810", "1");
+    });
+    if (localStorage.getItem("actie-hidden-20260810")) {
+      document.body.classList.add("actie-hidden");
+    }
+  }
+
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* Vangnet: draait de pagina zonder zichtbare frames (verborgen tabblad),
@@ -204,4 +216,15 @@
       }
     });
   }
+})();
+
+/* ---------- geslaagden-fotocarrousel ---------- */
+(function () {
+  var strip = document.querySelector('[data-strip]');
+  if (!strip) return;
+  var stap = function () { var f = strip.querySelector('figure'); return f ? f.getBoundingClientRect().width + 16 : 300; };
+  var vorige = document.querySelector('[data-strip-vorige]');
+  var volgende = document.querySelector('[data-strip-volgende]');
+  if (vorige) vorige.addEventListener('click', function () { strip.scrollBy({ left: -stap() * 2, behavior: 'smooth' }); });
+  if (volgende) volgende.addEventListener('click', function () { strip.scrollBy({ left: stap() * 2, behavior: 'smooth' }); });
 })();
