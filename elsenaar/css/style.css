@@ -687,20 +687,23 @@ body.nav-open .mobiel-nav a:nth-child(7) { transition-delay: .3s; }
 
 
 /* ---------- reviewbanner boven het menu ---------- */
-.review-banner { background: var(--petrol-950); color: var(--linnen); }
+.review-banner {
+  background: linear-gradient(100deg, var(--petrol-950), var(--petrol-800) 55%, var(--petrol-950));
+  border-bottom: 2px solid var(--koper);
+  color: var(--linnen);
+}
 .review-banner-binnen {
-  display: flex; align-items: center; justify-content: center; gap: .7rem;
-  min-height: 2.5rem; padding-block: .4rem;
-  text-decoration: none; color: inherit; font-size: .87rem;
+  display: flex; align-items: center; justify-content: center; gap: .8rem;
+  min-height: 2.7rem; padding: .45rem 1rem;
+  font-size: .92rem; letter-spacing: .02em;
 }
-.review-banner .sterren { display: inline-flex; gap: .12rem; color: var(--ster); }
-.review-banner .sterren .ic { width: 1em; height: 1em; }
-.rb-score b { font-weight: 700; }
-.rb-link { display: inline-flex; align-items: center; gap: .3rem; color: var(--koper-licht); font-weight: 600; }
-.rb-link .ic { width: .95em; height: .95em; transition: transform .25s; }
-.review-banner-binnen:hover .rb-link { text-decoration: underline; text-underline-offset: 3px; }
-.review-banner-binnen:hover .rb-link .ic { transform: translateX(3px); }
-@media (max-width: 560px) {
-  .rb-link { display: none; }
-  .review-banner-binnen { font-size: .82rem; }
-}
+.review-banner .sterren { display: inline-flex; gap: .18rem; color: var(--ster); filter: drop-shadow(0 1px 4px rgba(216,155,68,.45)); }
+.review-banner .sterren .ic { width: 1.05em; height: 1.05em; }
+.rb-score { color: rgba(246,242,232,.88); }
+.rb-score b { color: var(--linnen); font-size: 1.06em; font-weight: 700; margin-right: .15em; }
+@media (max-width: 560px) { .review-banner-binnen { font-size: .84rem; gap: .6rem; } }
+
+/* ---------- reviews op home: rustig, gecentreerd rooster ---------- */
+.review-rooster { display: grid; gap: 1.2rem; grid-template-columns: 1fr; }
+@media (min-width: 680px) { .review-rooster { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1020px) { .review-rooster { grid-template-columns: 1fr 1fr 1fr; } }
