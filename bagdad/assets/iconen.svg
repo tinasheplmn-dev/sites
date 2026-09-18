@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:none">
+  <!-- Eigen iconenset Bagdad: lijnstijl 1.6, ronde uiteinden, getekend op 24x24.
+       Vormen naar Lucide-basis, aangepast aan het merk (ster, chai-glas eigen ontwerp). -->
+  <symbol id="i-pijl" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-kruis" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-klok" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.4-6.5-10a6.5 6.5 0 0 1 13 0c0 4.6-6.5 10-6.5 10Z"/><circle cx="12" cy="10.6" r="2.3"/></symbol>
+  <symbol id="i-tel" viewBox="0 0 24 24"><path d="M5 4h4l1.7 4.2-2.1 1.6a13 13 0 0 0 5.6 5.6l1.6-2.1L20 15v4a1.5 1.5 0 0 1-1.6 1.5C10.4 20 4 13.6 3.5 5.6A1.5 1.5 0 0 1 5 4Z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="1.5"/><path d="m4.5 7 7.5 6 7.5-6"/></symbol>
+  <symbol id="i-insta" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="16.8" cy="7.2" r=".9" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8.5h3l1.6-2.5h6.8L17 8.5h3a1 1 0 0 1 1 1V18a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5a1 1 0 0 1 1-1Z"/><circle cx="12" cy="13.4" r="3.2"/></symbol>
+  <symbol id="i-tas" viewBox="0 0 24 24"><path d="M5.5 8.5h13l-.9 11a1.5 1.5 0 0 1-1.5 1.4H7.9a1.5 1.5 0 0 1-1.5-1.4l-.9-11Z"/><path d="M8.8 8.5V7a3.2 3.2 0 0 1 6.4 0v1.5"/></symbol>
+  <symbol id="i-kalender" viewBox="0 0 24 24"><rect x="4" y="5.5" width="16" height="15" rx="1.5"/><path d="M4 10h16M8.5 3.5v4M15.5 3.5v4"/></symbol>
+  <symbol id="i-gasten" viewBox="0 0 24 24"><circle cx="9" cy="8.5" r="3.2"/><path d="M3.5 19.5c.5-3.4 2.8-5.3 5.5-5.3s5 1.9 5.5 5.3"/><circle cx="16.8" cy="9.5" r="2.5"/><path d="M16.6 14.4c2.3.2 3.8 1.9 4.2 4.4"/></symbol>
+  <symbol id="i-chai" viewBox="0 0 24 24"><path d="M8 4.5h8l-1 5.5c-.3 1.6-.9 2.4-3 2.4s-2.7-.8-3-2.4l-1-5.5Z"/><path d="M9.4 12.2 8.6 18c-.1 1 .5 1.5 1.4 1.5h4c.9 0 1.5-.5 1.4-1.5l-.8-5.8M7 21h10"/></symbol>
+  <symbol id="i-bord" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/></symbol>
+  <symbol id="i-blad" viewBox="0 0 24 24"><path d="M5 19c0-8 4-13 14-14-.5 10-5 14-11.5 14"/><path d="M5 19c2-5 5-8 9-10"/></symbol>
+  <symbol id="i-vink" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-ster" viewBox="0 0 24 24"><path d="M12 2.5 14.4 9.6 22 12l-7.6 2.4L12 21.5 9.6 14.4 2 12l7.6-2.4Z"/></symbol>
+</svg>
