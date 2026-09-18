@@ -363,17 +363,34 @@
     }
 
     /* het paneel klapt open en dicht; de pagina eronder blijft gewoon bruikbaar */
+    var reserveerPad = EN ? 'reserveren-en.html' : 'reserveren.html';
     function toon(open) {
       overlay.hidden = !open;
       if (open) {
+        /* sluit een eventueel open mobiel menu, zodat het paneel vrij staat */
+        var menu = document.querySelector('[data-menu].open');
+        if (menu) {
+          menu.classList.remove('open');
+          document.body.classList.remove('menu-open');
+          document.body.style.overflow = '';
+          var mknop = document.querySelector('[data-menuknop]');
+          if (mknop) mknop.setAttribute('aria-expanded', 'false');
+        }
         var eerste = overlay.querySelector('.slot[aria-pressed="true"], .slot');
         if (eerste) eerste.focus({ preventScroll: true });
       }
     }
     document.addEventListener('click', function (e) {
+      if (e.target.closest('[data-rw-sluit]')) { toon(false); return; }
       var opener = e.target.closest('[data-reserveer-open]');
-      if (opener) { toon(overlay.hidden); return; }
-      if (e.target.closest('[data-rw-sluit]')) toon(false);
+      if (!opener) {
+        /* ook een gewone navigatielink naar reserveren opent het paneel */
+        var link = e.target.closest('a[href="' + reserveerPad + '"]');
+        if (link && !link.closest('footer') && !link.closest('.mobiel-menu')) opener = link;
+      }
+      if (!opener) return;
+      if (opener.tagName === 'A') e.preventDefault();   /* geen navigatie: het paneel opent hier */
+      toon(overlay.hidden);
     });
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && !overlay.hidden) { toon(false); return; }
@@ -387,12 +404,6 @@
         else if (!e.shiftKey && document.activeElement === laatste) { e.preventDefault(); eerste.focus(); }
         else if (!overlay.contains(document.activeElement)) { e.preventDefault(); eerste.focus(); }
       }
-    });
-    /* de navigatielink "Reserveer een tafel" opent voortaan ook het paneel */
-    var reserveerPad = EN ? 'reserveren-en.html' : 'reserveren.html';
-    document.querySelectorAll('a[href="' + reserveerPad + '"]').forEach(function (a) {
-      if (a.closest('footer') || a.closest('.mobiel-menu')) return;
-      a.addEventListener('click', function (e) { e.preventDefault(); toon(overlay.hidden); });
     });
   }
 })();

@@ -1048,3 +1048,12 @@ h1.een-regel, h2.een-regel { white-space: nowrap !important; text-wrap: nowrap !
   .bento-vak.groot { height: clamp(260px, 60vw, 420px); }
   .bento-vak.video, .bento > .bento-vak:last-child { height: clamp(300px, 70vw, 460px); }
 }
+
+/* wijnregels op mobiel: naam + prijs op één regel, omschrijving eronder (prijs niet meer afgesneden) */
+@media (max-width: 640px) {
+  .wijn-regel { flex-wrap: wrap; align-items: baseline; }
+  .wijn-regel .naam { order: 1; flex: 1 1 auto; }
+  .wijn-regel .prijs { order: 2; flex: 0 0 auto; }
+  .wijn-regel .stippel { display: none; }
+  .wijn-regel .oms { order: 3; flex: 1 1 100%; margin-top: .15rem; }
+}
