@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ranchobravo.nl/sitemap.xml

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <!-- Eigen set voor Rancho Bravo, getekend op Lucide-basis: 24-raster, lijn 1.8, ronde uiteinden -->
+  <symbol id="i-vlam" viewBox="0 0 24 24">
+    <path d="M12 21c3.9 0 7-3 7-6.8 0-2.4-1.2-4.4-2.6-6C15 6.5 13.6 4.9 13 3c-.6 2-1.8 3.2-3 4.4C8.2 9.2 7 11.2 7 14.2 7 18 8.1 21 12 21Z"/>
+    <path d="M12 21c1.7 0 3-1.4 3-3.2 0-1.6-.9-2.8-1.7-3.8-.5-.6-1-1.2-1.3-2-.3.8-.8 1.4-1.3 2-.8 1-1.7 2.2-1.7 3.8 0 1.8 1.3 3.2 3 3.2Z"/>
+  </symbol>
+  <symbol id="i-ster" viewBox="0 0 24 24">
+    <path d="m12 3 2.7 5.6 6.1.8-4.5 4.3 1.1 6-5.4-2.9-5.4 2.9 1.1-6L3.2 9.4l6.1-.8Z"/>
+  </symbol>
+  <symbol id="i-kalender" viewBox="0 0 24 24">
+    <rect x="3.5" y="5" width="17" height="16" rx="1.5"/><path d="M8 3v4M16 3v4M3.5 10h17"/>
+  </symbol>
+  <symbol id="i-kruis" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-min" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+  <symbol id="i-pijl" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+  <symbol id="i-marker" viewBox="0 0 24 24">
+    <path d="M12 21s-7-5.8-7-11a7 7 0 0 1 14 0c0 5.2-7 11-7 11Z"/><circle cx="12" cy="10" r="2.6"/>
+  </symbol>
+  <symbol id="i-klok" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+  <symbol id="i-tas" viewBox="0 0 24 24">
+    <path d="M5.5 8h13l-1 12.2a1.5 1.5 0 0 1-1.5 1.3H8a1.5 1.5 0 0 1-1.5-1.3Z"/><path d="M8.5 10V6.5a3.5 3.5 0 0 1 7 0V10"/>
+  </symbol>
+  <symbol id="i-bezorg" viewBox="0 0 24 24">
+    <circle cx="6.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/>
+    <path d="M9 17.5h6M3 6h8v9.5M11 9h5l3 4v4.5h-1.5M3 9.5h4M2 13h5"/>
+  </symbol>
+  <symbol id="i-wijn" viewBox="0 0 24 24">
+    <path d="M8 3h8c0 5-1.2 8-4 8s-4-3-4-8ZM12 11v8m-4 2h8M7.6 7h8.8"/>
+  </symbol>
+  <symbol id="i-bestek" viewBox="0 0 24 24">
+    <path d="M7 3v7a2 2 0 0 0 2 2v9M11 3v5M7 3v5M17.5 3c-2 1.5-3 4-3 7v2h3v9M17.5 3v18"/>
+  </symbol>
+  <symbol id="i-zegel" viewBox="0 0 24 24">
+    <path d="M12 2.8 14 5l3-.4.7 3L20.5 9l-1.2 2.8 1.2 2.9-2.8 1.3-.7 3-3-.4-2 2.2-2-2.2-3 .4-.7-3L2.5 14.7 3.7 12 2.5 9l2.8-1.3.7-3 3 .4Z"/>
+    <path d="m9 12 2.2 2.2L15.5 9.9"/>
+  </symbol>
+  <symbol id="i-grill" viewBox="0 0 24 24">
+    <path d="M4 10h16a8 8 0 0 1-16 0ZM12 18v3m-5.5-3.6L5 21m12.5-3.6L19 21"/>
+    <path d="M8 6c0-1 .8-1.2.8-2M12 6c0-1 .8-1.2.8-2M16 6c0-1 .8-1.2.8-2"/>
+  </symbol>
+  <symbol id="i-mes" viewBox="0 0 24 24">
+    <path d="M4 20 18.5 5.5c1 1 1.5 2.2 1.5 3.5 0 2.8-2.2 5-5 5h-3L7 19Z"/><path d="m4 20 5-5"/>
+  </symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24">
+    <rect x="3" y="5.5" width="18" height="13" rx="1.5"/><path d="m3.5 7 8.5 6 8.5-6"/>
+  </symbol>
+  <symbol id="i-tel" viewBox="0 0 24 24">
+    <path d="M5.5 4h3l1.5 4-2 1.5a12 12 0 0 0 6.5 6.5L16 14l4 1.5v3a1.8 1.8 0 0 1-2 1.8C10.5 19.6 4.4 13.5 3.7 6a1.8 1.8 0 0 1 1.8-2Z"/>
+  </symbol>
+  <symbol id="i-insta" viewBox="0 0 24 24">
+    <rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".8" fill="currentColor" stroke="none"/>
+  </symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24">
+    <path d="M15.5 4h-2A3.5 3.5 0 0 0 10 7.5V10H7.5v3.5H10V21h3.5v-7.5h2.6l.6-3.5h-3.2V8c0-.6.4-1 1-1h2Z"/>
+  </symbol>
+  <symbol id="i-zoek" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5Z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 5 5 10-11"/></symbol>
+  <symbol id="i-geluid" viewBox="0 0 24 24">
+    <path d="M4 9.5v5h3.5L12 19V5L7.5 9.5Z"/><path d="M15.5 9a4.3 4.3 0 0 1 0 6M18 6.5a8 8 0 0 1 0 11"/>
+  </symbol>
+  <symbol id="i-weegschaal" viewBox="0 0 24 24">
+    <path d="M12 4v16M8 20h8M12 4c-2 1.5-5 2-7 2m7-2c2 1.5 5 2 7 2M5 6l-2.5 6a3.5 3.5 0 0 0 5 0Zm14 0-2.5 6a3.5 3.5 0 0 0 5 0Z"/>
+  </symbol>
+  <symbol id="i-stier" viewBox="0 0 24 24">
+    <path d="M3 5c1.8 2.6 4 4 6 4h6c2 0 4.2-1.4 6-4M9 9c-1 1.6-1 3.2 0 4.6l1.6 2A2.4 2.4 0 0 0 12 19a2.4 2.4 0 0 0 1.4-3.4l1.6-2c1-1.4 1-3 0-4.6"/>
+  </symbol>
+</svg>
