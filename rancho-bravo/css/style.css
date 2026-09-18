@@ -248,7 +248,7 @@ html.js:not(.klaar) [data-rev]:not(.in) .brandlijn { transform: scaleX(0); }
 .loper { overflow: hidden; border-block: 1px solid var(--lijn-fijn); background: #0e0c0b; padding-block: .9rem; }
 .loper-band { display: flex; gap: 3.2rem; width: max-content; animation: loper 34s linear infinite; }
 .loper-band span { display: inline-flex; align-items: center; gap: 3.2rem; font-family: var(--display); font-size: 1.08rem; letter-spacing: .12em; color: var(--dim); white-space: nowrap; }
-.loper-band .vonk { color: var(--merk); font-family: var(--body); font-size: .8rem; }
+.loper-band .vonk { width: 15px; height: 15px; color: var(--merk); flex: none; opacity: .9; vertical-align: -2px; }
 @keyframes loper { to { transform: translateX(-50%); } }
 .loper:hover .loper-band { animation-play-state: paused; }
 
