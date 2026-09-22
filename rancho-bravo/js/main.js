@@ -182,10 +182,11 @@
   if (stil.length) {
     /* Sommige telefoons weigeren automatisch afspelen, ook bij een stille film:
        de spaarstand van iOS doet dat altijd. Lukt het niet, dan proberen we het
-       opnieuw zodra de bezoeker iets doet (tikken, scrollen, toets) of zodra hij
+       opnieuw zodra de bezoeker iets doet (tikken of een toets) of zodra hij
        terugkomt op het tabblad. Die handeling telt als toestemming. */
     var tikWacht = false;
-    var tikSoorten = ['pointerdown', 'touchstart', 'keydown', 'scroll'];
+    var rondes = 0;                 /* niet eindeloos blijven proberen */
+    var tikSoorten = ['pointerdown', 'touchend', 'keydown'];
 
     function inBeeld(v) {
       var r = v.getBoundingClientRect();
@@ -200,10 +201,11 @@
     function nogmaals() {
       tikSoorten.forEach(function (s) { document.removeEventListener(s, nogmaals); });
       tikWacht = false;
+      rondes++;
       [].forEach.call(stil, function (v) { if (v.paused && inBeeld(v)) probeer(v); });
     }
     function wachtOpHandeling() {
-      if (tikWacht) return;
+      if (tikWacht || rondes >= 4) return;
       tikWacht = true;
       tikSoorten.forEach(function (s) { document.addEventListener(s, nogmaals, { passive: true }); });
     }
