@@ -180,14 +180,47 @@
   }
   var stil = document.querySelectorAll('video[autoplay]');
   if (stil.length) {
+    /* Sommige telefoons weigeren automatisch afspelen, ook bij een stille film:
+       de spaarstand van iOS doet dat altijd. Lukt het niet, dan proberen we het
+       opnieuw zodra de bezoeker iets doet (tikken, scrollen, toets) of zodra hij
+       terugkomt op het tabblad. Die handeling telt als toestemming. */
+    var tikWacht = false;
+    var tikSoorten = ['pointerdown', 'touchstart', 'keydown', 'scroll'];
+
+    function inBeeld(v) {
+      var r = v.getBoundingClientRect();
+      return r.bottom > 0 && r.top < (window.innerHeight || document.documentElement.clientHeight);
+    }
+    function probeer(v) {
+      v.muted = true;
+      v.playsInline = true;
+      var p = v.play();
+      if (p && p.catch) p.catch(wachtOpHandeling);
+    }
+    function nogmaals() {
+      tikSoorten.forEach(function (s) { document.removeEventListener(s, nogmaals); });
+      tikWacht = false;
+      [].forEach.call(stil, function (v) { if (v.paused && inBeeld(v)) probeer(v); });
+    }
+    function wachtOpHandeling() {
+      if (tikWacht) return;
+      tikWacht = true;
+      tikSoorten.forEach(function (s) { document.addEventListener(s, nogmaals, { passive: true }); });
+    }
+
     var sfeer = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         var v = e.target;
-        if (e.isIntersecting && v.paused) { v.muted = true; var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+        if (e.isIntersecting && v.paused) probeer(v);
         else if (!e.isIntersecting && !v.paused) v.pause();
       });
     }, { threshold: .05 });
     stil.forEach(function (v) { sfeer.observe(v); });
+
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) return;
+      [].forEach.call(stil, function (v) { if (v.paused && inBeeld(v)) probeer(v); });
+    });
   }
 })();
 
