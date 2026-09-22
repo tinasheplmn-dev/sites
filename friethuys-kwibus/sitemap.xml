@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://friethuyskwibus.nl/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://friethuyskwibus.nl/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://friethuyskwibus.nl/index-en.html"/></url>
+  <url><loc>https://friethuyskwibus.nl/menukaart.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://friethuyskwibus.nl/menukaart.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://friethuyskwibus.nl/menukaart-en.html"/></url>
+  <url><loc>https://friethuyskwibus.nl/bestellen.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://friethuyskwibus.nl/bestellen.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://friethuyskwibus.nl/bestellen-en.html"/></url>
+  <url><loc>https://friethuyskwibus.nl/ons-verhaal.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://friethuyskwibus.nl/ons-verhaal.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://friethuyskwibus.nl/ons-verhaal-en.html"/></url>
+  <url><loc>https://friethuyskwibus.nl/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://friethuyskwibus.nl/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://friethuyskwibus.nl/contact-en.html"/></url>
+  <url><loc>https://friethuyskwibus.nl/index-en.html</loc></url>
+  <url><loc>https://friethuyskwibus.nl/menukaart-en.html</loc></url>
+  <url><loc>https://friethuyskwibus.nl/bestellen-en.html</loc></url>
+  <url><loc>https://friethuyskwibus.nl/ons-verhaal-en.html</loc></url>
+  <url><loc>https://friethuyskwibus.nl/contact-en.html</loc></url>
+</urlset>

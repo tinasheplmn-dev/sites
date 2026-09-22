@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://www.sanglee.nl/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.sanglee.nl/index.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sanglee.nl/index-en.html"/></url>
+  <url><loc>https://www.sanglee.nl/menukaart.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.sanglee.nl/menukaart.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sanglee.nl/menukaart-en.html"/></url>
+  <url><loc>https://www.sanglee.nl/bestellen.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.sanglee.nl/bestellen.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sanglee.nl/bestellen-en.html"/></url>
+  <url><loc>https://www.sanglee.nl/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.sanglee.nl/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sanglee.nl/contact-en.html"/></url>
+  <url><loc>https://www.sanglee.nl/index-en.html</loc></url>
+  <url><loc>https://www.sanglee.nl/menukaart-en.html</loc></url>
+  <url><loc>https://www.sanglee.nl/bestellen-en.html</loc></url>
+  <url><loc>https://www.sanglee.nl/contact-en.html</loc></url>
+</urlset>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.stefano-s.nl/sitemap.xml

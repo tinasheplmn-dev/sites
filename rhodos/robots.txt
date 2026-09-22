@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.restaurant-rhodos.nl/sitemap.xml

@@ -1,0 +1,1715 @@
+/* Lai Thai: Uw Thais voor Thuis.
+   Concept: de site dekt jouw tafel. Jasmijnrijst-wit als grond, het diepe
+   paars van de gevel als inkt, curry-oranje van de menukaart als accent,
+   en het blauw-witte Thaise porselein uit hun eigen foto's als signatuur.
+   Chonburi + Sarabun: beide in Bangkok getekend, met echt Thais schrift. */
+
+/* ---- fonts, zelf gehost ---- */
+@font-face {
+  font-family: 'Chonburi';
+  src: url('../assets/fonts/chonburi-latin.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+2000-206F, U+20AC, U+2212;
+}
+@font-face {
+  font-family: 'Chonburi';
+  src: url('../assets/fonts/chonburi-thai.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0E01-0E5B, U+200C-200D, U+25CC;
+}
+@font-face {
+  font-family: 'Sarabun';
+  src: url('../assets/fonts/sarabun-400-latin.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+2000-206F, U+20AC, U+2212;
+}
+@font-face {
+  font-family: 'Sarabun';
+  src: url('../assets/fonts/sarabun-400-thai.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0E01-0E5B, U+200C-200D, U+25CC;
+}
+@font-face {
+  font-family: 'Sarabun';
+  src: url('../assets/fonts/sarabun-600-latin.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Sarabun';
+  src: url('../assets/fonts/sarabun-700-latin.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* ---- kleur: rijstwit, gevelpaars, curry-oranje, porseleinblauw ---- */
+  --papier: #FAF6EF;             /* jasmijnrijst */
+  --papier-2: #F2EBDD;           /* sectieritme */
+  --vlak: #FFFDF7;               /* kaarten en panelen */
+  --inkt: #351150;               /* diep gevelpaars: tekst, donkere secties */
+  --inkt-diep: #26093B;          /* footer, actiebalk */
+  --tekst: var(--inkt);
+  --merk: #542785;               /* het paars van de zaak */
+  --merk-diep: #42165C;
+  --tweede: #2B4C9B;             /* porseleinblauw: details, patroonranden */
+  --cta: #F89D30;                /* curry-oranje: knoppen (inkt-tekst erop) */
+  --cta-diep: #E8890F;
+  --oranje-diep: #6E3B00;        /* oranje als tekst op licht, 7:1 (ook op papier-2) */
+  --cta-op-donker: #FFB55C;      /* oranje sterren en accenten op paars, 7:1 */
+  --oranje-kop: #A85A00;         /* het accentwoord in grote koppen, 4,5:1 */
+  --roze: #B94F98;               /* scheidingslijntje van de menukaart */
+  --dim: #544360;                /* zachte tekst op licht, 7:1 */
+  --dim-op-donker: #CBBFD6;      /* zachte tekst op paars, 7:1 */
+  --lijn: rgba(53, 17, 80, .14);
+  --lijn-op-donker: rgba(250, 246, 239, .22);
+  --groen: #1D7A46;              /* openstatus */
+  --rood-status: #C0392B;
+
+  /* ---- typografie ---- */
+  --display: 'Chonburi', 'Georgia', serif;
+  --body: 'Sarabun', 'Helvetica Neue', Arial, sans-serif;
+  --fs-hero:  clamp(2.35rem, 5.6vw + .4rem, 5.2rem);
+  --fs-h1:    clamp(2rem, 4.4vw, 3.4rem);
+  --fs-h2:    clamp(1.65rem, 3.2vw, 2.5rem);
+  --fs-h3:    clamp(1.1rem, 1.7vw, 1.35rem);
+  --fs-body:  clamp(1rem, .4vw + .9rem, 1.09rem);
+  --fs-klein: 1rem;
+  --fs-label: .8rem;
+
+  /* ---- ruimte ---- */
+  --wrap: min(1240px, 100% - 2.5rem);
+  --meet: 62ch;
+  --sectie: clamp(3.5rem, 8vw, 8.5rem);
+  --gutter: clamp(1rem, 3vw, 2.5rem);
+
+  /* ---- vorm: alles rond, als kommen en bakjes ---- */
+  --radius: 18px;
+  --radius-groot: 28px;
+  --knop-radius: 999px;
+
+  /* ---- beweging ---- */
+  --vlot: cubic-bezier(.22, 1, .36, 1);
+  --duur: .24s;
+  --komop: 28px;
+
+  /* schaduwen: grote blur, lage alpha (zwevend porselein) */
+  --schaduw-1: 0 2px 4px rgba(53, 17, 80, .06);
+  --schaduw-2: 0 2px 4px rgba(53, 17, 80, .05), 0 18px 44px rgba(53, 17, 80, .12);
+  --schaduw-3: 0 24px 56px rgba(53, 17, 80, .2);
+
+  /* gradient-omlijning: de twee merkkleuren van de menukaart */
+  --rim: linear-gradient(135deg, var(--merk) 0%, var(--roze) 42%, var(--cta) 100%);
+  --rim-koel: linear-gradient(135deg, var(--tweede) 0%, var(--merk) 55%, var(--cta) 100%);
+
+  /* de porseleinrand: geschulpte kommenrand als patroon */
+  --porselein: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='13' viewBox='0 0 28 13'%3E%3Cpath d='M0 13 A14 14 0 0 1 28 13' fill='none' stroke='%232B4C9B' stroke-width='1.7'/%3E%3Ccircle cx='14' cy='8' r='1.7' fill='%232B4C9B'/%3E%3C/svg%3E");
+}
+
+/* ---- reset ---- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; overflow-x: clip; background: var(--papier); }
+[hidden] { display: none !important; }
+
+body {
+  font-family: var(--body);
+  font-size: var(--fs-body);
+  line-height: 1.7;
+  color: var(--tekst);
+  background: var(--papier);
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, video, svg { display: block; max-width: 100%; }
+img, video { height: auto; }
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+::selection { background: var(--merk); color: #fff; }
+:focus-visible { outline: 3px solid var(--cta-diep); outline-offset: 3px; }
+:target, a:focus-visible, button:focus-visible, summary:focus-visible { scroll-margin-top: 7.5rem; }
+
+/* ---- koppen: Chonburi, met lucht; body ruim ---- */
+h1, h2, h3 { font-family: var(--display); font-weight: 400; text-wrap: balance; }
+h1 { font-size: var(--fs-h1); line-height: 1.08; letter-spacing: .012em; }
+h2 { font-size: var(--fs-h2); line-height: 1.1; letter-spacing: .012em; }
+h3 { font-size: var(--fs-h3); line-height: 1.28; letter-spacing: .01em; }
+p  { max-width: var(--meet); }
+strong { font-weight: 700; }
+
+.eyebrow {
+  font-family: var(--body);
+  font-size: var(--fs-label);
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--oranje-diep);
+}
+.accent { color: var(--cta); }
+.dim { color: var(--dim); }
+.thais {
+  font-family: var(--display);
+  color: var(--merk);
+}
+
+/* ---- opbouw ---- */
+.wrap { width: var(--wrap); margin-inline: auto; }
+.sectie { padding-block: var(--sectie); }
+.sectie-2 { background: var(--papier-2); }
+
+/* donkere paarse sectie: de omkering (slotband, vakjesblok) */
+.sectie.paars {
+  background: var(--inkt);
+  color: var(--papier);
+}
+.sectie.paars .eyebrow { color: var(--cta); }
+.sectie.paars .dim { color: var(--dim-op-donker); }
+.sectie.paars .thais { color: var(--dim-op-donker); }
+
+.sectiekop { margin-bottom: clamp(1.4rem, 3vw, 2.4rem); }
+.sectiekop .eyebrow { display: block; margin-bottom: .55rem; }
+.sectiekop p { margin-top: .7rem; color: var(--dim); }
+.sectie.paars .sectiekop p { color: var(--dim-op-donker); }
+
+/* de porseleinrand als sectiescheider */
+.porselein-rand {
+  height: 13px;
+  background-image: var(--porselein);
+  background-repeat: repeat-x;
+  background-position: center bottom;
+  opacity: .55;
+}
+.porselein-rand.op-donker { filter: brightness(2.1); opacity: .5; }
+
+/* ---- knoppen: pil, curry-oranje met paarse inkt ---- */
+.knop {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .55rem;
+  min-height: 54px;
+  padding: .85rem 1.75rem;
+  border-radius: var(--knop-radius);
+  font-weight: 700;
+  letter-spacing: .01em;
+  transition: transform var(--duur) var(--vlot), background var(--duur) var(--vlot),
+              color var(--duur) var(--vlot), border-color var(--duur) var(--vlot),
+              box-shadow var(--duur) var(--vlot);
+}
+.knop:hover { transform: translateY(-2px); }
+.knop:active { transform: translateY(0) scale(.98); }
+.knop-vol {
+  background: var(--cta);
+  color: var(--inkt);
+  box-shadow: 0 12px 30px -12px rgba(232, 137, 15, .65);
+}
+.knop-vol:hover { background: var(--cta-diep); box-shadow: 0 16px 34px -12px rgba(232, 137, 15, .75); }
+.knop:disabled { opacity: .55; cursor: not-allowed; transform: none; box-shadow: none; }
+.knop-lijn { border: 1.5px solid rgba(53, 17, 80, .35); color: var(--inkt); }
+.knop-lijn:hover { border-color: var(--merk); color: var(--merk); background: rgba(84, 39, 133, .05); }
+.sectie.paars .knop-lijn, .op-donker .knop-lijn { border-color: var(--lijn-op-donker); color: var(--papier); }
+.sectie.paars .knop-lijn:hover, .op-donker .knop-lijn:hover { border-color: var(--cta); color: var(--cta); background: transparent; }
+.knop .pijl { transition: transform var(--duur) var(--vlot); }
+.knop:hover .pijl { transform: translateX(4px); }
+
+.ikoon { width: 1.15em; height: 1.15em; flex: none; }
+
+/* ---- topbalk: gevelpaars ---- */
+.topbalk {
+  background: var(--merk-diep);
+  color: var(--papier);
+  font-size: var(--fs-klein);
+}
+.topbalk .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 42px;
+  padding-block: .35rem;
+}
+.topbalk a { font-weight: 700; }
+.topbalk a:hover { color: var(--cta); }
+.topbalk .rechts { display: flex; align-items: center; gap: 1.25rem; white-space: nowrap; }
+.topbalk .sterren { letter-spacing: .1em; color: var(--cta-op-donker); }
+
+/* ---- header ---- */
+.kop-balk {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: color-mix(in srgb, var(--papier) 90%, transparent);
+  border-bottom: 1px solid transparent;
+  transition: background .3s ease, border-color .3s ease;
+}
+@supports (backdrop-filter: blur(8px)) {
+  .kop-balk { backdrop-filter: blur(12px); }
+}
+.kop-balk.zweeft { border-color: var(--lijn); background: color-mix(in srgb, var(--papier) 96%, transparent); }
+.kop-balk .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  min-height: 78px;
+}
+.logo { display: inline-flex; align-items: center; min-height: 44px; color: var(--merk); }
+.logo svg { height: 52px; width: auto; }
+.hoofdnav { display: flex; align-items: center; gap: clamp(1rem, 2.2vw, 2rem); }
+.hoofdnav a:not(.knop) {
+  position: relative;
+  font-weight: 700;
+  font-size: var(--fs-klein);
+  padding-block: .4rem;
+}
+.hoofdnav a:not(.knop)::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 100%; height: 2.5px;
+  border-radius: 2px;
+  background: var(--cta);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .25s var(--vlot);
+}
+.hoofdnav a:not(.knop):hover::after,
+.hoofdnav a[aria-current="page"]::after { transform: scaleX(1); }
+.hoofdnav .knop { min-height: 46px; padding: .55rem 1.35rem; }
+
+.menuknop { display: none; }
+
+/* ---- mobiel menu ---- */
+.mobiel-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  background: var(--inkt);
+  color: var(--papier);
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path .45s cubic-bezier(.7, 0, .2, 1), visibility 0s .45s;
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem;
+}
+.mobiel-menu.open { clip-path: inset(0 0 0 0); visibility: visible; transition: clip-path .45s cubic-bezier(.7, 0, .2, 1); }
+.mobiel-menu .menu-top { display: flex; justify-content: space-between; align-items: center; min-height: 56px; }
+.mobiel-menu .menu-top .logo { color: var(--papier); }
+.mobiel-menu .menu-top .logo svg { height: 44px; }
+.mobiel-menu .menuknop { color: var(--papier); }
+.mobiel-menu nav { display: grid; gap: .25rem; margin-block: auto; }
+.mobiel-menu nav a {
+  font-family: var(--display);
+  font-size: clamp(1.7rem, 6.5vw, 2.4rem);
+  padding: .5rem .25rem;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .4s ease, transform .4s ease;
+}
+.mobiel-menu.open nav a { opacity: 1; transform: none; }
+.mobiel-menu.open nav a:nth-child(1) { transition-delay: .1s; }
+.mobiel-menu.open nav a:nth-child(2) { transition-delay: .16s; }
+.mobiel-menu.open nav a:nth-child(3) { transition-delay: .22s; }
+.mobiel-menu.open nav a:nth-child(4) { transition-delay: .28s; }
+.mobiel-menu.open nav a:nth-child(5) { transition-delay: .34s; }
+.mobiel-menu nav a[aria-current="page"] { color: var(--cta); }
+.mobiel-menu .menu-voet { display: grid; gap: .75rem; }
+body.menu-open { overflow: hidden; }
+
+/* ---- hero: het gedekte bord ---- */
+.hero {
+  position: relative;
+  overflow: clip;
+  isolation: isolate;
+  padding-block: clamp(2.5rem, 5.5vw, 5rem) clamp(3rem, 6vw, 5.5rem);
+}
+/* het Thaise schrift van hun raamsticker, groot en stil op de achtergrond */
+.hero::before {
+  content: "ลายไทย";
+  position: absolute;
+  z-index: -1;
+  top: clamp(.5rem, 3vw, 2.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--display);
+  font-size: clamp(9rem, 26vw, 24rem);
+  line-height: 1;
+  color: rgba(84, 39, 133, .055);
+  white-space: nowrap;
+  pointer-events: none;
+}
+.hero-raster {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+}
+.hero-inhoud h1 {
+  font-size: var(--fs-hero);
+  line-height: 1.06;
+  max-width: 13ch;
+}
+.hero-inhoud h1 .accent { color: var(--oranje-kop); }
+.hero-lead {
+  margin-top: 1.1rem;
+  font-size: 1.05rem;
+  color: var(--dim);
+  max-width: 42ch;
+  line-height: 1.6;
+}
+.hero-knoppen { display: flex; flex-wrap: wrap; gap: .9rem; margin-top: 1.8rem; }
+.feitenrij { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.6rem; }
+.feitenrij .chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .45rem 1rem;
+  border: 1.5px solid rgba(84, 39, 133, .25);
+  border-radius: 999px;
+  font-size: var(--fs-klein);
+  font-weight: 700;
+  color: var(--inkt);
+  background: var(--vlak);
+  box-shadow: var(--schaduw-1);
+}
+.feitenrij .chip .ster { color: var(--oranje-diep); letter-spacing: .06em; }
+.feitenrij .chip .stip {
+  width: .6em; height: .6em;
+  border-radius: 999px;
+  background: var(--groen);
+  flex: none;
+}
+.contact-blok [data-open-status] .stip { display: inline-block; width: .6em; height: .6em; border-radius: 999px; background: var(--groen); margin-right: .15rem; }
+
+/* het grote bord rechts, met zwevende kommen eromheen */
+.hero-bord {
+  position: relative;
+  aspect-ratio: 1;
+  width: 100%;
+  max-width: min(560px, 88vw);
+  margin-inline: auto;
+}
+.hero-bord .bord {
+  position: absolute;
+  inset: 6%;
+  border-radius: 50%;
+  overflow: clip;
+  box-shadow: var(--schaduw-3);
+  border: 6px solid var(--vlak);
+  outline: 1.5px solid rgba(43, 76, 155, .35);
+  outline-offset: -12px;
+}
+.hero-bord .bord img { width: 100%; height: 100%; object-fit: cover; }
+/* geschulpte porseleinring om het bord */
+.hero-bord::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1.7px dashed rgba(43, 76, 155, .45);
+  animation: bord-draai 90s linear infinite;
+}
+.hero-kom {
+  position: absolute;
+  border-radius: 50%;
+  overflow: clip;
+  border: 4px solid var(--vlak);
+  box-shadow: var(--schaduw-2);
+  width: 27%;
+  aspect-ratio: 1;
+}
+.hero-kom img { width: 100%; height: 100%; object-fit: cover; }
+.hero-kom.k1 { top: -2%; right: 1%; }
+.hero-kom.k2 { bottom: 3%; left: -4%; width: 31%; }
+.hero-kom.k3 { top: 34%; right: -7%; width: 22%; }
+@keyframes bord-draai { to { transform: rotate(360deg); } }
+
+/* ---- bewijsband onder de hero ---- */
+.bewijsband {
+  background: var(--merk-diep);
+  color: var(--papier);
+  position: relative;
+}
+.bewijsband .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: .75rem 2rem;
+  padding-block: 1rem;
+  font-weight: 700;
+  font-size: var(--fs-klein);
+}
+.bewijsband .item { display: inline-flex; align-items: center; gap: .6rem; }
+.bewijsband .item .ster { color: var(--cta-op-donker); letter-spacing: .08em; }
+.bewijsband a:hover { color: var(--cta); }
+.bewijsband .stip { width: .6em; height: .6em; border-radius: 999px; flex: none; background: var(--cta); }
+
+/* ---- signatuurgerechten: kommen op tafel ---- */
+.kommen-raster {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+}
+.kom-kaart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: .75rem;
+  padding: 0 .25rem;
+}
+.kom-kaart .kom {
+  position: relative;
+  width: min(100%, 240px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: clip;
+  border: 5px solid var(--vlak);
+  box-shadow: var(--schaduw-2);
+  transition: transform .35s var(--vlot), box-shadow .35s var(--vlot);
+}
+.kom-kaart:hover .kom { transform: translateY(-6px) rotate(-1.5deg); box-shadow: var(--schaduw-3); }
+.kom-kaart .kom img { width: 100%; height: 100%; object-fit: cover; transition: transform .55s var(--vlot); }
+.kom-kaart:hover .kom img { transform: scale(1.06); }
+.kom-kaart h3 { display: flex; align-items: baseline; gap: .6rem; justify-content: center; flex-wrap: wrap; }
+.kom-kaart .prijs { font-family: var(--body); font-weight: 700; font-size: var(--fs-klein); color: var(--oranje-diep); white-space: nowrap; }
+.kom-kaart p { font-size: var(--fs-klein); color: var(--dim); max-width: 26ch; }
+
+/* chili-schaal */
+.chili { display: inline-flex; gap: .15em; color: #A93226; }
+.chili .ikoon { width: .95em; height: .95em; }
+.veg { color: var(--groen); font-weight: 700; font-size: .82rem; letter-spacing: .04em; }
+
+/* ---- vakjesmenu-blok ---- */
+.twee-kolommen {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+}
+.beeldkader { position: relative; }
+.beeldkader img { border-radius: var(--radius-groot); width: 100%; object-fit: cover; box-shadow: var(--schaduw-2); }
+.beeldkader.rond img { border-radius: 50%; aspect-ratio: 1; }
+.beeldkader::before {
+  content: "";
+  position: absolute;
+  inset: 18px -18px -18px 18px;
+  border: 1.7px dashed rgba(43, 76, 155, .45);
+  border-radius: var(--radius-groot);
+  z-index: -1;
+}
+.beeldkader.rond::before { border-radius: 50%; }
+.diepte-laag {
+  position: absolute;
+  top: auto;
+  left: auto;
+  right: -14px;
+  bottom: -18px;
+  background: var(--vlak);
+  color: var(--inkt);
+  border-radius: var(--radius);
+  border-top: 3px solid var(--cta);
+  padding: 1rem 1.3rem;
+  box-shadow: var(--schaduw-3);
+  display: grid;
+  gap: .1rem;
+  text-align: center;
+}
+.diepte-laag strong { font-family: var(--display); font-size: 1.8rem; line-height: 1.15; color: var(--merk); }
+.diepte-laag span { font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--dim); }
+
+.vinkjes { display: grid; gap: .65rem; margin-top: 1.4rem; }
+.vinkjes li { display: flex; align-items: baseline; gap: .65rem; }
+.vinkjes .v { color: var(--oranje-diep); flex: none; font-weight: 700; }
+.sectie.paars .vinkjes .v { color: var(--cta); }
+
+/* prijssticker op het vakjesblok */
+.prijs-sticker {
+  display: inline-flex;
+  align-items: baseline;
+  gap: .5rem;
+  font-family: var(--display);
+  font-size: 1.5rem;
+  color: var(--merk);
+}
+.sectie.paars .prijs-sticker { color: var(--cta); }
+
+/* ---- reviews ---- */
+.review-raster {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.75rem);
+}
+.review {
+  background: var(--vlak);
+  border: 1px solid var(--lijn);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.5rem 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: .9rem;
+  box-shadow: var(--schaduw-1);
+}
+.review .sterren { color: var(--oranje-diep); letter-spacing: .12em; font-size: .95rem; }
+.review blockquote {
+  font-size: 1.02rem;
+  line-height: 1.6;
+  flex: 1;
+}
+.review cite { font-style: normal; font-size: var(--fs-klein); font-weight: 700; color: var(--dim); }
+.review-bron { font-size: var(--fs-klein); color: var(--dim); }
+.review-bron a { font-weight: 700; color: var(--oranje-diep); display: inline-block; padding-block: .45rem; }
+.review-bron a:hover { text-decoration: underline; }
+
+/* ---- stappen ---- */
+.stappen {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.75rem);
+  counter-reset: stap;
+}
+.stap {
+  position: relative;
+  background: var(--vlak);
+  border: 1px solid var(--lijn);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.4rem;
+  box-shadow: var(--schaduw-1);
+}
+.stap::before {
+  counter-increment: stap;
+  content: counter(stap);
+  display: grid;
+  place-items: center;
+  width: 44px; height: 44px;
+  border-radius: 999px;
+  background: var(--papier-2);
+  color: var(--merk);
+  font-family: var(--display);
+  font-size: 1.3rem;
+  margin-bottom: .8rem;
+}
+.stap h3 { margin-bottom: .3rem; }
+.stap p { font-size: var(--fs-klein); color: var(--dim); }
+
+/* ---- slotband ---- */
+.slotband { text-align: center; }
+.slotband h2 { font-size: clamp(1.9rem, 4vw, 3rem); }
+.slotband .knoppen { display: flex; justify-content: center; flex-wrap: wrap; gap: .9rem; margin-top: 1.9rem; }
+.slotband .subregel { margin: 1rem auto 0; color: var(--dim-op-donker); }
+.slotband .subregel a { font-weight: 700; color: var(--papier); display: inline-block; padding-block: .4rem; }
+.slotband .subregel a:hover { color: var(--cta); }
+
+/* ---- footer ---- */
+footer {
+  background: var(--inkt-diep);
+  color: var(--papier);
+  padding-block: clamp(2.5rem, 5vw, 4rem) 1.5rem;
+  font-size: var(--fs-klein);
+}
+.footer-raster {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  margin-bottom: 2.5rem;
+}
+.footer-raster h3 { font-size: 1.02rem; margin-bottom: .8rem; color: var(--papier); }
+.footer-raster ul { display: grid; gap: .45rem; }
+.footer-raster p { color: var(--dim-op-donker); }
+footer .logo { color: var(--papier); margin-bottom: 1rem; }
+footer .logo svg { height: 56px; }
+footer a:not(.knop) { display: inline-block; padding-block: .2rem; }
+footer a:not(.knop):hover { color: var(--cta); }
+footer .voetnoot {
+  border-top: 1px solid var(--lijn-op-donker);
+  padding-top: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: .75rem;
+  color: var(--dim-op-donker);
+}
+footer .voetnoot a { font-weight: 700; }
+.footer-tijden li { display: flex; justify-content: space-between; gap: 1rem; max-width: 260px; }
+.footer-tijden .dag { color: var(--dim-op-donker); }
+
+.mettafel-noot {
+  font-size: .92rem;
+  color: var(--dim);
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+}
+.mettafel-noot a { font-weight: 700; display: inline-block; padding-block: .35rem; }
+.mettafel-noot a:hover { color: var(--oranje-diep); }
+footer .mettafel-noot, .sectie.paars .mettafel-noot { color: var(--dim-op-donker); }
+footer .mettafel-noot a:hover { color: var(--cta); }
+
+/* ---- vaste actiebalk mobiel: Bellen + Bestel online ---- */
+.actiebalk {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 55;
+  display: none;
+  grid-template-columns: 1fr 1.4fr;
+  gap: .5rem;
+  padding: .6rem calc(.75rem + env(safe-area-inset-right)) calc(.6rem + env(safe-area-inset-bottom)) calc(.75rem + env(safe-area-inset-left));
+  background: color-mix(in srgb, var(--inkt-diep) 94%, transparent);
+  border-top: 1px solid var(--lijn-op-donker);
+  transform: translateY(110%);
+  transition: transform .3s var(--vlot);
+}
+@supports (backdrop-filter: blur(8px)) { .actiebalk { backdrop-filter: blur(10px); } }
+.actiebalk.zichtbaar { transform: none; }
+.actiebalk .knop { min-height: 52px; width: 100%; padding-inline: 1rem; font-size: .95rem; }
+.actiebalk .knop-lijn { border-color: var(--lijn-op-donker); color: var(--papier); }
+
+/* ---- menukaartpagina ---- */
+.kaart-pagina-kop { text-align: center; }
+.kaart-pagina-kop .thais { font-size: clamp(1.1rem, 2vw, 1.4rem); color: var(--merk); }
+.kaart-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .5rem;
+  margin-top: 1.75rem;
+}
+.kaart-nav a {
+  padding: .5rem 1.05rem;
+  border: 1.5px solid rgba(84, 39, 133, .3);
+  border-radius: 999px;
+  font-size: var(--fs-klein);
+  font-weight: 700;
+  background: var(--vlak);
+  transition: border-color var(--duur), color var(--duur), background var(--duur);
+}
+.kaart-nav a:hover { border-color: var(--merk); color: var(--merk); }
+
+.menu-categorie {
+  border: 1px solid var(--lijn);
+  border-radius: var(--radius);
+  background: var(--vlak);
+  color: var(--inkt);
+  box-shadow: var(--schaduw-1);
+  overflow: clip;
+}
+.menu-categorie + .menu-categorie { margin-top: 1rem; }
+.menu-categorie summary {
+  list-style: none;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.2rem 1.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+.menu-categorie summary::-webkit-details-marker { display: none; }
+.menu-categorie summary h2 { font-size: clamp(1.35rem, 2.4vw, 1.75rem); color: var(--merk); }
+.menu-categorie summary .aantal { font-size: var(--fs-klein); font-weight: 700; color: var(--dim); white-space: nowrap; }
+.menu-categorie summary .aantal::after { content: " ▾"; color: var(--oranje-diep); }
+.menu-categorie[open] summary .aantal::after { content: " ▴"; }
+.menu-categorie .cat-noot {
+  margin: -0.6rem 1.5rem .9rem;
+  font-size: var(--fs-klein);
+  color: var(--dim);
+  max-width: 62ch;
+}
+.menu-categorie .gerechten { padding: 0 1.5rem 1.4rem; display: grid; gap: 1.05rem; }
+.gerecht .naam {
+  font-weight: 700;
+  font-size: 1.04rem;
+  display: flex;
+  align-items: baseline;
+  gap: .75rem;
+}
+.gerecht .naam::after { content: ""; flex: 1; border-bottom: 1.5px dotted rgba(185, 79, 152, .5); transform: translateY(-4px); }
+.gerecht .prijs { font-weight: 700; white-space: nowrap; color: var(--merk); }
+.gerecht .prijs .middel { font-weight: 400; color: var(--dim); }
+.gerecht .oms { font-size: var(--fs-klein); color: var(--dim); max-width: 58ch; }
+.gerecht .tip { justify-self: start; }
+
+.tip {
+  display: inline-block;
+  font-size: .74rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--merk);
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  padding: .1rem .6rem;
+  margin-top: .3rem;
+}
+.tip-oranje { color: var(--oranje-diep); }
+
+/* kaartnoot (kleine lettertjes van de kaart) */
+.kaart-noot {
+  border: 1.5px dashed rgba(43, 76, 155, .4);
+  border-radius: var(--radius);
+  background: var(--vlak);
+  padding: 1rem 1.25rem;
+  font-size: var(--fs-klein);
+  color: var(--dim);
+}
+
+/* ---- bestelpagina ---- */
+.bestel-indeling {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(320px, 1fr);
+  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: start;
+}
+.bestel-menu .menu-categorie .gerechten { gap: .65rem; }
+.bestel-regel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: .55rem 0;
+}
+.bestel-regel + .bestel-regel { border-top: 1px solid rgba(53, 17, 80, .08); }
+.bestel-regel .info { min-width: 0; flex: 1; }
+.bestel-regel .naam { font-weight: 700; }
+.bestel-regel .oms { font-size: .88rem; color: var(--dim); }
+.bestel-regel .prijs { font-weight: 700; white-space: nowrap; color: var(--merk); }
+.bestel-regel .plusmin { display: flex; align-items: center; gap: .5rem; }
+.telknop {
+  width: 40px; height: 40px;
+  border-radius: 999px;
+  border: 1.5px solid rgba(84, 39, 133, .4);
+  display: grid;
+  place-items: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: background var(--duur), color var(--duur), border-color var(--duur), transform var(--duur);
+}
+.telknop:hover { border-color: var(--merk); color: var(--merk); background: rgba(84, 39, 133, .06); }
+.telknop:active { transform: scale(.92); }
+.telknop.vol { background: var(--merk); border-color: var(--merk); color: #fff; }
+.bestel-regel .aantal { min-width: 1.5ch; text-align: center; font-weight: 700; }
+.bestel-regel .bestel-foto {
+  flex: none;
+  width: 64px; height: 64px;
+  border-radius: 999px;
+  overflow: clip;
+  border: 3px solid var(--vlak);
+  box-shadow: var(--schaduw-1);
+}
+.bestel-regel .bestel-foto img { width: 100%; height: 100%; object-fit: cover; }
+.bestel-regel .bestel-foto-leeg { background: var(--papier-2); }
+.bestel-regel .bestel-foto .g-leeg {
+  display: grid;
+  place-items: center;
+  width: 100%; height: 100%;
+  gap: .05rem;
+  background: var(--porselein) repeat-x center 6px, linear-gradient(160deg, var(--papier-2), var(--vlak));
+  color: var(--merk);
+  text-align: center;
+}
+.bestel-regel .bestel-foto .g-leeg .ikoon { width: 17px; height: 17px; opacity: .75; }
+.bestel-regel .bestel-foto .g-leeg span { font-size: .46rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--dim); }
+
+.mandje {
+  position: sticky;
+  top: 96px;
+  background: var(--vlak);
+  border: 1px solid var(--lijn);
+  border-top: 4px solid var(--cta);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  color: var(--inkt);
+  box-shadow: var(--schaduw-2);
+}
+.mandje h2 { font-size: 1.35rem; margin-bottom: 1rem; color: var(--merk); }
+.mandje-regels { display: grid; gap: .55rem; margin-bottom: 1rem; }
+.mandje-regel { display: flex; justify-content: space-between; gap: 1rem; font-size: var(--fs-klein); }
+.mandje-regel .n { color: var(--dim); }
+.mandje-leeg { color: var(--dim); font-size: var(--fs-klein); }
+.mandje-totaal {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-top: 1px solid var(--lijn);
+  padding-top: .9rem;
+  margin-top: .25rem;
+}
+.mandje-totaal .subregel { font-weight: 400; font-size: var(--fs-klein); color: var(--dim); }
+.mandje .knop { width: 100%; margin-top: 1.1rem; }
+.mandje .nootje { font-size: .84rem; color: var(--dim); margin-top: .8rem; text-align: center; }
+
+.bezorg-drempel {
+  font-size: .88rem;
+  color: var(--oranje-diep);
+  background: rgba(248, 157, 48, .12);
+  border-radius: var(--radius);
+  padding: .6rem .9rem;
+  margin-top: .6rem;
+}
+
+/* stappenformulier */
+.formulier { display: grid; gap: 1.1rem; }
+.veld { display: grid; gap: .35rem; }
+.veld label { font-weight: 700; font-size: var(--fs-klein); }
+.veld input, .veld select, .veld textarea {
+  font: inherit;
+  color: var(--inkt);
+  background: #fff;
+  border: 1.5px solid rgba(53, 17, 80, .3);
+  border-radius: 14px;
+  padding: .8rem 1rem;
+  min-height: 52px;
+  width: 100%;
+}
+.veld textarea { min-height: 96px; resize: vertical; }
+.veld input:focus, .veld select:focus, .veld textarea:focus { outline: 3px solid var(--cta-diep); outline-offset: 1px; }
+.veld .fout, .fout { color: #8F1D12; font-size: .88rem; }
+.veld.heeft-fout input, .veld.heeft-fout select { border-color: #C2564C; }
+.nootje { font-size: var(--fs-klein); color: var(--dim); }
+
+.slot-raster { display: flex; flex-wrap: wrap; gap: .5rem; }
+.slot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .6rem 1rem;
+  min-height: 48px;
+  min-width: 48px;
+  border: 1.5px solid rgba(84, 39, 133, .35);
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: var(--fs-klein);
+  transition: background var(--duur), color var(--duur), border-color var(--duur);
+}
+.slot:hover { border-color: var(--merk); color: var(--merk); }
+.slot[aria-pressed="true"] { background: var(--merk); border-color: var(--merk); color: #fff; }
+
+.bevestiging {
+  background: var(--vlak);
+  border: 1.5px solid rgba(248, 157, 48, .6);
+  border-radius: var(--radius);
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  display: grid;
+  gap: .9rem;
+  justify-items: start;
+}
+.bevestiging .nummer { font-family: var(--display); font-size: 1.9rem; color: var(--merk); }
+
+/* zwevende mandje-knop op mobiel */
+.mandje-zwever.knop {
+  position: fixed;
+  left: 50%;
+  bottom: calc(1rem + env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  z-index: 55;
+  width: min(92vw, 420px);
+  box-shadow: var(--schaduw-3);
+}
+@media (min-width: 1021px) { .mandje-zwever.knop { display: none; } }
+
+/* ---- sticky bestel-balk ---- */
+.bestel-balk {
+  position: sticky;
+  top: 78px;
+  z-index: 40;
+  background: color-mix(in srgb, var(--papier) 94%, transparent);
+  border-block: 1px solid var(--lijn);
+  padding-block: .6rem;
+}
+@supports (backdrop-filter: blur(8px)) { .bestel-balk { backdrop-filter: blur(10px); } }
+.bestel-balk .wrap { display: flex; align-items: center; gap: .75rem; }
+.bestel-zoek { flex: 0 0 clamp(180px, 24vw, 260px); }
+.bestel-zoek input {
+  width: 100%;
+  font: inherit;
+  font-size: var(--fs-klein);
+  color: var(--inkt);
+  background: var(--vlak);
+  border: 1.5px solid rgba(53, 17, 80, .25);
+  border-radius: 999px;
+  padding: .55rem 1rem;
+  min-height: 44px;
+}
+.bestel-zoek input:focus { outline: 3px solid var(--cta-diep); outline-offset: 1px; }
+.bestel-chips {
+  display: flex;
+  gap: .4rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-block: .15rem;
+}
+.bestel-chips::-webkit-scrollbar { display: none; }
+.bestel-chips a {
+  flex: none;
+  padding: .45rem .9rem;
+  border: 1.5px solid rgba(84, 39, 133, .3);
+  border-radius: 999px;
+  font-size: .88rem;
+  font-weight: 700;
+  white-space: nowrap;
+  background: var(--vlak);
+  transition: border-color var(--duur), color var(--duur);
+}
+.bestel-chips a:hover { border-color: var(--merk); color: var(--merk); }
+@media (max-width: 860px) {
+  .bestel-balk { top: 0; }
+  .bestel-balk .wrap { flex-wrap: wrap; }
+  .bestel-zoek { flex: 1 1 100%; }
+  .bestel-chips a { padding-block: .7rem; }
+  .feitenrij .chip { min-height: 44px; }
+  .kaart-nav a { padding-block: .7rem; }
+}
+
+/* ---- de bakje-samensteller ---- */
+.bakje {
+  background: var(--vlak);
+  border: 1.5px solid rgba(43, 76, 155, .35);
+  border-radius: var(--radius-groot);
+  padding: clamp(1.4rem, 3vw, 2rem);
+  box-shadow: var(--schaduw-2);
+  position: relative;
+  overflow: clip;
+}
+.bakje::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 13px;
+  background-image: var(--porselein);
+  background-repeat: repeat-x;
+  background-position: center top;
+  transform: scaleY(-1);
+  opacity: .5;
+}
+.bakje-kop { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; margin-bottom: .5rem; }
+.bakje-kop h3 { font-size: clamp(1.3rem, 2.2vw, 1.6rem); color: var(--merk); }
+.bakje-kop .prijs-sticker { font-size: 1.35rem; }
+.bakje-stap { margin-top: 1.1rem; }
+.bakje-stap > .bakje-label { display: block; font-weight: 700; font-size: var(--fs-klein); margin-bottom: .5rem; }
+.bakje-keuze { display: grid; gap: .45rem; }
+.bakje-keuze .keuze {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  padding: .6rem .9rem;
+  border: 1.5px solid rgba(53, 17, 80, .18);
+  border-radius: 14px;
+  font-size: var(--fs-klein);
+  cursor: pointer;
+  transition: border-color var(--duur), background var(--duur);
+  background: #fff;
+}
+.bakje-keuze .keuze:hover { border-color: var(--merk); }
+.bakje-keuze .keuze:has(:checked) { border-color: var(--merk); background: rgba(84, 39, 133, .06); }
+.bakje-keuze input { accent-color: var(--merk); width: 1.5rem; height: 1.5rem; flex: none; }
+.bakje-keuze .keuze .naam { flex: 1; font-weight: 600; }
+.bakje-keuze .keuze .meer { font-size: .84rem; color: var(--oranje-diep); font-weight: 700; white-space: nowrap; }
+.bakje-voet { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-top: 1.3rem; }
+.bakje-voet .totaal { font-weight: 700; font-size: 1.15rem; color: var(--merk); }
+.bakje-voet .knop { min-height: 50px; }
+.bakje .fout { margin-top: .6rem; }
+
+/* ---- account op dit toestel ---- */
+.account-blok {
+  border: 1.5px dashed rgba(84, 39, 133, .4);
+  border-radius: var(--radius);
+  padding: .8rem 1rem;
+  margin-bottom: 1rem;
+  display: grid;
+  gap: .6rem;
+  font-size: var(--fs-klein);
+}
+.account-maak {
+  font-weight: 700;
+  color: var(--merk);
+  text-align: left;
+  padding: .2rem 0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.account-wis {
+  font-size: .82rem;
+  color: var(--dim);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  padding: .2rem .1rem;
+}
+.account-form { display: grid; gap: .6rem; }
+.account-form label { display: grid; gap: .3rem; font-weight: 700; font-size: .88rem; }
+.account-form input {
+  font: inherit;
+  color: var(--inkt);
+  background: #fff;
+  border: 1.5px solid rgba(53, 17, 80, .3);
+  border-radius: 12px;
+  padding: .6rem .9rem;
+  min-height: 46px;
+}
+.account-form input:focus { outline: 3px solid var(--cta-diep); outline-offset: 1px; }
+.account-form .knop { min-height: 46px; width: 100%; }
+.account-opnieuw.knop { width: 100%; min-height: 48px; font-size: .95rem; }
+
+/* ---- micro-feedback ---- */
+@keyframes knop-pop { 40% { transform: scale(1.18); } 100% { transform: scale(1); } }
+.telknop.pop { animation: knop-pop .28s var(--vlot); }
+@keyframes zwever-puls { 35% { transform: translateX(-50%) scale(1.05); } 100% { transform: translateX(-50%) scale(1); } }
+.mandje-zwever.puls { animation: zwever-puls .32s var(--vlot); }
+
+/* ---- FAQ ---- */
+.faq-item {
+  border: 1px solid var(--lijn);
+  border-radius: var(--radius);
+  background: var(--vlak);
+  box-shadow: var(--schaduw-1);
+}
+.faq-item + .faq-item { margin-top: .75rem; }
+.faq-item summary {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 1.1rem 1.3rem;
+  cursor: pointer;
+  user-select: none;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; font-family: var(--display); font-size: 1.3rem; color: var(--oranje-diep); flex: none; line-height: 1; }
+.faq-item[open] summary::after { content: "−"; }
+.faq-item summary h3 { font-family: var(--body); font-weight: 700; font-size: 1.02rem; }
+.faq-item p { padding: 0 1.3rem 1.2rem; color: var(--dim); max-width: 62ch; }
+
+/* ---- contact ---- */
+.contact-raster {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: start;
+}
+.contact-blok { display: grid; gap: 1.4rem; }
+.contact-blok .regel { display: grid; gap: .2rem; }
+.contact-blok .regel .label { font-size: var(--fs-label); font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--oranje-diep); }
+.contact-blok .regel a:hover { color: var(--merk); }
+.contact-paneel {
+  background: var(--vlak);
+  border: 1px solid var(--lijn);
+  border-top: 4px solid var(--cta);
+  border-radius: var(--radius);
+  padding: clamp(1.4rem, 3vw, 2rem);
+  box-shadow: var(--schaduw-2);
+}
+
+/* ---- footer-vouw op mobiel ---- */
+.voet-vouw summary { list-style: none; cursor: default; }
+.voet-vouw summary::-webkit-details-marker { display: none; }
+.voet-vouw summary h3 { display: inline-flex; align-items: baseline; gap: .5rem; }
+@media (max-width: 640px) {
+  .voet-vouw { border-top: 1px solid var(--lijn-op-donker); padding-top: 1rem; }
+  .voet-vouw summary { cursor: pointer; }
+  .voet-vouw summary h3::after { content: "▾"; font-family: var(--body); font-size: .8rem; color: var(--cta); }
+  .voet-vouw[open] summary h3::after { content: "▴"; }
+  .voet-vouw > ul { padding-top: .5rem; }
+}
+
+/* ---- schermlezer-only ---- */
+p a[href^="tel:"], p a[href^="mailto:"], .kaart-noot a {
+  display: inline-block;
+  padding-block: .35rem;
+  margin-block: -.2rem;
+}
+
+.visueel-weg {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ---- reveals: fail-open basis (motion.css verfijnt dit) ---- */
+html.js [data-rev]:not(.af) { transition: opacity .45s var(--vlot), translate .6s var(--vlot); }
+html.js:not(.klaar) [data-rev]:not(.in) { opacity: 0; translate: 0 var(--komop); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  html.js [data-rev] { translate: none !important; transform: none !important; transition: opacity .45s ease !important; }
+  .hero-bord::before { animation: none; }
+  *, *::before, *::after { animation-duration: .01ms !important; }
+}
+
+
+/* ================================================================
+   Makeover sep 2026: gethematiseerde porseleinkaarten, hero-USP's,
+   bestelstappen, verhaalcollage en held-reviews.
+   Het thema: Thais porselein. Elke kaart heeft de geschulpte
+   kommenrand en een omlijning in de twee kleuren van hun menukaart.
+   ================================================================ */
+
+/* ---- utility: omlijning in de merkkleuren (paars naar oranje) ---- */
+.rim {
+  border: 1.8px solid transparent;
+  background-color: var(--vlak);
+  background-image: linear-gradient(var(--vlak), var(--vlak)), var(--rim);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+.rim-op-donker {
+  background-color: var(--inkt);
+  background-image: linear-gradient(var(--inkt), var(--inkt)), var(--rim);
+}
+/* beeld met omlijning: de gradient loopt als lijst om de foto */
+.rim-beeld {
+  padding: 5px;
+  border-radius: var(--radius-groot);
+  background: var(--rim);
+  box-shadow: var(--schaduw-2);
+}
+.rim-beeld > img { border-radius: calc(var(--radius-groot) - 5px); width: 100%; display: block; }
+.rim-beeld.rond { padding: 6px; border-radius: 50%; }
+.rim-beeld.rond > img { border-radius: 50%; aspect-ratio: 1; object-fit: cover; }
+
+/* ---- hero-USP's: porseleintegeltje als bullet ---- */
+.hero-usp {
+  display: grid;
+  gap: .7rem;
+  margin-top: 1.5rem;
+  max-width: 34rem;
+}
+.hero-usp li {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  font-size: 1.04rem;
+  line-height: 1.45;
+}
+.hero-usp .tegel {
+  flex: none;
+  width: 34px; height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  background: var(--vlak);
+  border: 1.5px solid transparent;
+  background-image: linear-gradient(var(--vlak), var(--vlak)), var(--rim);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: var(--schaduw-1);
+  color: var(--merk);
+}
+.hero-usp .tegel .ikoon { width: 18px; height: 18px; }
+.hero-usp strong { font-weight: 700; }
+
+/* ---- de porseleinkaart: het vaste USP-kaartje van deze site ---- */
+.porselein-raster {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.6rem);
+}
+.porselein-raster.drie { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+.porseleinkaart {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-groot);
+  overflow: clip;
+  border: 1.8px solid transparent;
+  background-color: var(--vlak);
+  background-image: linear-gradient(var(--vlak), var(--vlak)), var(--rim);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: var(--schaduw-1);
+  transition: transform .3s var(--vlot), box-shadow .3s var(--vlot);
+}
+.porseleinkaart:hover { transform: translateY(-5px); box-shadow: var(--schaduw-2); }
+
+/* de foto bovenin, als boog (de vorm van een omgekeerde kom) */
+.porseleinkaart .pk-foto {
+  position: relative;
+  aspect-ratio: 5 / 4;
+  overflow: clip;
+  margin: 5px 5px 0;
+  border-radius: calc(var(--radius-groot) - 6px) calc(var(--radius-groot) - 6px) 4px 4px;
+}
+.porseleinkaart .pk-foto img {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .55s var(--vlot);
+}
+.porseleinkaart:hover .pk-foto img { transform: scale(1.06); }
+
+/* de geschulpte porseleinrand als scheiding onder de foto */
+.porseleinkaart .pk-rand {
+  height: 13px;
+  margin: -7px 5px 0;
+  position: relative;
+  z-index: 3;
+  background-image: var(--porselein);
+  background-repeat: repeat-x;
+  background-position: center bottom;
+  filter: drop-shadow(0 -2px 0 var(--vlak));
+}
+
+/* de icoonbadge hangt op de porseleinrand, tussen foto en tekst */
+.porseleinkaart .pk-rand { position: relative; }
+.porseleinkaart .pk-badge {
+  position: absolute;
+  top: 50%;
+  left: 1.1rem;
+  translate: 0 -50%;
+  z-index: 4;
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--cta);
+  color: var(--inkt);
+  box-shadow: 0 0 0 5px var(--vlak), var(--schaduw-1);
+  transition: rotate .4s cubic-bezier(.3, 1.6, .5, 1);
+}
+.porseleinkaart .pk-badge .ikoon { width: 24px; height: 24px; }
+.porseleinkaart:hover .pk-badge { rotate: -12deg; }
+
+.porseleinkaart .pk-tekst {
+  padding: 2.1rem 1.3rem 1.4rem;
+  display: grid;
+  gap: .35rem;
+}
+.porseleinkaart .pk-tekst h3 { color: var(--merk); min-height: 2.56em; display: flex; align-items: flex-end; }
+.porseleinkaart .pk-tekst p { font-size: var(--fs-klein); color: var(--dim); max-width: none; }
+.porseleinkaart .pk-nr {
+  position: absolute;
+  top: .9rem; right: .9rem;
+  z-index: 3;
+  font-family: var(--display);
+  font-size: 1rem;
+  line-height: 1;
+  padding: .3rem .65rem;
+  border-radius: 999px;
+  background: var(--vlak);
+  color: var(--merk);
+  box-shadow: var(--schaduw-1);
+}
+
+/* ---- "Online bestellen doe je zo": stappen met verbindingslijn ---- */
+.bestel-uitleg {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, .85fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+.stap-lijst { display: grid; gap: 1.5rem; margin-top: 1.6rem; }
+.stap-rij {
+  position: relative;
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  gap: 1.1rem;
+  align-items: start;
+}
+/* de stippellijn die de stappen verbindt */
+.stap-rij:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  left: 28px;
+  top: 62px;
+  bottom: -1.5rem;
+  border-left: 2px dashed rgba(250, 246, 239, .35);
+}
+.sectie:not(.paars) .stap-rij:not(:last-child)::before { border-left-color: rgba(84, 39, 133, .3); }
+.stap-bol {
+  position: relative;
+  width: 58px; height: 58px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--vlak);
+  color: var(--merk);
+  box-shadow: var(--schaduw-1);
+}
+.stap-bol .ikoon { width: 25px; height: 25px; }
+.stap-bol .nr {
+  position: absolute;
+  top: -6px; right: -6px;
+  width: 25px; height: 25px;
+  border-radius: 50%;
+  background: var(--cta);
+  color: var(--inkt);
+  font-size: .82rem;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 0 0 3px var(--inkt);
+}
+.sectie:not(.paars) .stap-bol .nr { box-shadow: 0 0 0 3px var(--papier-2); }
+.stap-rij h3 { margin-bottom: .2rem; }
+.stap-rij p { font-size: var(--fs-klein); max-width: 46ch; }
+.sectie.paars .stap-rij p { color: var(--dim-op-donker); }
+.sectie:not(.paars) .stap-rij p { color: var(--dim); }
+
+/* de boogfoto rechts, met de balie-kaart eronder */
+.boog-beeld { position: relative; }
+.boog-foto {
+  border-radius: 999px 999px var(--radius-groot) var(--radius-groot);
+  overflow: clip;
+  aspect-ratio: 4 / 5;
+  padding: 5px;
+  background: var(--rim);
+  box-shadow: var(--schaduw-3);
+}
+.boog-foto img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  border-radius: 999px 999px calc(var(--radius-groot) - 5px) calc(var(--radius-groot) - 5px);
+}
+.balie-kaart {
+  position: relative;
+  z-index: 2;
+  margin: -3.5rem 0 0 -1.5rem;
+  width: calc(100% + 1.5rem);
+  background: var(--vlak);
+  color: var(--inkt);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.3rem;
+  box-shadow: var(--schaduw-3);
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr);
+  gap: .9rem;
+  align-items: center;
+}
+.balie-kaart .balie-ikoon {
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--merk);
+  color: var(--papier);
+}
+.balie-kaart .balie-ikoon .ikoon { width: 22px; height: 22px; }
+.balie-kaart strong { display: block; font-size: 1.02rem; }
+.balie-kaart p { font-size: .95rem; color: var(--dim); margin: 0; max-width: none; }
+.balie-kaart .status { font-size: .95rem; font-weight: 700; display: inline-flex; align-items: center; gap: .4rem; margin-top: .15rem; }
+.balie-kaart .status .stip { width: .55em; height: .55em; border-radius: 999px; flex: none; background: var(--groen); }
+
+/* ---- verhaalcollage: gekantelde foto's met omlijning ---- */
+.collage {
+  position: relative;
+  aspect-ratio: 1 / 1.02;
+}
+.collage .c-groot {
+  position: absolute;
+  inset: 0 0 9% 27%;
+  border-radius: var(--radius-groot);
+  overflow: clip;
+  padding: 5px;
+  background: var(--rim);
+  box-shadow: var(--schaduw-3);
+}
+.collage .c-groot img { width: 100%; height: 100%; object-fit: cover; border-radius: calc(var(--radius-groot) - 5px); }
+.collage .c-klein {
+  position: absolute;
+  width: 40%;
+  aspect-ratio: 1;
+  border-radius: var(--radius);
+  overflow: clip;
+  padding: 5px;
+  background: var(--rim);
+  box-shadow: var(--schaduw-3);
+  transition: transform .4s var(--vlot);
+}
+.collage .c-klein img { width: 100%; height: 100%; object-fit: cover; border-radius: calc(var(--radius) - 5px); }
+.collage .c-1 { left: 0; top: 11%; rotate: -5deg; }
+.collage .c-2 { left: 5%; bottom: 0; rotate: 4deg; width: 37%; }
+.collage .c-klein:hover { transform: scale(1.04); rotate: 0deg; }
+/* het bijschriftlabel op een collagefoto */
+.collage .c-label {
+  position: absolute;
+  left: 50%;
+  bottom: .7rem;
+  translate: -50% 0;
+  background: var(--vlak);
+  color: var(--merk);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: .25rem .7rem;
+  border-radius: 999px;
+  white-space: nowrap;
+  box-shadow: var(--schaduw-1);
+}
+/* de scorebadge rechtsboven op de collage */
+.score-badge {
+  position: absolute;
+  top: -.5rem; right: -.5rem;
+  z-index: 3;
+  width: 92px; height: 92px;
+  border-radius: 50%;
+  background: var(--cta);
+  color: var(--inkt);
+  display: grid;
+  place-items: center;
+  align-content: center;
+  text-align: center;
+  box-shadow: 0 0 0 5px var(--papier), var(--schaduw-2);
+}
+.score-badge .cijfer { font-family: var(--display); font-size: 1.6rem; line-height: 1; }
+.score-badge .sterren { font-size: .68rem; letter-spacing: .06em; }
+.score-badge .aantal { font-size: .6rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; }
+
+/* ---- reviews: één uitgelichte plus kaarten met initialen ---- */
+.review-bento {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.6rem);
+}
+.review-held {
+  grid-column: span 1;
+  grid-row: span 2;
+  background: var(--inkt);
+  color: var(--papier);
+  border-radius: var(--radius-groot);
+  padding: 1.8rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: var(--schaduw-2);
+  position: relative;
+  overflow: clip;
+}
+.review-held::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 13px;
+  background-image: var(--porselein);
+  background-repeat: repeat-x;
+  filter: brightness(2.2);
+  opacity: .45;
+}
+.review-held blockquote { font-size: 1.3rem; line-height: 1.5; flex: 1; display: flex; align-items: center; }
+.review-held .sterren { color: var(--cta-op-donker); letter-spacing: .12em; }
+.review-held cite { font-style: normal; font-weight: 700; color: var(--papier); }
+.review-held .rol { font-size: .92rem; color: var(--dim-op-donker); }
+
+.review-kaart {
+  background: var(--vlak);
+  border: 1.8px solid transparent;
+  background-image: linear-gradient(var(--vlak), var(--vlak)), var(--rim);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  border-radius: var(--radius);
+  padding: 1.3rem 1.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+  box-shadow: var(--schaduw-1);
+  transition: transform .28s var(--vlot);
+}
+.review-kaart:hover { transform: translateY(-4px); }
+.review-kaart .sterren { color: var(--oranje-diep); letter-spacing: .12em; font-size: .95rem; }
+.review-kaart blockquote { font-size: var(--fs-klein); line-height: 1.55; flex: 1; }
+.review-kaart .wie { display: flex; align-items: center; gap: .6rem; }
+.review-kaart cite { font-style: normal; font-size: .95rem; font-weight: 700; }
+.avatar {
+  flex: none;
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--cta);
+  color: var(--inkt);
+  font-weight: 700;
+  font-size: .88rem;
+  letter-spacing: .02em;
+}
+.review-held .avatar { background: var(--cta); }
+
+/* ---- tweekolomsblok met tekst naast beeld, ruimer ---- */
+.verhaal-raster {
+  display: grid;
+  grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+}
+.verhaal-raster.omgekeerd > *:first-child { order: 2; }
+
+/* ---- feitenstrook onder het verhaal ---- */
+.feiten-strook {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+}
+.feit {
+  text-align: center;
+  padding: 1.2rem 1rem;
+  border-radius: var(--radius);
+  background: var(--vlak);
+  border: 1.8px solid transparent;
+  background-image: linear-gradient(var(--vlak), var(--vlak)), var(--rim);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+.feit strong { display: block; font-family: var(--display); font-size: 1.7rem; color: var(--merk); line-height: 1.1; }
+.feit span { font-size: .92rem; color: var(--dim); }
+
+
+/* ---- menukaart: elk gerecht met beeldplek ---- */
+.gerecht {
+  display: grid;
+  grid-template-columns: 74px minmax(0, 1fr) auto;
+  gap: .2rem 1rem;
+  align-items: start;
+}
+.gerecht .g-foto {
+  grid-row: span 3;
+  width: 74px; height: 74px;
+  border-radius: 50%;
+  overflow: clip;
+  position: relative;
+  border: 3px solid var(--vlak);
+  box-shadow: var(--schaduw-1);
+  background: var(--papier-2);
+}
+.gerecht .g-foto img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+/* nette placeholder: het porseleinpatroon met een kom-icoon */
+.gerecht .g-leeg {
+  display: grid;
+  place-items: center;
+  width: 100%; height: 100%;
+  gap: .05rem;
+  background:
+    var(--porselein) repeat-x center 8px,
+    linear-gradient(160deg, var(--papier-2), var(--vlak));
+  color: var(--merk);
+  text-align: center;
+}
+.gerecht .g-leeg .ikoon { width: 19px; height: 19px; opacity: .75; }
+.gerecht .g-leeg span {
+  font-size: .5rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+.gerecht .naam { grid-column: 2; }
+.gerecht .prijs { grid-column: 3; text-align: right; }
+.gerecht .oms { grid-column: 2 / -1; }
+.gerecht .tip { grid-column: 2 / -1; }
+@media (max-width: 520px) {
+  .gerecht { grid-template-columns: 58px minmax(0, 1fr) auto; gap: .2rem .75rem; }
+  .gerecht .g-foto { width: 58px; height: 58px; }
+}
+
+/* ---- breakpoints ---- */
+@media (max-width: 1020px) {
+  .kommen-raster { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .porselein-raster, .porselein-raster.drie { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .bestel-uitleg { grid-template-columns: 1fr; }
+  .boog-beeld { max-width: 460px; margin-inline: auto; }
+  .review-bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .review-held { grid-column: span 2; grid-row: auto; }
+  .bestel-indeling { grid-template-columns: 1fr; }
+  .mandje { position: static; }
+}
+
+@media (max-width: 860px) {
+  footer a:not(.knop), .topbalk a, .kaart-nav a, .review-bron a,
+  p a[href^="tel:"], p a[href^="mailto:"], li a, .dim a, .contact-blok a:not(.knop), .mettafel-noot a, .slotband .subregel a {
+    display: inline-block;
+    padding-block: .7rem;
+    margin-block: -.3rem;
+  }
+  .kaart-nav a { padding: .7rem 1.05rem; }
+  .bewijsband .item a { display: inline-flex; align-items: center; min-height: 44px; }
+  .topbalk .slogan { display: none; }
+  .topbalk .wrap { justify-content: center; }
+  .hoofdnav { display: none; }
+  .menuknop {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    font-weight: 700;
+    min-height: 44px;
+    padding: .4rem .5rem;
+  }
+  .hero-raster { grid-template-columns: 1fr; }
+  .hero-bord { max-width: min(420px, 86vw); margin-top: .5rem; }
+  .review-raster, .stappen, .kommen-raster {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-inline: var(--gutter);
+    margin-inline: calc(var(--gutter) * -1);
+    scrollbar-width: none;
+  }
+  .review-raster::-webkit-scrollbar, .stappen::-webkit-scrollbar, .kommen-raster::-webkit-scrollbar { display: none; }
+  .review-raster > *, .stappen > * { flex: 0 0 82%; scroll-snap-align: start; }
+  .kommen-raster > * { flex: 0 0 62%; scroll-snap-align: start; }
+  .twee-kolommen { grid-template-columns: 1fr; }
+  .twee-kolommen .beeldkader { order: -1; max-width: 560px; }
+  .verhaal-raster { grid-template-columns: 1fr; }
+  .verhaal-raster .collage { order: -1; max-width: 460px; margin-inline: auto; }
+  .verhaal-raster.omgekeerd > *:first-child { order: 0; }
+  .porselein-raster, .porselein-raster.drie {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-inline: var(--gutter);
+    margin-inline: calc(var(--gutter) * -1);
+    scrollbar-width: none;
+  }
+  .porselein-raster::-webkit-scrollbar { display: none; }
+  .porselein-raster > * { flex: 0 0 76%; scroll-snap-align: start; }
+  .feiten-strook { grid-template-columns: 1fr; }
+  .balie-kaart { margin-left: 0; width: 100%; }
+  .contact-raster { grid-template-columns: 1fr; }
+  .footer-raster { grid-template-columns: 1fr 1fr; }
+  .actiebalk { display: grid; }
+}
+
+@media (max-width: 640px) {
+  .knop { min-height: 58px; width: 100%; }
+  .review-bento { grid-template-columns: 1fr; }
+  .review-held { grid-column: span 1; }
+  .score-badge { width: 76px; height: 76px; top: -.25rem; right: -.25rem; }
+  .score-badge .cijfer { font-size: 1.35rem; }
+  .hero-usp li { font-size: 1rem; }
+  .porselein-raster > * { flex: 0 0 82%; }
+  .hero-knoppen .knop, .slotband .knop { width: 100%; }
+  .hoofdnav .knop { width: auto; }
+  .diepte-laag { right: 8px; bottom: -16px; padding: .8rem 1rem; }
+  .diepte-laag strong { font-size: 1.4rem; }
+  .menu-categorie summary { padding: 1rem 1.1rem; }
+  .menu-categorie .gerechten { padding: 0 1.1rem 1.2rem; }
+  .menu-categorie .cat-noot { margin-inline: 1.1rem; }
+  .footer-raster { grid-template-columns: 1fr; }
+  .telknop { width: 44px; height: 44px; }
+  .bewijsband .wrap { justify-content: center; text-align: center; }
+}
+
+@media (max-width: 520px) {
+  .topbalk .rechts { gap: .9rem; font-size: .88rem; }
+  .logo svg { height: 42px; }
+  .feitenrij .chip { padding: .4rem .8rem; font-size: .85rem; }
+  .hero-kom.k3 { display: none; }
+}

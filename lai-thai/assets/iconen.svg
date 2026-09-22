@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <!-- Eigen iconenset Lai Thai: lijnstijl 2px, ronde hoeken, naar het designsysteem.
+       Vormen op basis van Lucide (MIT), aangepast; chili en kom zelf getekend. -->
+  <symbol id="i-telefoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+  </symbol>
+  <symbol id="i-whatsapp" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12.04 2a9.9 9.9 0 0 0-8.51 14.94L2 22l5.2-1.49A9.9 9.9 0 1 0 12.04 2Zm0 1.8a8.1 8.1 0 1 1-4.1 15.1l-.3-.17-3.08.88.85-3-.2-.31A8.1 8.1 0 0 1 12.04 3.8Zm-3.3 4.02c-.2 0-.5.07-.77.36-.26.29-1 .98-1 2.4 0 1.4 1.03 2.77 1.17 2.96.14.19 2 3.04 4.85 4.15 2.4.94 2.88.75 3.4.7.52-.05 1.68-.68 1.92-1.35.24-.66.24-1.23.17-1.35-.07-.12-.26-.19-.55-.33-.29-.14-1.68-.83-1.94-.92-.26-.1-.45-.14-.64.14-.19.29-.74.92-.9 1.11-.17.19-.34.22-.63.07-.29-.14-1.2-.44-2.29-1.41-.85-.75-1.42-1.68-1.58-1.97-.17-.28-.02-.44.12-.58.13-.13.29-.33.43-.5.15-.17.2-.29.29-.48.1-.19.05-.36-.02-.5-.07-.15-.63-1.56-.89-2.13-.23-.55-.47-.47-.64-.48Z"/>
+  </symbol>
+  <symbol id="i-tas" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/>
+    <path d="M3 6h18"/>
+    <path d="M16 10a4 4 0 0 1-8 0"/>
+  </symbol>
+  <symbol id="i-pijl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+  </symbol>
+  <symbol id="i-kruis" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+  </symbol>
+  <symbol id="i-chili" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20.5 3.5c-1.7 0-2.9 1-3.2 2.3"/>
+    <path d="M17.3 5.8c1.4.6 2.2 2 1.9 3.9-.8 4.9-6 10-12.3 11.3-1.9.4-3.3-1-2.9-2.9C5.3 11.8 10.4 6.6 15.3 5.8c.7-.1 1.4-.1 2 0Z"/>
+  </symbol>
+  <symbol id="i-blad" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+    <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+  </symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+    <circle cx="12" cy="10" r="3"/>
+  </symbol>
+  <symbol id="i-klok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="10"/>
+    <path d="M12 6v6l4 2"/>
+  </symbol>
+  <symbol id="i-fiets" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="5.5" cy="17.5" r="3.5"/>
+    <circle cx="18.5" cy="17.5" r="3.5"/>
+    <path d="M15 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"/>
+    <path d="m12 17.5 2.5-6L9 9l3 3.5h5"/>
+  </symbol>
+  <symbol id="i-kom" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 10h16a8 8 0 0 1-5 7.4V19a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-1.6A8 8 0 0 1 4 10Z"/>
+    <path d="M9 7c0-1.5 1-1.5 1-3"/>
+    <path d="M14 7c0-1.5 1-1.5 1-3"/>
+  </symbol>
+  <symbol id="i-ster" viewBox="0 0 24 24" fill="currentColor">
+    <path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 19.77l-6.18 3.25L7 16.14 2 9.27l6.91-1.01L12 2Z"/>
+  </symbol>
+  <symbol id="i-wok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M2.5 10h19a9.5 9.5 0 0 1-19 0Z"/>
+    <path d="M21.5 10 23 8.2"/>
+    <path d="M8 6.5c0-1.6 1.2-1.7 1.2-3.3"/>
+    <path d="M12 6c0-1.9 1.4-2 1.4-3.8"/>
+    <path d="M16 6.5c0-1.6 1.2-1.7 1.2-3.3"/>
+  </symbol>
+  <symbol id="i-kaart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 4.5A1.5 1.5 0 0 1 4.5 3H10a3 3 0 0 1 2 5.2V21a3 3 0 0 0-2-.8H4.5A1.5 1.5 0 0 1 3 18.7Z"/>
+    <path d="M21 4.5A1.5 1.5 0 0 0 19.5 3H14a3 3 0 0 0-2 5.2V21a3 3 0 0 1 2-.8h5.5a1.5 1.5 0 0 0 1.5-1.5Z"/>
+  </symbol>
+  <symbol id="i-munt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="9"/>
+    <path d="M15.5 9.2A4 4 0 0 0 9 12a4 4 0 0 0 6.5 2.8"/>
+    <path d="M7.5 11h5M7.5 13.2h5"/>
+  </symbol>
+  <symbol id="i-vink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m4.5 12.5 5 5 10-11"/>
+  </symbol>
+  <symbol id="i-hart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 20.5s-8-4.9-8-10.2A4.3 4.3 0 0 1 12 7.8a4.3 4.3 0 0 1 8 2.5c0 5.3-8 10.2-8 10.2Z"/>
+  </symbol>
+  <symbol id="i-mes" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3.5 14.5 14 4c2 2 2.6 4.4 2 6.5L8 18.5Z"/>
+    <path d="m8 18.5-2.6 2.6a1.8 1.8 0 0 1-2.6-2.6L5.4 16"/>
+    <path d="M17 14.5c1.8 1.8 3 3.4 3.5 4.5"/>
+  </symbol>
+  <symbol id="i-groep" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="9" cy="8" r="3.2"/>
+    <path d="M2.5 20a6.5 6.5 0 0 1 13 0"/>
+    <path d="M16.5 5.2a3.2 3.2 0 0 1 0 5.6"/>
+    <path d="M18 14.4a6.5 6.5 0 0 1 3.5 5.6"/>
+  </symbol>
+</svg>

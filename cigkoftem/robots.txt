@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /beheer
+
+Sitemap: https://www.cigkoftem-den-bosch.nl/sitemap.xml

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /beheer
+Sitemap: https://www.sanglee.nl/sitemap.xml
