@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <!-- Eigen iconenset Bolwerk: lijndikte 1.8, ronde uiteinden, getekend op de Lucide-basis en aangepast aan het merk (parasol en golf zelf getekend). -->
+  <symbol id="i-parasol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3v1"/>
+    <path d="M4 12a8 8 0 0 1 16 0Z"/>
+    <path d="M7.5 12c0-4.5 1.8-8 4.5-8s4.5 3.5 4.5 8"/>
+    <path d="M12 12v7a2 2 0 0 0 4 0"/>
+  </symbol>
+  <symbol id="i-golf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M2 12c2.2 0 2.2-2.5 4.4-2.5S8.6 12 10.8 12s2.2-2.5 4.4-2.5S17.4 12 19.6 12 21.8 9.5 24 9.5" transform="translate(-1 0)"/>
+    <path d="M2 17c2.2 0 2.2-2.5 4.4-2.5S8.6 17 10.8 17s2.2-2.5 4.4-2.5S17.4 17 19.6 17 21.8 14.5 24 14.5" transform="translate(-1 0)"/>
+  </symbol>
+  <symbol id="i-boot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 14.5 5 9h14l2 5.5"/>
+    <path d="M12 9V5h4l-1.5 2"/>
+    <path d="M2 18c1.7 0 1.7-1.4 3.4-1.4S7.1 18 8.8 18s1.7-1.4 3.4-1.4S13.9 18 15.6 18s1.7-1.4 3.4-1.4S20.7 18 22.4 18"/>
+  </symbol>
+  <symbol id="i-kalender" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="5" width="18" height="16" rx="2"/>
+    <path d="M8 3v4M16 3v4M3 10h18"/>
+  </symbol>
+  <symbol id="i-klok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="9"/>
+    <path d="M12 7v5l3.5 2"/>
+  </symbol>
+  <symbol id="i-ster" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+    <path d="M12 2.6l2.9 5.9 6.5.95-4.7 4.6 1.1 6.5L12 17.5l-5.8 3.05 1.1-6.5-4.7-4.6 6.5-.95z"/>
+  </symbol>
+  <symbol id="i-marker" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/>
+    <circle cx="12" cy="10" r="2.6"/>
+  </symbol>
+  <symbol id="i-glas" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M7 3h10l-1.2 8a3.9 3.9 0 0 1-7.6 0Z"/>
+    <path d="M12 15v6M8.5 21h7"/>
+  </symbol>
+  <symbol id="i-koffie" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 9h12v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4Z"/>
+    <path d="M16 10h2.5a2.5 2.5 0 0 1 0 5H16"/>
+    <path d="M7 5.5c0-1 1-1 1-2M11 5.5c0-1 1-1 1-2"/>
+  </symbol>
+  <symbol id="i-bord" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="9"/>
+    <circle cx="12" cy="12" r="4.5"/>
+  </symbol>
+  <symbol id="i-vork" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M7 3v6a2.5 2.5 0 0 0 5 0V3M9.5 3v18"/>
+    <path d="M17 3c-1.7 1.2-2.5 3.4-2.5 5.5 0 2 .9 3 2.5 3v9.5"/>
+  </symbol>
+  <symbol id="i-groep" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="9" cy="8" r="3.2"/>
+    <path d="M3.5 20c.6-3.2 2.8-5 5.5-5s4.9 1.8 5.5 5"/>
+    <circle cx="17" cy="9" r="2.5"/>
+    <path d="M16.5 15.2c2.3.2 3.7 1.8 4.1 4.3"/>
+  </symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="5.5" width="18" height="13" rx="2"/>
+    <path d="m4 7 8 6 8-6"/>
+  </symbol>
+  <symbol id="i-vink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m4.5 12.5 5 5 10-11"/>
+  </symbol>
+  <symbol id="i-pijl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 12h16M14 6l6 6-6 6"/>
+  </symbol>
+  <symbol id="i-kruis" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 6l12 12M18 6 6 18"/>
+  </symbol>
+  <symbol id="i-quote" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+    <path d="M5 17c-1.2 0-2-.9-2-2.3C3 10.6 5.4 7.6 9 6l.8 1.6c-2 1-3.3 2.6-3.6 4.4.3-.1.6-.2 1-.2 1.5 0 2.6 1.1 2.6 2.6C9.8 15.9 8.6 17 7 17Zm9.6 0c-1.2 0-2-.9-2-2.3 0-4.1 2.4-7.1 6-8.7l.8 1.6c-2 1-3.3 2.6-3.6 4.4.3-.1.6-.2 1-.2 1.5 0 2.6 1.1 2.6 2.6 0 1.5-1.2 2.6-2.8 2.6Z"/>
+  </symbol>
+  <symbol id="i-zon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="4"/>
+    <path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5 5l1.4 1.4M17.6 17.6 19 19M19 5l-1.4 1.4M6.4 17.6 5 19"/>
+  </symbol>
+  <symbol id="i-muur" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="4" width="18" height="16" rx="1"/>
+    <path d="M3 9.3h18M3 14.6h18M9 4v5.3M15 9.3v5.3M9 14.6V20M15 14.6V20" transform="translate(0 0)"/>
+  </symbol>
+</svg>
