@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /beheer
+Sitemap: https://ganoush-brockley.co.uk/sitemap.xml

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /beheer
+Sitemap: https://lebanesekitchen-brockley.co.uk/sitemap.xml
