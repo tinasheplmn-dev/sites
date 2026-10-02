@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://biangstreetfood.co.uk/sitemap.xml
