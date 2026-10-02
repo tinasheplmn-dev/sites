@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /beheer
+
+Sitemap: https://limehousefriedchicken.co.uk/sitemap.xml
