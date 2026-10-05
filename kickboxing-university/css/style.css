@@ -668,3 +668,8 @@ html.js:not(.klaar) [data-stagger]:not(.in) .usp .tape { translate: -120% 0; opa
 .praktisch .met-beeld { grid-row: span 2; }
 .praktisch .met-beeld .blok-beeld { aspect-ratio: 3 / 2; }
 @media (max-width: 860px) { .praktisch:has(.met-beeld) { grid-template-columns: 1fr; } .praktisch .met-beeld { grid-row: auto; } .praktisch .met-beeld .blok-beeld { aspect-ratio: 16 / 10; } }
+
+/* ---- beeldkaders krijgen kleur bij hover, net als de leskaarten ---- */
+.beeldkader img { transition: filter .6s ease, transform .8s var(--vlot); }
+.beeldkader:hover img, .beeldkader:focus-within img { filter: none; }
+@media (hover: none) { .beeldkader img.in-kleur { filter: none; } }

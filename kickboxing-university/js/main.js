@@ -278,3 +278,12 @@
     }, { threshold: .25 }).observe(v);
   });
 })();
+
+/* ---------- 8. touchscreens: beeldkaders kleuren in zodra ze in beeld zijn (er is geen hover) ---------- */
+(function () {
+  'use strict';
+  if (!window.matchMedia('(hover: none)').matches || !('IntersectionObserver' in window)) return;
+  document.querySelectorAll('.beeldkader img').forEach(function (img) {
+    new IntersectionObserver(function (e) { img.classList.toggle('in-kleur', e[0].isIntersecting); }, { threshold: .6 }).observe(img);
+  });
+})();
