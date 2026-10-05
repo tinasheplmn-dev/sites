@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /beheer
+Disallow: /_data/
+Sitemap: https://kickboxinguniversity.nl/sitemap.xml
