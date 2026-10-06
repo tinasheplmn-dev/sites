@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://pfcsalmonlane.co.uk/sitemap.xml
