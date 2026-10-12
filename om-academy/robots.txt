@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /_bouw/
+Disallow: /_data/
+Disallow: /beheer
+Sitemap: https://www.om-academy.nl/sitemap.xml
