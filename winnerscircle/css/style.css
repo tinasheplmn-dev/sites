@@ -125,8 +125,8 @@ h3 { font-size: var(--fs-h3); line-height: 1.2; }
 .hero h1 .regel { display: block; }
 .voordelen { display: grid; gap: .85rem; margin-bottom: 2.3rem; }
 .voordelen li { display: flex; align-items: center; gap: .9rem; font-size: 1.06rem; font-weight: 500; }
-.ring { flex: none; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; border: 2px solid transparent; background: linear-gradient(var(--inkt-2), var(--inkt-2)) padding-box, var(--verloop) border-box; color: #fff; }
-.ring .icoon { width: 20px; height: 20px; }
+.ring { flex: none; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--oranje) linear-gradient(135deg, var(--cta-van), var(--roze) 70%, var(--paars)); color: var(--inkt); box-shadow: 0 0 0 4px rgba(255, 46, 136, .14), 0 6px 18px rgba(255, 46, 136, .3); }
+.ring .icoon { width: 22px; height: 22px; }
 .knoppen { display: flex; flex-wrap: wrap; gap: 1rem; }
 .chips { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 2rem; }
 .chip { display: inline-flex; align-items: center; gap: .55rem; min-height: 46px; padding: .55rem 1.15rem; border-radius: 999px; background: rgba(17, 15, 26, .75); border: 1px solid var(--lijn); font-size: 1rem; font-weight: 500; }
