@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 120" role="img" aria-label="Gero Auto's, sinds 1994">
+  <defs>
+    <linearGradient id="chroom" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fdfdfd"/>
+      <stop offset=".45" stop-color="#c9ccd2"/>
+      <stop offset=".5" stop-color="#8d939c"/>
+      <stop offset=".62" stop-color="#e6e8ec"/>
+      <stop offset="1" stop-color="#9aa0a8"/>
+    </linearGradient>
+    <linearGradient id="rood" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e01b3a"/>
+      <stop offset="1" stop-color="#8c0000"/>
+    </linearGradient>
+    <linearGradient id="staal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".48" stop-color="#d7dae0"/>
+      <stop offset=".52" stop-color="#7c838d"/>
+      <stop offset="1" stop-color="#eef0f3"/>
+    </linearGradient>
+    <clipPath id="vorm"><rect x="6" y="6" width="408" height="108" rx="18"/></clipPath>
+  </defs>
+  <rect x="2" y="2" width="416" height="116" rx="22" fill="url(#chroom)"/>
+  <rect x="6" y="6" width="408" height="108" rx="18" fill="#1a1c21"/>
+  <g clip-path="url(#vorm)">
+    <path d="M6 6h408v10q-204 44-408 0z" fill="url(#rood)"/>
+    <path d="M6 114h408v-10q-204-44-408 0z" fill="url(#rood)"/>
+    <ellipse cx="210" cy="60" rx="236" ry="34" fill="url(#staal)"/>
+  </g>
+  <text x="210" y="21" text-anchor="middle" font-family="Barlow, system-ui, sans-serif" font-weight="700" font-style="italic" font-size="11" fill="#fff" letter-spacing=".5">www.geroauto.nl</text>
+  <text x="210" y="77" text-anchor="middle" font-family="Barlow Condensed, Barlow, system-ui, sans-serif" font-weight="800" font-style="italic" font-size="52" fill="#15171b" stroke="#fff" stroke-width="2.5" paint-order="stroke" letter-spacing="1">Gero Auto's</text>
+  <text x="210" y="107" text-anchor="middle" font-family="Barlow, system-ui, sans-serif" font-weight="700" font-style="italic" font-size="12" fill="#fff" letter-spacing="1">sinds 1994</text>
+</svg>
