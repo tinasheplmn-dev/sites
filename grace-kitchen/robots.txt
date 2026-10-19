@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tinasheplmn-dev.github.io/sites/grace-kitchen/sitemap.xml
