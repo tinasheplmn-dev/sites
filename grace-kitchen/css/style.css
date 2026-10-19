@@ -151,7 +151,7 @@ html.js .hero.in .lint, html.klaar .lint { stroke-dashoffset: 0; }
 .hero-in { position: relative; display: grid; grid-template-columns: minmax(0, 1.18fr) minmax(0, 1fr); align-items: center; gap: clamp(1.5rem, 3vw, 3rem); }
 .hero-kop { font-size: var(--fs-hero); line-height: 1.02; margin-bottom: 1.6rem; }
 .hero-kop .regel { display: block; }
-@media (min-width: 641px) { .hero-kop .regel { white-space: nowrap; } }
+.hero-kop .regel { white-space: nowrap; }
 .hero-kop em { color: var(--merk-diep); }
 .hero-bullets { display: grid; gap: .8rem; margin-bottom: 2rem; font-weight: 700; font-size: 1.12rem; }
 .hero-bullets li { display: flex; align-items: center; gap: .85rem; white-space: nowrap; }
@@ -500,7 +500,8 @@ html.js .baan { animation: baan 60s linear infinite; }
 }
 
 @media (max-width: 640px) {
-  .hero-kop { font-size: clamp(2.05rem, 9.4vw, 2.6rem); }
+  /* tweede regel is 10,4em breed: schaal mee zodat de kop altijd op twee regels past */
+  .hero-kop { font-size: min(2.6rem, calc((100vw - 2 * var(--gutter)) / 10.7)); }
   .hero-bullets { font-size: 1.05rem; }
   .hero-knoppen .knop { width: 100%; }
   .kiezer-rij { justify-content: space-between; }

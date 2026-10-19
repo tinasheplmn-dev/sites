@@ -2,7 +2,6 @@
 (function () {
   'use strict';
 
-  var kalm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var gerechten = window.GERECHTEN || [];
 
   /* ---------- Het draaiende bord in de hero ---------- */
@@ -17,7 +16,6 @@
     var bestel = document.querySelector('[data-bestelknop]');
     var huidig = 0;
     var timer = null;
-    var gepauzeerd = false;
 
     var toon = function (n) {
       if (n === huidig) return;
@@ -42,10 +40,11 @@
       knoppen.forEach(function (k, i) { k.setAttribute('aria-pressed', String(i === n)); });
     };
 
+    /* draait vanzelf door, rustig: elk gerecht blijft 5 seconden staan.
+       Na een eigen keuze begint de telling opnieuw, zodat die keuze even blijft staan. */
     var start = function () {
       clearInterval(timer);
-      if (kalm || gepauzeerd) return;
-      timer = setInterval(function () { toon((huidig + 1) % beelden.length); }, 4200);
+      timer = setInterval(function () { toon((huidig + 1) % beelden.length); }, 5000);
     };
 
     knoppen.forEach(function (k) {
@@ -54,12 +53,6 @@
         start();
       });
     });
-    /* pauze zolang de bezoeker met het bord of de kiezer bezig is */
-    var zone = document.querySelector('.hero-in');
-    zone.addEventListener('pointerenter', function () { gepauzeerd = true; clearInterval(timer); });
-    zone.addEventListener('pointerleave', function () { gepauzeerd = false; start(); });
-    zone.addEventListener('focusin', function () { gepauzeerd = true; clearInterval(timer); });
-    zone.addEventListener('focusout', function () { gepauzeerd = false; start(); });
     document.addEventListener('visibilitychange', function () { document.hidden ? clearInterval(timer) : start(); });
     start();
   }
