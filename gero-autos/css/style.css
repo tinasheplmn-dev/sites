@@ -208,13 +208,11 @@ strong { font-weight: 600; }
 /* ---- hero ---- */
 .hero { position: relative; overflow: clip; padding-block: clamp(3rem, 6vw, 5.5rem) clamp(2rem, 4vw, 3rem); }
 .hero .wrap { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; }
-.hero h1 { font-size: var(--fs-hero); margin: 1rem 0 1.3rem; max-width: 12ch; }
-.hero h1 .regel { display: block; }
+.hero h1 { font-size: var(--fs-hero); margin: 1rem 0 1.4rem; line-height: .92; letter-spacing: -.012em; }
+.hero h1 .regel { display: block; white-space: nowrap; }
 .hero .bullets { display: grid; gap: .55rem; margin-bottom: 1.6rem; }
-.bullets li { display: flex; align-items: center; gap: .8rem; font-weight: 500; font-size: 1.08rem; }
-.bullets .bol { width: 34px; height: 34px; flex: none; display: grid; place-items: center; border-radius: 50%; background: #fbe3e7; color: var(--merk-diep); }
-.bullets .bol .icoon { width: 18px; height: 18px; }
-.donker .bullets .bol { background: var(--merk); color: #fff; }
+.bullets li { display: flex; align-items: center; gap: .95rem; font-weight: 600; font-size: 1.1rem; }
+.hero .bullets { gap: .75rem; }
 .hero .bewijs { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.4rem; }
 .chip { display: inline-flex; align-items: center; gap: .55rem; min-height: 46px; padding: .5rem 1rem; border-radius: 999px; background: var(--wit); border: 1px solid var(--lijn); font-weight: 600; font-size: 1rem; box-shadow: var(--schaduw-1); }
 .chip .sterren { color: var(--plaat); display: inline-flex; }
@@ -301,9 +299,8 @@ strong { font-weight: 600; }
 .belofte .nr { font-family: var(--display); font-weight: 800; color: var(--merk); font-size: .95rem; letter-spacing: .12em; }
 .belofte h3 { font-size: 1.5rem; }
 .belofte p { color: var(--dim); font-size: 1rem; }
-.belofte .check { display: grid; gap: .35rem; margin-top: .3rem; }
-.belofte .check li { display: flex; align-items: center; gap: .55rem; font-weight: 500; font-size: .98rem; }
-.belofte .check .icoon { width: 20px; height: 20px; color: var(--groen); flex: none; }
+.belofte .check { display: grid; gap: .55rem; margin-top: .5rem; }
+.belofte .check li { display: flex; align-items: center; gap: .7rem; font-weight: 500; font-size: .98rem; line-height: 1.3; }
 @media (max-width: 860px) { .beloften { grid-template-columns: 1fr; } }
 
 /* ---- twee panelen (werkplaats en inkoop) ---- */
@@ -572,3 +569,98 @@ footer .socials a:hover { background: #fff; color: var(--inkt); }
 .skip { position: absolute; left: -999px; top: 0; background: var(--inkt); color: #fff; padding: .6rem 1rem; z-index: 999; }
 .skip:focus { left: 1rem; top: 1rem; }
 .mettafel { font-size: .8rem; color: var(--dim); }
+
+
+/* ==========================================================================
+   EMBLEEM: branded bullet-icoon, als een autobadge. Chroomrand uit het logo,
+   rood geëmailleerd vlak met glans, wit icoon.
+   ========================================================================== */
+.embleem { --m: 46px; position: relative; display: inline-block; flex: none; width: var(--m); height: var(--m); padding: 2px; border-radius: 32%;
+  background: linear-gradient(155deg, #ffffff 0%, #d6d9de 28%, #7c838d 50%, #f2f3f5 70%, #9aa0a8 100%);
+  box-shadow: 0 8px 16px -8px rgba(140, 0, 0, .7), 0 2px 4px rgba(21, 23, 27, .15); }
+.embleem > span { position: relative; display: grid; place-items: center; width: 100%; height: 100%; border-radius: 30%; overflow: hidden; color: #fff;
+  background: radial-gradient(120% 95% at 28% 12%, #ff6a7c 0%, #d0142f 34%, #9a0414 72%, #5e0008 100%);
+  box-shadow: inset 0 -3px 6px rgba(0, 0, 0, .35), inset 0 1px 0 rgba(255, 255, 255, .35); }
+.embleem > span::after { content: ""; position: absolute; left: -10%; right: -10%; top: -45%; height: 80%; border-radius: 50%; background: linear-gradient(180deg, rgba(255, 255, 255, .5), rgba(255, 255, 255, 0)); pointer-events: none; }
+.embleem .icoon { position: relative; z-index: 1; width: 54%; height: 54%; filter: drop-shadow(0 1px 1px rgba(0, 0, 0, .45)); }
+.embleem.klein { --m: 32px; border-radius: 30%; padding: 1.5px; }
+.embleem.mini { --m: 26px; padding: 1.5px; }
+.embleem.initiaal > span { font-family: var(--display); font-weight: 800; font-size: calc(var(--m) * .4); letter-spacing: .02em; text-shadow: 0 1px 1px rgba(0, 0, 0, .4); }
+li:hover > .embleem > span::after, .embleem:hover > span::after { animation: glans .8s var(--vlot); }
+@keyframes glans { from { transform: translateX(-60%); } to { transform: translateX(60%); } }
+@media (prefers-reduced-motion: reduce) { .embleem > span::after { animation: none !important; } }
+
+/* ==========================================================================
+   REVIEWS (home): teller-dashboard, uitgelichte koper, twee rijbanen
+   ========================================================================== */
+.reviews2 { position: relative; background: #101216; color: #fff; overflow: clip; isolation: isolate; padding-bottom: clamp(3rem, 6vw, 5rem); }
+.reviews2 .gloed { position: absolute; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(45% 55% at 18% 30%, rgba(200, 16, 46, .35), transparent 70%), radial-gradient(40% 50% at 90% 10%, rgba(201, 204, 210, .12), transparent 70%); }
+.reviews2 .eyebrow { color: #ff9aa8; }
+.reviews2 .eyebrow::before { background: #ff9aa8; }
+.reviews2 .accent { color: #ff5c70; }
+.reviews2-kop { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.4fr); gap: clamp(1.6rem, 4vw, 4rem); align-items: center; }
+
+.meter-kaart { position: relative; padding: 2rem 1.8rem 1.8rem; border-radius: 26px; text-align: center; display: grid; justify-items: center; gap: .5rem;
+  background: radial-gradient(90% 70% at 50% 0%, #2a2d34, #15171b 70%); box-shadow: 0 40px 70px -40px rgba(0, 0, 0, .9), inset 0 1px 0 rgba(255, 255, 255, .08); }
+.meter-kaart::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.5px; background: linear-gradient(160deg, #fff, #c9ccd2 30%, #5c626b 55%, #e6e8ec 75%, #8d939c); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
+.meter { width: min(300px, 100%); overflow: visible; }
+.meter .spoor { fill: none; stroke: rgba(255, 255, 255, .1); stroke-width: 14; stroke-linecap: round; }
+.meter .boog { fill: none; stroke: url(#meter-rood); stroke-width: 14; stroke-linecap: round; stroke-dasharray: var(--boog); stroke-dashoffset: var(--waarde); filter: drop-shadow(0 0 8px rgba(255, 59, 85, .7)); transition: stroke-dashoffset 1.8s var(--vlot); }
+.meter .streepjes line { stroke: rgba(255, 255, 255, .55); stroke-width: 2; }
+.meter .streepjes text { fill: #c7ccd4; font: 600 10px var(--body); text-anchor: middle; }
+.meter .naald { transform-origin: 110px 112px; transform: rotate(var(--naald)); transition: transform 1.8s var(--kick, cubic-bezier(.22, 1.1, .32, 1)); }
+.meter .naald line { stroke: #fff; stroke-width: 3.5; stroke-linecap: round; }
+.meter .naald circle { fill: #15171b; stroke: #fff; stroke-width: 3; }
+html.js:not(.klaar) .meter-kaart:not(.in) .meter .boog { stroke-dashoffset: var(--boog); }
+html.js:not(.klaar) .meter-kaart:not(.in) .meter .naald { transform: rotate(0deg); }
+.meter-kaart .score { font-family: var(--display); font-weight: 800; font-size: clamp(3.6rem, 6vw, 4.6rem); line-height: .9; margin-top: -1.2rem; }
+.meter-kaart .score small { font-size: .4em; color: #c7ccd4; margin-left: .1em; }
+.sterren-score { position: relative; display: inline-block; line-height: 0; }
+.sterren-score .ster-achter, .sterren-score .ster-voor { display: inline-flex; gap: 3px; }
+.sterren-score .ster-achter { color: rgba(255, 255, 255, .18); }
+.sterren-score .ster-voor { position: absolute; inset: 0 auto 0 0; overflow: hidden; color: var(--plaat); white-space: nowrap; }
+.sterren-score .icoon { width: 1.5rem; height: 1.5rem; flex: none; }
+.meter-kaart .onder { color: #c7ccd4; font-size: .98rem; }
+.meter-kaart .knop { margin-top: .4rem; }
+
+.uitgelicht h2 { font-size: clamp(2rem, 3.6vw, 3.2rem); color: #fff; margin: .6rem 0 2.1rem; }
+.quote-blok { position: relative; padding: 1.8rem 1.9rem 1.6rem; border-radius: 22px; background: rgba(255, 255, 255, .04); border: 1px solid rgba(255, 255, 255, .1); }
+.quote-blok .quote { position: absolute; top: -18px; left: 1.6rem; width: 44px; height: 44px; color: #ff3b55; filter: drop-shadow(0 4px 10px rgba(200, 16, 46, .6)); }
+.quote-blok blockquote { font-family: var(--display); font-weight: 600; font-size: clamp(1.25rem, 1.8vw, 1.55rem); line-height: 1.3; color: #f2f3f5; }
+.quote-blok figcaption { display: flex; flex-wrap: wrap; align-items: center; gap: .7rem 1rem; margin-top: 1.3rem; }
+.quote-blok figcaption strong { display: block; font-size: 1.02rem; }
+.quote-blok figcaption .sterren { color: var(--plaat); }
+.modelbadge { display: inline-flex; align-items: center; font-family: var(--display); font-style: italic; font-weight: 800; letter-spacing: .04em; font-size: .9rem; padding: .25rem .7rem; border-radius: 6px; color: #15171b;
+  background: linear-gradient(180deg, #ffffff 0%, #d6d9de 45%, #8d939c 52%, #eef0f3 100%); box-shadow: 0 2px 6px rgba(0, 0, 0, .4), inset 0 0 0 1px rgba(255, 255, 255, .6); }
+.modelbadge.groot { font-size: 1.05rem; padding: .35rem .9rem; }
+.km-chip { display: inline-flex; align-items: center; gap: .45rem; padding: .35rem .8rem; border-radius: 999px; font-weight: 600; font-size: .92rem; background: rgba(200, 16, 46, .2); border: 1px solid rgba(255, 92, 112, .45); color: #ffd0d6; }
+.km-chip .icoon { width: 1.1em; height: 1.1em; }
+.themas { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.2rem; }
+.themas li { display: inline-flex; align-items: center; gap: .55rem; padding: .35rem .9rem .35rem .4rem; border-radius: 999px; background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .12); font-weight: 500; font-size: .95rem; }
+
+.banen { margin-top: clamp(2.4rem, 5vw, 3.6rem); display: grid; gap: 0; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+.baan .loper-band { gap: 1.1rem; align-items: flex-start; padding-block: .6rem; --loper-duur: 110s; }
+.baan.rechts .loper-band { animation-direction: reverse; --loper-duur: 125s; }
+.baan:hover .loper-band { animation-play-state: paused; }
+.wegmarkering { height: 4px; margin: .9rem 0; background: repeating-linear-gradient(90deg, rgba(255, 255, 255, .55) 0 42px, transparent 42px 84px); opacity: .5; }
+html.js .wegmarkering { animation: markering 2.4s linear infinite; }
+@keyframes markering { to { background-position: 84px 0; } }
+.baankaart { flex: none; width: 360px; padding: 1.3rem 1.4rem 1.2rem; border-radius: 18px; background: linear-gradient(170deg, rgba(255, 255, 255, .07), rgba(255, 255, 255, .02)); border: 1px solid rgba(255, 255, 255, .1); display: grid; gap: .8rem; white-space: normal; transition: border-color .25s ease, transform .25s var(--vlot), background .25s ease; }
+.baankaart.breed { width: 470px; }
+.baankaart:hover { border-color: rgba(255, 92, 112, .6); background: linear-gradient(170deg, rgba(200, 16, 46, .18), rgba(255, 255, 255, .03)); transform: translateY(-3px); }
+.baankaart .baankop { display: flex; align-items: center; justify-content: space-between; gap: .6rem; }
+.baankaart .sterren { color: var(--plaat); }
+.baankaart p { color: #e6e8ec; font-size: 1rem; line-height: 1.55; }
+.baankaart .wie { display: flex; align-items: center; gap: .6rem; }
+.baankaart .naam { font-weight: 600; }
+.baankaart .bron { margin-left: auto; font-size: .8rem; color: #c7ccd4; letter-spacing: .06em; text-transform: uppercase; }
+.reviews2-voet { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 2.2rem; }
+.reviews2-voet p { color: #c7ccd4; }
+.reviews2-voet a:not(.knop) { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 1020px) { .reviews2-kop { grid-template-columns: 1fr; } .meter-kaart { max-width: 460px; width: 100%; margin-inline: auto; } }
+@media (max-width: 640px) { .baankaart { width: 290px; } .baankaart.breed { width: 330px; } .quote-blok { padding: 1.6rem 1.3rem 1.3rem; } .themas li { font-size: .9rem; } }
+@media (prefers-reduced-motion: reduce) { .baan { overflow-x: auto; } .wegmarkering { animation: none !important; } }
+
+/* sterren altijd op één regel, in elke context */
+.sterren { display: inline-flex; gap: 2px; align-items: center; color: var(--plaat); }
+.quote-blok figcaption .sterren { margin-top: .2rem; }
