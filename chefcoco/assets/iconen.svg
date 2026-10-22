@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <!-- opgerold broodje in papier -->
+  <symbol id="i-wrap" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 20 4.5 8.5a3 3 0 0 1 2.3-3.6l6.6-1.4a3 3 0 0 1 3.6 2.3L19.5 17"/><path d="m5.2 11.5 11.4-2.4M6 15.2l11.4-2.4"/><path d="M7 20h12.5"/></g></symbol>
+  <!-- burger -->
+  <symbol id="i-burger" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5a8 6 0 0 1 16 0z"/><path d="M3.5 13.5h17M4.5 16.5h15a0 0 0 0 1 0 0 2.5 2.5 0 0 1-2.5 2.5H7a2.5 2.5 0 0 1-2.5-2.5z"/><path d="M9 7.5h.01M12.5 6.5h.01M15 8h.01"/></g></symbol>
+  <!-- pan met vlam: fajita -->
+  <symbol id="i-pan" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h14v2.5a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"/><path d="M17 12h4"/><path d="M8 7.5c-.8-1 .2-2 0-3M12 7.5c-.8-1 .2-2 0-3"/></g></symbol>
+  <!-- frietzak -->
+  <symbol id="i-friet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 10h13l-1.8 10h-9.4z"/><path d="M8 10 7 4.5M11 10V3.5M14 10l.6-6M16.8 10l1.3-4.5"/></g></symbol>
+  <!-- blaadje: vers -->
+  <symbol id="i-blad" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19C5 10 10 5 19.5 4.5 19 14 14 19 5 19z"/><path d="M5 19 13 11"/></g></symbol>
+  <!-- sterretje van kruiden: smaak -->
+  <symbol id="i-kruid" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M5.6 18.4l2.8-2.8M15.6 8.4l2.8-2.8"/><circle cx="12" cy="12" r="2.2"/></g></symbol>
+  <!-- plantje in pot -->
+  <symbol id="i-plant" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 14h10l-1.3 6.5H8.3z"/><path d="M12 14V8M12 10c-3 0-5-2-5-5 3 0 5 2 5 5zM12 9c0-3 2-5 5-5 0 3-2 5-5 5z"/></g></symbol>
+  <!-- bord met bestek -->
+  <symbol id="i-bord" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5.5"/><path d="M3 4v5a1.5 1.5 0 0 0 3 0V4M4.5 9v11M20.5 4c-1.5 1-2 3-2 5.5h2V20"/></g></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></g></symbol>
+  <symbol id="i-pijl" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13.5 6.5 19 12l-5.5 5.5"/></g></symbol>
+  <symbol id="i-ster" viewBox="0 0 24 24"><path fill="currentColor" d="m12 2.8 2.8 5.9 6.4.8-4.7 4.4 1.2 6.3L12 17.1l-5.7 3.1 1.2-6.3-4.7-4.4 6.4-.8z"/></symbol>
+  <symbol id="i-klok" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></g></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l1.5-2.5h7L17 8h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></g></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/></g></symbol>
+  <symbol id="i-sluit" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 6 12 12M18 6 6 18"/></g></symbol>
+  <symbol id="i-quote" viewBox="0 0 48 48"><path fill="currentColor" d="M8 36V25.5C8 16 12.6 10.6 21 9l1.4 3.6c-4.4 1.4-6.6 4.3-6.8 8.4H21V36zm19 0V25.5C27 16 31.6 10.6 40 9l1.4 3.6c-4.4 1.4-6.6 4.3-6.8 8.4H40V36z"/></symbol>
+  <!-- de papegaai met koksmuts -->
+  <symbol id="i-papegaai" viewBox="0 0 120 150">
+    <path d="M42 30c-6-12 2-26 18-26s24 14 18 26c6-2 12 4 9 10H33c-3-6 3-12 9-10z" fill="#fff" stroke="#102a43" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="35" y="36" width="50" height="10" rx="3" fill="#fff" stroke="#102a43" stroke-width="3"/>
+    <path d="M60 46c-22 0-34 16-34 38 0 26 14 46 34 50 14-3 22-16 22-34 10 2 18-6 16-16-4-24-16-38-38-38z" fill="#1fa868" stroke="#102a43" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M48 96c-8 10-8 30 6 40 6-12 8-26-6-40z" fill="#1c74d9" stroke="#102a43" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M60 134 54 150M66 134l2 16" stroke="#102a43" stroke-width="3" stroke-linecap="round"/>
+    <path d="M78 66c10-2 18 4 18 12-4-2-8-2-12 2" fill="#ffc93c" stroke="#102a43" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M60 60c-8 0-12 6-12 12h16c4-4 2-12-4-12z" fill="#ff3e7f" stroke="#102a43" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="70" cy="64" r="7" fill="#fff" stroke="#102a43" stroke-width="3"/>
+    <circle cx="71.5" cy="64" r="3" fill="#102a43"/>
+  </symbol>
+</svg>
