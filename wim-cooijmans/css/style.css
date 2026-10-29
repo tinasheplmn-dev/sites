@@ -958,3 +958,14 @@ html.js .alleen-zonder-js { display: none !important; }
   .tijden { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .sectiekop { margin-bottom: 1.6rem; }
 }
+
+/* tussenmaat: topbalk zonder bijzin, menu zonder afbreken */
+.hoofdnav a { white-space: nowrap; }
+@media (max-width: 1100px) {
+  .topbalk .alleen-breed { display: none; }
+  .hoofdnav { gap: 1.2rem; }
+}
+@media (max-width: 960px) {
+  .hoofdnav { display: none; }
+  .menuknop { display: grid; }
+}

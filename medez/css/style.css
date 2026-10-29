@@ -1050,3 +1050,11 @@ html.js .alleen-zonder-js { display: none !important; }
 .docent-vacature figure { display: grid; place-items: center; background: var(--papier-2); border: 3px dashed rgba(229, 23, 95, .45); border-radius: 12px 12px 0 0; }
 .docent-vacature figure span { font-family: var(--display); font-weight: 800; font-size: 6rem; color: var(--roze-tekst); }
 .docent-geen-foto figure { background: var(--papier-2); }
+
+/* tussenmaat (tablet liggend, smalle laptop): menu klapt eerder om, zodat niets over twee regels loopt */
+.hoofdnav a { white-space: nowrap; }
+@media (max-width: 1100px) {
+  .hoofdnav { display: none; }
+  .menuknop { display: grid; }
+  .alleen-breed, .topbalk-links a.alleen-breed { display: none; }
+}
