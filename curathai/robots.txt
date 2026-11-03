@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
-Disallow: /beheer
+Disallow: /app/
+Disallow: /beheer/
 Disallow: /api/
 Sitemap: https://curathai.nl/sitemap.xml

@@ -1,0 +1,17 @@
+{
+  "name": "Cura Thai",
+  "short_name": "Cura Thai",
+  "description": "Boek je Thaise massage of yogales, bekijk je rittenkaart en je afspraken.",
+  "start_url": "/app/",
+  "scope": "/app/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "lang": "nl",
+  "theme_color": "#14544e",
+  "background_color": "#f7f4ec",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
