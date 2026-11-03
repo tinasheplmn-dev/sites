@@ -742,21 +742,30 @@ html.js .alleen-zonder-js { display: none !important; }
 .spoor-tijd { font-variant-numeric: tabular-nums; font-weight: 600; color: var(--dim); font-size: 1rem; }
 .spoor.speelt .spoor-tijd { color: var(--dim-op-donker); }
 
-/* ---------- reviews ---------- */
-.review-raster { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.1rem; }
-.review { display: grid; align-content: start; gap: 1rem; padding: 1.5rem 1.6rem 1.7rem; background: var(--toets-wit); border-radius: 4px 4px 18px 18px; border: 2px solid transparent; background: linear-gradient(var(--toets-wit), var(--toets-wit)) padding-box, linear-gradient(170deg, rgba(32, 120, 130, .55), rgba(200, 161, 90, .55)) border-box; }
-.review blockquote { font-size: 1.04rem; color: var(--tekst); }
-.review figcaption { display: flex; align-items: center; gap: .8rem; }
-.review figcaption > span:last-child { display: grid; gap: .1rem; }
-.avatar { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 4px 4px 12px 12px; background: var(--inkt); color: var(--merk-licht); font-weight: 700; font-size: .95rem; letter-spacing: .04em; flex: none; }
+/* ---------- reviews: noten op een notenbalk ---------- */
+.reviews .wrap { position: relative; }
+.notenbalk { position: absolute; left: calc(var(--gutter) * -1); right: calc(var(--gutter) * -1); top: 58%; height: 64px; pointer-events: none; background: repeating-linear-gradient(180deg, rgba(13, 21, 23, .16) 0 1.5px, transparent 1.5px 16px); }
+.review-raster { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.1rem; align-items: stretch; }
+.review { position: relative; display: grid; grid-template-rows: 1fr auto; align-content: start; gap: .9rem; margin: 0; padding: 1.5rem 1.6rem 1.6rem; background: var(--toets-wit); color: var(--tekst); border-radius: 6px 6px 20px 20px; border: 1px solid var(--lijn); border-top: 4px solid var(--merk); box-shadow: 0 2px 4px rgba(13, 21, 23, .05), 0 26px 50px -30px rgba(13, 21, 23, .45); transition: transform var(--duur) var(--vlot), box-shadow var(--duur) var(--vlot); }
+.review:hover { transform: translateY(-4px); box-shadow: 0 2px 4px rgba(13, 21, 23, .05), 0 32px 56px -30px rgba(13, 21, 23, .5); }
+.review-noot { position: absolute; right: 1.2rem; top: -18px; display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--merk-licht); color: var(--inkt); box-shadow: 0 6px 14px -6px rgba(13, 21, 23, .5); }
+.review-noot .icoon { width: 18px; height: 18px; }
+.review blockquote { font-size: 1.04rem; line-height: 1.6; }
+.review blockquote::before { content: "\201C"; font-family: var(--display); font-size: 2.4rem; line-height: 0; color: var(--merk-tekst); vertical-align: -1rem; margin-right: .15rem; }
+.review figcaption { display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; padding-top: .8rem; border-top: 1px dashed var(--lijn); }
+.review figcaption > span:nth-child(2) { display: grid; gap: .05rem; min-width: 0; flex: 1; }
+.review-wat { font-size: .88rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--merk-tekst); line-height: 1.3; }
+.avatar { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 4px 4px 12px 12px; background: var(--inkt); color: var(--merk-licht); font-weight: 700; font-size: .92rem; letter-spacing: .04em; flex: none; }
 .sterren { display: inline-flex; gap: 2px; color: #a8781f; }
-.sterren .icoon { width: 16px; height: 16px; }
-.review-groot { grid-row: span 2; background: var(--inkt); border: 0; color: var(--papier); padding: clamp(1.8rem, 3vw, 2.6rem); align-content: space-between; position: relative; overflow: hidden; }
-.review-groot blockquote { font-family: var(--display); font-size: clamp(1.45rem, 2.1vw, 1.95rem); line-height: 1.3; color: var(--papier); }
+.sterren .icoon { width: 15px; height: 15px; }
+.review-groot { grid-column: span 2; grid-row: span 2; background: var(--inkt); border-color: var(--inkt); border-top-color: var(--tweede); color: var(--papier); padding: clamp(1.8rem, 3vw, 2.6rem); translate: none !important; }
+.review-groot blockquote { font-family: var(--display); font-size: clamp(1.5rem, 2.6vw, 2.5rem); line-height: 1.25; color: var(--papier); }
+.review-groot blockquote::before { color: var(--merk-licht); font-size: 3rem; }
+.review-groot figcaption { border-top-color: var(--lijn-op-donker); }
 .review-groot .avatar { background: var(--merk-licht); color: var(--inkt); }
+.review-groot .review-wat { color: var(--merk-licht); }
 .review-groot .sterren { color: var(--tweede); }
-.review-glyph { width: 64px; height: 64px; color: var(--merk-licht); }
-.review-groot::after { content: ""; position: absolute; right: -10px; bottom: 0; width: 46%; height: 30px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='70' height='30'%3E%3Cg fill='%23f4f6f5' fill-opacity='.10'%3E%3Crect x='0' width='9' height='30'/%3E%3Crect x='10' width='9' height='30'/%3E%3Crect x='20' width='9' height='30'/%3E%3Crect x='30' width='9' height='30'/%3E%3Crect x='40' width='9' height='30'/%3E%3Crect x='50' width='9' height='30'/%3E%3Crect x='60' width='9' height='30'/%3E%3C/g%3E%3C/svg%3E") repeat-x; }
+.review-groot .review-noot { background: var(--tweede); }
 .carrousel-pijlen { display: none; }
 
 /* ---------- tarief kort ---------- */
@@ -917,7 +926,11 @@ html.js .alleen-zonder-js { display: none !important; }
   .rij-carrousel, .review-raster { display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; padding-inline: var(--gutter); margin-inline: calc(var(--gutter) * -1); scrollbar-width: none; padding-bottom: .8rem; }
   .rij-carrousel::-webkit-scrollbar, .review-raster::-webkit-scrollbar { display: none; }
   .rij-carrousel > *, .review-raster > * { flex: 0 0 84%; scroll-snap-align: start; }
-  .review-groot { grid-row: auto; }
+  .review-groot { grid-column: auto; grid-row: auto; }
+  .review figcaption .sterren { flex-basis: 100%; }
+  .review-groot blockquote { font-size: 1.4rem; }
+  .notenbalk { display: none; }
+  .review-raster { padding-top: 1.2rem; }
   .carrousel-pijlen { display: flex; gap: .6rem; justify-content: flex-end; margin-top: .6rem; }
   .carrousel-pijlen .pijlknop { color: var(--inkt); border-color: var(--lijn); }
   .maten { grid-template-columns: minmax(0, 1fr); border: 0; gap: 1.8rem; }
