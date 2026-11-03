@@ -15,6 +15,7 @@
 <meta name="theme-color" content="#08070d">
 <link rel="icon" href="assets/img/favicon-192.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/img/favicon-192.png">
+<link rel="manifest" href="manifest.json">
 <link rel="preload" href="assets/fonts/unbounded-900.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/motion.css">
@@ -23,7 +24,7 @@
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.winnerscirclegym.nl/"},{"@type":"ListItem","position":2,"name":"Gratis proefles","item":"https://www.winnerscirclegym.nl/proefles.html"}]}
 </script>
 </head>
-<body data-x='[{"d":2,"s":"19:45","e":"20:30","les":"Bokszaktraining"},{"d":4,"s":"20:00","e":"20:45","les":"HIIT-training"},{"d":6,"s":"10:45","e":"11:30","les":"Bokszaktraining"}]'>
+<body data-rooster='[{"d":2,"s":"19:45","e":"20:30","les":"Bokszaktraining"},{"d":4,"s":"20:00","e":"20:45","les":"HIIT-training"},{"d":6,"s":"10:45","e":"11:30","les":"Bokszaktraining"}]'>
 
 <div class="topbalk">
   <div class="wrap">
@@ -43,7 +44,7 @@
         <li><a href="index.html#trainen">Trainen</a></li>
         <li><a href="index.html#rooster">Rooster &amp; tarieven</a></li>
         <li><a href="index.html#trainers">Trainers</a></li>
-        <li><a href="index.html#reviews">Reviews</a></li>
+        <li><a href="index.html#faq">Vragen</a></li>
       </ul>
       <a class="knop rand" href="https://winnerscircle.virtuagym.com/" data-app-ingang><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-groep"/></svg>Inloggen</a>
       <a class="knop" href="proefles.html" aria-current="page">Gratis proefles</a>
@@ -55,13 +56,13 @@
 <div class="mobiel-menu" id="mobiel-menu" data-menu>
   <div class="boven">
     <img src="assets/img/logo-wit.png" alt="Winners Circle" width="125" height="40" style="height:40px;width:auto">
-    <button class="menuknop" type="button" aria-label="Menu sluiten" style="display:inline-flex" onclick="document.querySelector('[data-menuknop]').click()"><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-sluit"/></svg></button>
+    <button class="menuknop" type="button" aria-label="Menu sluiten" style="display:inline-flex" data-menusluit><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-sluit"/></svg></button>
   </div>
   <nav aria-label="Mobiel menu">
     <a href="index.html#trainen">Trainen</a>
     <a href="index.html#rooster">Rooster &amp; tarieven</a>
     <a href="index.html#trainers">Trainers</a>
-    <a href="index.html#reviews">Reviews</a>
+    <a href="index.html#faq">Vragen</a>
   </nav>
   <div class="voet">
     <a class="knop groot" href="proefles.html">Plan je gratis proefles</a>
@@ -86,26 +87,31 @@
     <div class="paneel" data-rev>
       <p class="eyebrow">Groepsles proberen</p>
       <h2>Bokszak of HIIT</h2>
-      <p>Groepslessen boek je in onze portal. Je account is gratis en je kiest zelf een les uit het rooster.</p>
+      <p>Kies een van de eerstvolgende lessen. Je naam en de les komen dan vanzelf in het bericht hiernaast; wij zetten je op de lijst.</p>
+      <div class="volgende-lessen" data-volgende-lessen></div>
+      <noscript><p>Lessen: dinsdag 19:45 bokszaktraining, donderdag 20:00 HIIT-training, zaterdag 10:45 bokszaktraining.</p></noscript>
       <ol class="stappen">
-        <li><span><strong>Maak een account</strong> in de Winners Circle-portal.</span></li>
-        <li><span><strong>Kies een les:</strong> dinsdag 19:45, donderdag 20:00 of zaterdag 10:45.</span></li>
-        <li><span><strong>Kom in sportkleding</strong> naar de studio aan de Bilderdijkstraat 20.</span></li>
+        <li><span><strong>Kies een les</strong> hierboven en vul je naam in.</span></li>
+        <li><span><strong>Verstuur het bericht</strong> per mail of WhatsApp; je krijgt een bevestiging van een trainer.</span></li>
+        <li><span><strong>Kom in sportkleding</strong> naar de Bilderdijkstraat 20, met schone binnenschoenen en water.</span></li>
       </ol>
-      <a class="knop groot" href="https://winnerscircle.virtuagym.com/" target="_blank" rel="noopener"><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-kalender"/></svg>Naar de portal</a>
+      <p class="na">Al lid? <a href="https://winnerscircle.virtuagym.com/" target="_blank" rel="noopener" data-app-ingang style="text-decoration:underline;text-underline-offset:3px;font-weight:600">Log in</a> en reserveer je plek in het rooster.</p>
     </div>
     <div class="paneel verloop-rand" id="prive" data-rev>
-      <p class="eyebrow">Privétraining</p>
+      <p class="eyebrow">Aanmelden</p>
       <h2>Laten we beginnen</h2>
-      <p>Interesse in personal, duo of small group training? Laat je gegevens achter. We nemen contact met je op om een eerste training te plannen.</p>
+      <p>Voor een groepsles of een privétraining (personal, duo of small group). Laat je gegevens achter, dan plannen we je eerste training.</p>
       <form class="formulier" data-intake novalidate>
+        <p class="gekozen-les" data-gekozen-les hidden>Je proefles:<strong></strong></p>
+        <input type="hidden" name="les" value="">
+        <div class="honing" aria-hidden="true"><label for="website">Website</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div>
         <div class="twee">
           <div class="veld"><label for="voornaam">Voornaam</label><input id="voornaam" name="voornaam" autocomplete="given-name" required><span class="fout" data-fout="voornaam" hidden>Vul je voornaam in.</span></div>
           <div class="veld"><label for="achternaam">Achternaam</label><input id="achternaam" name="achternaam" autocomplete="family-name"></div>
         </div>
         <div class="twee">
-          <div class="veld"><label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" required><span class="fout" data-fout="email" hidden>Vul een geldig e-mailadres in.</span></div>
-          <div class="veld"><label for="telefoon">Telefoon</label><input id="telefoon" name="telefoon" type="tel" autocomplete="tel"></div>
+          <div class="veld"><label for="email">E-mail</label><input id="email" name="email" type="email" inputmode="email" autocomplete="email" required><span class="fout" data-fout="email" hidden>Vul een geldig e-mailadres in.</span></div>
+          <div class="veld"><label for="telefoon">Telefoon</label><input id="telefoon" name="telefoon" type="tel" inputmode="tel" autocomplete="tel"></div>
         </div>
         <fieldset class="veld opties">
           <legend>Wat is je doel?</legend>
@@ -132,6 +138,7 @@
       <div class="bedankt" data-bedankt hidden>
         <h2 class="verloop-tekst">Bedankt, tot snel!</h2>
         <p>Je bericht staat klaar. Verstuur het en we nemen contact met je op om je eerste training te plannen.</p>
+        <div class="knoppen"><a class="knop rand" data-ics href="#" hidden><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-kalender"/></svg>Zet in je agenda</a></div>
       </div>
     </div>
   </div>
@@ -147,25 +154,25 @@
         <p>Boksstudio in Den Bosch. Waar iedereen een winnaar kan zijn.</p>
       </div>
       <div>
-        <h3>Studio</h3>
-        <ul><li>Bilderdijkstraat 20</li><li>5216 JZ 's-Hertogenbosch</li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Bilderdijkstraat%2020%205216JZ%20s-Hertogenbosch" target="_blank" rel="noopener"><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-pin"/></svg>Route plannen</a></li></ul>
+        <h3>Trainen</h3>
+        <ul><li><a href="privetraining.html">Privétraining</a></li><li><a href="bokszaktraining.html">Bokszaktraining</a></li><li><a href="boksen-voor-beginners.html">Boksen voor beginners</a></li><li><a href="proefles.html">Gratis proefles</a></li></ul>
       </div>
       <div>
-        <h3>Contact</h3>
-        <ul><li><a href="tel:+31620390657"><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-tel"/></svg>06 20 39 06 57</a></li><li><a href="mailto:info@winnerscirclegym.nl"><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-mail"/></svg>info@winnerscirclegym.nl</a></li></ul>
+        <h3>Studio</h3>
+        <ul><li>Bilderdijkstraat 20</li><li>5216 JZ 's-Hertogenbosch</li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Bilderdijkstraat%2020%205216JZ%20s-Hertogenbosch" target="_blank" rel="noopener"><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-pin"/></svg>Route plannen</a></li><li><a href="tel:+31620390657"><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-tel"/></svg>06 20 39 06 57</a></li><li><a href="mailto:info@winnerscirclegym.nl"><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-mail"/></svg>info@winnerscirclegym.nl</a></li></ul>
       </div>
       <div>
         <h3>Volg ons</h3>
         <ul><li><a href="https://www.instagram.com/winnerscirclegym/" target="_blank" rel="noopener"><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-insta"/></svg>Instagram</a></li><li><a href="https://www.tiktok.com/@winnerscirclegym" target="_blank" rel="noopener"><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-tiktok"/></svg>TikTok</a></li><li><a href="https://winnerscircle.virtuagym.com/" target="_blank" rel="noopener" data-app-ingang><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-kalender"/></svg>Inloggen voor leden</a></li></ul>
       </div>
     </div>
-    <div class="klein"><span>© 2026 Winners Circle</span><a href="proefles.html">Gratis proefles plannen</a></div>
+    <div class="klein"><span>© 2026 Winners Circle · <a href="privacy.html">Privacy</a></span><a href="proefles.html">Gratis proefles plannen</a></div>
   </div>
 </footer>
 
 <nav class="actiebalk" data-mobielcta aria-label="Snelle acties">
   <a href="https://wa.me/31620390657?text=Hoi%20Winners%20Circle%2C%20ik%20heb%20een%20vraag."><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-wa"/></svg>WhatsApp</a>
-  <a class="hoofd" href="proefles.html"><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-gratis"/></svg>Gratis proefles</a>
+  <a class="hoofd" href="#prive"><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-gratis"/></svg><span>Naar het formulier</span></a>
 </nav>
 
 <script src="js/motion.js" defer></script>

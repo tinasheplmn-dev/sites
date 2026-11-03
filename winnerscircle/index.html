@@ -15,6 +15,7 @@
 <meta name="theme-color" content="#08070d">
 <link rel="icon" href="assets/img/favicon-192.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/img/favicon-192.png">
+<link rel="manifest" href="manifest.json">
 <link rel="preload" href="assets/fonts/unbounded-900.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/img/hero-poster.webp" as="image">
 <link rel="stylesheet" href="css/style.css">
@@ -22,22 +23,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "SportsActivityLocation",
-  "name": "Winners Circle",
-  "url": "https://www.winnerscirclegym.nl/",
-  "image": "https://www.winnerscirclegym.nl/assets/img/og.jpg",
-  "telephone": "+31620390657",
-  "email": "info@winnerscirclegym.nl",
-  "priceRange": "€39 - €70",
-  "address": { "@type": "PostalAddress", "streetAddress": "Bilderdijkstraat 20", "postalCode": "5216 JZ", "addressLocality": "'s-Hertogenbosch", "addressCountry": "NL" },
-  "sameAs": ["https://www.instagram.com/winnerscirclegym/", "https://www.tiktok.com/@winnerscirclegym"],
-  "makesOffer": [
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Personal training" }, "price": "50", "priceCurrency": "EUR" },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Duo training" }, "price": "60", "priceCurrency": "EUR" },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Small group training" }, "price": "70", "priceCurrency": "EUR" },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bokszaktraining 8x per maand" }, "price": "39", "priceCurrency": "EUR" },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bokszaktraining unlimited" }, "price": "54", "priceCurrency": "EUR" },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Strippenkaart 10 credits" }, "price": "84", "priceCurrency": "EUR" }
+  "@graph": [
+    {
+      "@type": "SportsActivityLocation",
+      "@id": "https://www.winnerscirclegym.nl/#studio",
+      "name": "Winners Circle",
+      "description": "Boksstudio in Den Bosch. Privétraining en bokszaktraining in groepen van maximaal 8 personen.",
+      "url": "https://www.winnerscirclegym.nl/",
+      "image": "https://www.winnerscirclegym.nl/assets/img/og.jpg",
+      "telephone": "+31620390657",
+      "email": "info@winnerscirclegym.nl",
+      "priceRange": "€39 - €70",
+      "address": { "@type": "PostalAddress", "streetAddress": "Bilderdijkstraat 20", "postalCode": "5216 JZ", "addressLocality": "'s-Hertogenbosch", "addressCountry": "NL" },
+      "sameAs": ["https://www.instagram.com/winnerscirclegym/", "https://www.tiktok.com/@winnerscirclegym"],
+      "makesOffer": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Personal training" }, "price": "50", "priceCurrency": "EUR" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Duo training" }, "price": "60", "priceCurrency": "EUR" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Small group training" }, "price": "70", "priceCurrency": "EUR" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bokszaktraining 8x per maand" }, "price": "39", "priceCurrency": "EUR" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bokszaktraining unlimited" }, "price": "54", "priceCurrency": "EUR" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Strippenkaart 10 credits" }, "price": "84", "priceCurrency": "EUR" }
+      ]
+    },
+    { "@type": "Event", "name": "Bokszaktraining", "eventSchedule": { "@type": "Schedule", "byDay": "https://schema.org/Tuesday", "startTime": "19:45", "endTime": "20:30", "repeatFrequency": "P1W" }, "location": { "@id": "https://www.winnerscirclegym.nl/#studio" }, "organizer": { "@id": "https://www.winnerscirclegym.nl/#studio" }, "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "maximumAttendeeCapacity": 8 },
+    { "@type": "Event", "name": "HIIT-training", "eventSchedule": { "@type": "Schedule", "byDay": "https://schema.org/Thursday", "startTime": "20:00", "endTime": "20:45", "repeatFrequency": "P1W" }, "location": { "@id": "https://www.winnerscirclegym.nl/#studio" }, "organizer": { "@id": "https://www.winnerscirclegym.nl/#studio" }, "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "maximumAttendeeCapacity": 8 },
+    { "@type": "Event", "name": "Bokszaktraining", "eventSchedule": { "@type": "Schedule", "byDay": "https://schema.org/Saturday", "startTime": "10:45", "endTime": "11:30", "repeatFrequency": "P1W" }, "location": { "@id": "https://www.winnerscirclegym.nl/#studio" }, "organizer": { "@id": "https://www.winnerscirclegym.nl/#studio" }, "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "maximumAttendeeCapacity": 8 },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Moet ik al kunnen boksen?", "acceptedAnswer": { "@type": "Answer", "text": "Nee. Beginners en gevorderden trainen hier naast elkaar. De trainers passen de oefeningen aan op jouw niveau en letten op je techniek vanaf de eerste stoot." } },
+        { "@type": "Question", "name": "Wat neem ik mee naar mijn eerste training?", "acceptedAnswer": { "@type": "Answer", "text": "Sportkleding, schone binnenschoenen en water. Over handschoenen en bandages: vraag het bij je proefles, dan kijken we samen wat je nodig hebt." } },
+        { "@type": "Question", "name": "Is de proefles echt gratis?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Je eerste training is gratis, in de groep of privé. Daarna kies je zelf of en hoe je verder wilt." } },
+        { "@type": "Question", "name": "Wat is het verschil tussen privétraining en bokszaktraining?", "acceptedAnswer": { "@type": "Answer", "text": "Privétraining is besloten: alleen jij en je trainer, met z'n tweeën of met je eigen groepje, op een moment dat jou past, per sessie betaald. Bokszaktraining is een openbare groepsles van maximaal 8 personen op vaste tijden, met een abonnement of strippenkaart." } },
+        { "@type": "Question", "name": "Hoe boek ik een groepsles?", "acceptedAnswer": { "@type": "Answer", "text": "Je logt in op je ledenaccount en reserveert je plek in het rooster. Zo weet je zeker dat je erbij bent, want er zijn maximaal 8 plekken per les." } },
+        { "@type": "Question", "name": "Hoe werkt opzeggen?", "acceptedAnswer": { "@type": "Answer", "text": "Abonnementen lopen per maand. De precieze voorwaarden, zoals de opzegtermijn, krijg je bij het afsluiten en kun je altijd navragen bij de trainers." } }
+      ]
+    }
   ]
 }
 </script>
@@ -62,7 +83,7 @@
         <li><a href="#trainen">Trainen</a></li>
         <li><a href="#rooster">Rooster &amp; tarieven</a></li>
         <li><a href="#trainers">Trainers</a></li>
-        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#faq">Vragen</a></li>
       </ul>
       <!-- Inloggen wijst nu nog naar de Virtuagym-portal; wordt straks het eigen plansysteem (/app). -->
       <a class="knop rand" href="https://winnerscircle.virtuagym.com/" data-app-ingang><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-groep"/></svg>Inloggen</a>
@@ -72,16 +93,20 @@
   </div>
 </header>
 
+<nav class="ankerbalk" aria-label="Secties" data-ankerbalk>
+  <a href="#trainen">Trainen</a><a href="#rooster">Rooster</a><a href="#trainers">Trainers</a><a href="#reviews">Reviews</a><a href="#faq">Vragen</a>
+</nav>
+
 <div class="mobiel-menu" id="mobiel-menu" data-menu>
   <div class="boven">
     <img src="assets/img/logo-wit.png" alt="Winners Circle" width="125" height="40" style="height:40px;width:auto">
-    <button class="menuknop" type="button" aria-label="Menu sluiten" style="display:inline-flex" onclick="document.querySelector('[data-menuknop]').click()"><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-sluit"/></svg></button>
+    <button class="menuknop" type="button" aria-label="Menu sluiten" style="display:inline-flex" data-menusluit><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-sluit"/></svg></button>
   </div>
   <nav aria-label="Mobiel menu">
     <a href="#trainen">Trainen</a>
     <a href="#rooster">Rooster &amp; tarieven</a>
     <a href="#trainers">Trainers</a>
-    <a href="#reviews">Reviews</a>
+    <a href="#faq">Vragen</a>
   </nav>
   <div class="voet">
     <a class="knop groot" href="proefles.html">Plan je gratis proefles</a>
@@ -93,11 +118,10 @@
 <main>
 
 <section class="hero" data-hero aria-label="Welkom bij Winners Circle">
-  <div class="film">
-    <video autoplay muted loop playsinline preload="metadata" poster="assets/img/hero-poster.webp" data-bron-groot="assets/video/hero-1280.mp4" data-bron-klein="assets/video/hero-854.mp4" aria-label="Sfeerbeeld: bokstraining op de zak en op de pads in de studio" width="1280" height="720">
-      <source src="assets/video/hero-1280.mp4" type="video/mp4">
-    </video>
+  <div class="film" data-ring-open>
+    <video muted loop playsinline preload="none" poster="assets/img/hero-poster.webp" data-bron-groot="assets/video/hero-1280.mp4" data-bron-klein="assets/video/hero-854.mp4" aria-label="Sfeerbeeld: bokstraining op de zak en op de pads in de studio" width="1280" height="720"></video>
   </div>
+  <span class="ringlijn" aria-hidden="true"></span>
   <div class="gloed" aria-hidden="true"></div>
   <div class="wrap">
     <p class="eyebrow" data-hero-item>Boksstudio in Den Bosch</p>
@@ -108,7 +132,7 @@
       <a class="knop groot rand" href="#trainen">Zo kun je trainen</a>
     </div>
     <div class="chips" data-hero-item>
-      <span class="chip" data-volgende-les><span class="stip" aria-hidden="true"></span><span class="tekst">Groepslessen op di, do en za</span></span>
+      <a class="chip" href="#rooster" data-volgende-les><span class="stip" aria-hidden="true"></span><span class="tekst">Groepslessen op di, do en za</span></a>
       <a class="chip" href="#reviews"><span class="sterren" aria-hidden="true"><svg class="icoon"><use href="assets/iconen.svg?v=3#i-ster"/></svg></span>5 sterren van leden</a>
     </div>
   </div>
@@ -123,12 +147,12 @@
   </ul>
 </div>
 
-<section class="sectie trainen" id="trainen" aria-labelledby="trainen-kop">
+<section class="sectie trainen" id="trainen" aria-labelledby="trainen-kop" data-cta="Gratis proefles" data-cta-href="proefles.html">
   <div class="wrap">
     <div class="sectie-kop" data-rev>
       <p class="eyebrow">Twee manieren om te trainen</p>
       <h2 id="trainen-kop">Privé, of in de groep</h2>
-      <p>Allebei met dezelfde trainers en dezelfde aandacht voor techniek. Het verschil zit in wie er naast je staat.</p>
+      <p class="kort">Winners Circle is een boksstudio aan de Bilderdijkstraat 20 in Den Bosch. Privétraining vanaf € 50 per sessie, bokszaktraining in groepen van maximaal 8 vanaf € 39 per maand. Dezelfde trainers, dezelfde aandacht voor techniek; het verschil zit in wie er naast je staat.</p>
     </div>
     <div class="raster" data-rev data-stagger>
       <article class="spoor" id="prive">
@@ -143,7 +167,10 @@
           <div class="vorm"><span class="ring"><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-handschoen"/></svg></span><div><strong>Personal training</strong><small>Eén op één</small></div><span class="prijs">€ 50<small>per sessie</small></span></div>
           <div class="vorm"><span class="ring"><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-groep"/></svg></span><div><strong>Duo training</strong><small>Met z'n tweeën</small></div><span class="prijs">€ 60<small>per sessie</small></span></div>
           <div class="vorm"><span class="ring"><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-beker"/></svg></span><div><strong>Small group</strong><small>Je eigen groep, 3 tot 6 personen</small></div><span class="prijs">€ 70<small>per sessie</small></span></div>
-          <a class="knop" href="proefles.html#prive">Vraag een privétraining aan <svg class="icoon icoon-pijl" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-pijl"/></svg></a>
+          <div class="knoppen">
+            <a class="knop" href="proefles.html#prive">Vraag een privétraining aan <svg class="icoon icoon-pijl" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-pijl"/></svg></a>
+            <a class="knop rand" href="privetraining.html">Meer over privétraining</a>
+          </div>
         </div>
       </article>
       <article class="spoor" id="bokszak">
@@ -159,10 +186,40 @@
           <div class="vorm"><span class="ring"><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-bliksem"/></svg></span><div><strong>HIIT-training</strong><small>Intense cardio met je eigen lichaamsgewicht, met rondes op de zak.</small></div><span class="prijs">45<small>minuten</small></span></div>
           <div class="knoppen">
             <a class="knop" href="proefles.html">Probeer een les gratis <svg class="icoon icoon-pijl" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-pijl"/></svg></a>
-            <a class="knop rand" href="#rooster">Rooster en tarieven</a>
+            <a class="knop rand" href="bokszaktraining.html">Meer over bokszaktraining</a>
           </div>
         </div>
       </article>
+    </div>
+
+    <div class="keuzehulp" data-keuzehulp data-rev>
+      <button class="keuzehulp-knop" type="button" data-vouw aria-expanded="false" aria-controls="keuzehulp-inhoud" data-alleen-mobiel>Twijfel je? Drie vragen, één advies<svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-pijl"/></svg></button>
+      <div class="keuzehulp-inhoud" id="keuzehulp-inhoud">
+      <div class="vragen">
+        <p class="eyebrow">Twijfel je? Drie vragen</p>
+        <fieldset><legend>Wat wil je vooral?</legend>
+          <label class="pil"><input type="radio" name="kh-doel" value="techniek" checked><span>Beter leren boksen</span></label>
+          <label class="pil"><input type="radio" name="kh-doel" value="fit"><span>Fitter worden</span></label>
+          <label class="pil"><input type="radio" name="kh-doel" value="stok"><span>Een stok achter de deur</span></label>
+        </fieldset>
+        <fieldset><legend>Alleen of samen?</legend>
+          <label class="pil"><input type="radio" name="kh-wie" value="alleen" checked><span>Alleen</span></label>
+          <label class="pil"><input type="radio" name="kh-wie" value="duo"><span>Met een vriend of partner</span></label>
+          <label class="pil"><input type="radio" name="kh-wie" value="groep"><span>In een groep</span></label>
+        </fieldset>
+        <fieldset><legend>Hoe vaak per week?</legend>
+          <label class="pil"><input type="radio" name="kh-vaak" value="1" checked><span>1 keer</span></label>
+          <label class="pil"><input type="radio" name="kh-vaak" value="2"><span>2 keer</span></label>
+          <label class="pil"><input type="radio" name="kh-vaak" value="3"><span>3 keer of vaker</span></label>
+        </fieldset>
+      </div>
+      <div class="advies" aria-live="polite">
+        <p class="eyebrow">Ons advies</p>
+        <h3 data-kh-kop>Personal training</h3>
+        <p data-kh-tekst>Eén op één leer je het snelst: elke stoot wordt gezien en bijgestuurd.</p>
+        <a class="knop" data-kh-knop href="proefles.html#prive">Vraag een privétraining aan <svg class="icoon icoon-pijl" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-pijl"/></svg></a>
+      </div>
+      </div>
     </div>
   </div>
 </section>
@@ -175,23 +232,37 @@
   </div>
 </section>
 
-<section class="sectie rooster" id="rooster" aria-labelledby="rooster-kop">
+<section class="sectie rooster" id="rooster" aria-labelledby="rooster-kop" data-cta="Reserveer je plek" data-cta-href="https://winnerscircle.virtuagym.com/">
   <div class="wrap">
     <div class="sectie-kop" data-rev>
       <p class="eyebrow">Bokszaktraining</p>
       <h2 id="rooster-kop">Rooster en tarieven</h2>
       <p>Drie vaste momenten per week. Je reserveert je plek vooraf, zodat je zeker weet dat je erbij bent.</p>
     </div>
-    <div class="dagen" data-rev data-stagger aria-roledescription="carrousel">
-      <article class="dag" data-dag="2"><span class="tag">Vandaag</span><p class="naam">Dinsdag</p><p class="tijd">19:45</p><p class="les"><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-zak"/></svg>Bokszaktraining</p><p>Tot 20:30, na je werk nog even alles eruit.</p></article>
-      <article class="dag" data-dag="4"><span class="tag">Vandaag</span><p class="naam">Donderdag</p><p class="tijd">20:00</p><p class="les"><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-bliksem"/></svg>HIIT-training</p><p>Tot 20:45, intense cardio met rondes op de zak.</p></article>
-      <article class="dag" data-dag="6"><span class="tag">Vandaag</span><p class="naam">Zaterdag</p><p class="tijd">10:45</p><p class="les"><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-zak"/></svg>Bokszaktraining</p><p>Tot 11:30, het weekend goed beginnen.</p></article>
+    <div class="week" data-rev data-week aria-label="Weekrooster">
+      <div class="kolom" data-dag="1"><span class="dagnaam">Ma</span><span class="leeg">rust</span></div>
+      <div class="kolom" data-dag="2"><span class="dagnaam">Di</span><div class="les"><span class="tijd">19:45</span><span class="naam"><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-zak"/></svg>Bokszak</span><span class="tot">tot 20:30</span></div></div>
+      <div class="kolom" data-dag="3"><span class="dagnaam">Wo</span><span class="leeg">rust</span></div>
+      <div class="kolom" data-dag="4"><span class="dagnaam">Do</span><div class="les"><span class="tijd">20:00</span><span class="naam"><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-bliksem"/></svg>HIIT</span><span class="tot">tot 20:45</span></div></div>
+      <div class="kolom" data-dag="5"><span class="dagnaam">Vr</span><span class="leeg">rust</span></div>
+      <div class="kolom" data-dag="6"><span class="dagnaam">Za</span><div class="les"><span class="tijd">10:45</span><span class="naam"><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-zak"/></svg>Bokszak</span><span class="tot">tot 11:30</span></div></div>
+      <div class="kolom" data-dag="0"><span class="dagnaam">Zo</span><span class="leeg">rust</span></div>
+    </div>
+    <p class="weeknoot" data-rev>Privétrainingen plannen we buiten het rooster om, ook overdag en op andere dagen.</p>
+
+    <div class="schuif" data-rev data-tariefschuif>
+      <span class="vraag">Hoe vaak train je?</span>
+      <div class="pillen" role="radiogroup" aria-label="Hoe vaak train je">
+        <label class="pil"><input type="radio" name="vaak" value="soms"><span>Af en toe</span></label>
+        <label class="pil"><input type="radio" name="vaak" value="1-2" checked><span>1 à 2 keer per week</span></label>
+        <label class="pil"><input type="radio" name="vaak" value="3"><span>3 keer of vaker</span></label>
+      </div>
     </div>
     <div class="tarieven" data-rev data-stagger aria-roledescription="carrousel">
-      <article class="tarief"><h3>8x per maand</h3><p class="bedrag">€ 39 <small>per maand</small></p><p>8 lessen per maand, bokszak en HIIT</p></article>
-      <article class="tarief uitgelicht"><span class="badge">Meest vrijheid</span><h3>Unlimited</h3><p class="bedrag">€ 54 <small>per maand</small></p><p>Onbeperkt groepslessen</p></article>
-      <article class="tarief"><h3>Unlimited 6 maanden</h3><p class="bedrag">€ 49 <small>per maand</small></p><p>Onbeperkt, voordeliger bij 6 maanden</p></article>
-      <article class="tarief"><h3>Strippenkaart</h3><p class="bedrag">€ 84 <small>10 credits</small></p><p>Geen abonnement, kom wanneer het uitkomt</p></article>
+      <article class="tarief" data-plan="1-2"><h3>8x per maand</h3><p class="bedrag">€ 39 <small>per maand</small></p><p>8 lessen per maand, bokszak en HIIT</p></article>
+      <article class="tarief" data-plan="3"><span class="badge">Meest vrijheid</span><h3>Unlimited</h3><p class="bedrag">€ 54 <small>per maand</small></p><p>Onbeperkt groepslessen</p></article>
+      <article class="tarief" data-plan="3"><h3>Unlimited 6 maanden</h3><p class="bedrag">€ 49 <small>per maand</small></p><p>Onbeperkt, voordeliger bij 6 maanden</p></article>
+      <article class="tarief" data-plan="soms"><h3>Strippenkaart</h3><p class="bedrag">€ 84 <small>10 credits</small></p><p>Geen abonnement, kom wanneer het uitkomt</p></article>
     </div>
     <div class="onder" data-rev>
       <a class="knop donker" href="https://winnerscircle.virtuagym.com/" target="_blank" rel="noopener" data-app-ingang><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-kalender"/></svg>Reserveer je plek</a>
@@ -218,14 +289,14 @@
   </div>
 </section>
 
-<section class="sectie reviews" id="reviews" aria-labelledby="reviews-kop">
+<section class="sectie reviews licht" id="reviews" aria-labelledby="reviews-kop">
   <div class="wrap">
     <div class="kopregel" data-rev>
       <div class="sectie-kop">
         <p class="eyebrow">Reviews</p>
         <h2 id="reviews-kop">Wat leden zeggen</h2>
       </div>
-      <a class="knop rand" href="https://www.google.com/maps/search/?api=1&amp;query=Winners%20Circle%20Bilderdijkstraat%2020%20Den%20Bosch" target="_blank" rel="noopener">Alle reviews op Google</a>
+      <a class="knop donker" href="https://www.google.com/maps/search/?api=1&amp;query=Winners%20Circle%20Bilderdijkstraat%2020%20Den%20Bosch" target="_blank" rel="noopener">Alle reviews op Google</a>
     </div>
     <div class="review-raster" data-rev data-stagger data-carrousel aria-roledescription="carrousel">
       <article class="review">
@@ -272,8 +343,26 @@
   </div>
 </section>
 
+<section class="sectie faq" id="faq" aria-labelledby="faq-kop">
+  <div class="wrap raster">
+    <div class="sectie-kop" data-rev>
+      <p class="eyebrow">Veelgestelde vragen</p>
+      <h2 id="faq-kop">Voor je eerste keer</h2>
+      <p>Staat je vraag er niet bij? <a href="https://wa.me/31620390657?text=Hoi%20Winners%20Circle%2C%20ik%20heb%20een%20vraag.">Stuur een WhatsApp</a>, je krijgt antwoord van een van de trainers.</p>
+    </div>
+    <div class="vragenlijst" data-rev data-stagger>
+      <div class="vraag"><button type="button" aria-expanded="false" aria-controls="faq-1" data-vouw>Moet ik al kunnen boksen?<svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-pijl"/></svg></button><div id="faq-1" hidden><p>Nee. Beginners en gevorderden trainen hier naast elkaar. De trainers passen de oefeningen aan op jouw niveau en letten op je techniek vanaf de eerste stoot.</p></div></div>
+      <div class="vraag"><button type="button" aria-expanded="false" aria-controls="faq-2" data-vouw>Wat neem ik mee naar mijn eerste training?<svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-pijl"/></svg></button><div id="faq-2" hidden><p>Sportkleding, schone binnenschoenen en water. Over handschoenen en bandages: vraag het bij je proefles, dan kijken we samen wat je nodig hebt.</p></div></div>
+      <div class="vraag"><button type="button" aria-expanded="false" aria-controls="faq-3" data-vouw>Is de proefles echt gratis?<svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-pijl"/></svg></button><div id="faq-3" hidden><p>Ja. Je eerste training is gratis, in de groep of privé. Daarna kies je zelf of en hoe je verder wilt.</p></div></div>
+      <div class="vraag"><button type="button" aria-expanded="false" aria-controls="faq-4" data-vouw>Wat is het verschil tussen privétraining en bokszaktraining?<svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-pijl"/></svg></button><div id="faq-4" hidden><p>Privétraining is besloten: alleen jij en je trainer, met z'n tweeën of met je eigen groepje, op een moment dat jou past, per sessie betaald. Bokszaktraining is een openbare groepsles van maximaal 8 personen op vaste tijden, met een abonnement of strippenkaart.</p></div></div>
+      <div class="vraag"><button type="button" aria-expanded="false" aria-controls="faq-5" data-vouw>Hoe boek ik een groepsles?<svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-pijl"/></svg></button><div id="faq-5" hidden><p>Je logt in op je ledenaccount en reserveert je plek in het rooster. Zo weet je zeker dat je erbij bent, want er zijn maximaal 8 plekken per les.</p></div></div>
+      <div class="vraag"><button type="button" aria-expanded="false" aria-controls="faq-6" data-vouw>Hoe werkt opzeggen?<svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-pijl"/></svg></button><div id="faq-6" hidden><p>Abonnementen lopen per maand. De precieze voorwaarden, zoals de opzegtermijn, krijg je bij het afsluiten en kun je altijd navragen bij de trainers.</p></div></div>
+    </div>
+  </div>
+</section>
+
 <section class="sectie slot" aria-labelledby="slot-kop">
-  <div class="achter" aria-hidden="true"><img src="assets/img/studio-zaal.webp" alt="" width="1600" height="1067" loading="lazy"></div>
+  <div class="achter" aria-hidden="true"><img src="assets/img/ig-06.webp" alt="" width="640" height="1136" loading="lazy"></div>
   <div class="wrap" data-rev>
     <p class="eyebrow">Je eerste stap</p>
     <h2 id="slot-kop">Stap in <span class="verloop-tekst">the circle</span></h2>
@@ -295,25 +384,25 @@
         <p>Boksstudio in Den Bosch. Waar iedereen een winnaar kan zijn.</p>
       </div>
       <div>
-        <h3>Studio</h3>
-        <ul><li>Bilderdijkstraat 20</li><li>5216 JZ 's-Hertogenbosch</li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Bilderdijkstraat%2020%205216JZ%20s-Hertogenbosch" target="_blank" rel="noopener"><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-pin"/></svg>Route plannen</a></li></ul>
+        <h3>Trainen</h3>
+        <ul><li><a href="privetraining.html">Privétraining</a></li><li><a href="bokszaktraining.html">Bokszaktraining</a></li><li><a href="boksen-voor-beginners.html">Boksen voor beginners</a></li><li><a href="proefles.html">Gratis proefles</a></li></ul>
       </div>
       <div>
-        <h3>Contact</h3>
-        <ul><li><a href="tel:+31620390657"><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-tel"/></svg>06 20 39 06 57</a></li><li><a href="mailto:info@winnerscirclegym.nl"><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-mail"/></svg>info@winnerscirclegym.nl</a></li></ul>
+        <h3>Studio</h3>
+        <ul><li>Bilderdijkstraat 20</li><li>5216 JZ 's-Hertogenbosch</li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Bilderdijkstraat%2020%205216JZ%20s-Hertogenbosch" target="_blank" rel="noopener"><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-pin"/></svg>Route plannen</a></li><li><a href="tel:+31620390657"><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-tel"/></svg>06 20 39 06 57</a></li><li><a href="mailto:info@winnerscirclegym.nl"><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-mail"/></svg>info@winnerscirclegym.nl</a></li></ul>
       </div>
       <div>
         <h3>Volg ons</h3>
         <ul><li><a href="https://www.instagram.com/winnerscirclegym/" target="_blank" rel="noopener"><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-insta"/></svg>Instagram</a></li><li><a href="https://www.tiktok.com/@winnerscirclegym" target="_blank" rel="noopener"><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-tiktok"/></svg>TikTok</a></li><li><a href="https://winnerscircle.virtuagym.com/" target="_blank" rel="noopener" data-app-ingang><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-kalender"/></svg>Inloggen voor leden</a></li></ul>
       </div>
     </div>
-    <div class="klein"><span>© 2026 Winners Circle</span><a href="proefles.html">Gratis proefles plannen</a></div>
+    <div class="klein"><span>© 2026 Winners Circle · <a href="privacy.html">Privacy</a></span><a href="proefles.html">Gratis proefles plannen</a></div>
   </div>
 </footer>
 
 <nav class="actiebalk" data-mobielcta aria-label="Snelle acties">
   <a href="https://wa.me/31620390657?text=Hoi%20Winners%20Circle%2C%20ik%20heb%20een%20vraag."><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-wa"/></svg>WhatsApp</a>
-  <a class="hoofd" href="proefles.html"><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-gratis"/></svg>Gratis proefles</a>
+  <a class="hoofd" href="proefles.html" data-cta-knop><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-gratis"/></svg><span>Gratis proefles</span></a>
 </nav>
 
 <script src="js/motion.js" defer></script>
