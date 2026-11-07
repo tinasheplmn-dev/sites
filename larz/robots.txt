@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /_bouw/
+
+Sitemap: https://larz.nl/sitemap.xml
