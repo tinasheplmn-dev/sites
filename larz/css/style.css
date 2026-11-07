@@ -102,7 +102,7 @@ em { font-style: normal; color: var(--merk); }
 .licht .eyebrow { color: #4f6a0b; }
 
 .wrap { width: var(--wrap); margin-inline: auto; }
-.sectie { padding-block: var(--sectie); position: relative; }
+.sectie { padding-block: var(--sectie); position: relative; overflow-x: clip; }
 .sectie.toon-2 { background: var(--inkt-2); }
 .sectie.licht { background: var(--papier); color: var(--inkt); }
 .sectie-kop { display: flex; flex-direction: column; gap: .9rem; margin-bottom: clamp(1.6rem, 3.5vw, 2.8rem); }
@@ -165,6 +165,7 @@ html.js .eq.leeft i:nth-child(1) { animation-delay: -.2s } html.js .eq.leeft i:n
   background: rgba(200, 245, 60, .14); color: var(--merk);
 }
 .lijst .bol .eq { height: 13px; }
+.lijst .bol .ic { width: 17px; height: 17px; stroke-width: 2.1; }
 .licht .lijst .bol { background: rgba(11, 11, 16, .08); color: var(--inkt); }
 .lijst.groot li { font-size: 1.08rem; }
 
@@ -596,8 +597,8 @@ html.js .slot-eq.leeft i { animation: hero-eq var(--t, 1.4s) ease-in-out var(--f
 @media (max-width: 520px) { .voet-in { grid-template-columns: 1fr; } }
 
 /* ---- mobiele actiebalk ---- */
-.actiebalk { position: fixed; left: 0; right: 0; bottom: 0; z-index: 180; display: none; grid-template-columns: 1fr 1fr 1fr; gap: 6px; padding: 8px 8px calc(8px + env(safe-area-inset-bottom)); background: rgba(11, 11, 16, .92); border-top: 1px solid var(--lijn-op-donker); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); transform: translateY(110%); transition: transform .35s var(--vlot); }
-.actiebalk.zichtbaar { transform: none; }
+.actiebalk { position: fixed; left: 0; right: 0; bottom: 0; z-index: 180; display: none; grid-template-columns: 1fr 1fr 1fr; gap: 6px; padding: 8px 8px calc(8px + env(safe-area-inset-bottom)); background: #0d0d13; border-top: 1px solid var(--lijn-op-donker); opacity: 0; visibility: hidden; transition: opacity .3s ease, visibility 0s .3s; }
+.actiebalk.zichtbaar { opacity: 1; visibility: visible; transition: opacity .3s ease; }
 .actiebalk a { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; min-height: 56px; border-radius: 3px; font-size: .8rem; font-weight: 700; letter-spacing: .02em; background: var(--inkt-3); color: var(--papier); }
 .actiebalk a .ic { width: 20px; height: 20px; }
 .actiebalk a.hoofd { background: var(--merk); color: var(--inkt); }

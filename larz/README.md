@@ -62,6 +62,8 @@ Statische host (Vercel, Netlify, Cloudflare Pages). `vercel.json` zet nette URL'
 - Variatie: Big Shoulders Display stond al in 6 van 216 sites (geen daarvan een fitnesspresenter), magenta lijkt op 6 eerdere accenten maar is hier alleen een lichtrand, de hoekradius 4 px is naar 2 px gegaan.
 - Contrastmeting op alle 6 pagina's, 1440 en 390 breed, met `?foto=1`: twee echte fouten gevonden en hersteld. De slotband (licht) had witte knoptekst op wit omdat de `licht`-klasse ontbrak, en de voorbije agendarijen zaten op `opacity: .75` waardoor de maandlabels op 5,9:1 kwamen. Nu 0 meldingen, op het decoratieve omlijnde nummer bij de podia na (transparante vulling met lime contour, `aria-hidden`).
 - Ontwerpmeting: topbalktekst van 14 naar 16 px, tikdoelen in topbalk, footer en agenda naar 44 px, mobiele hero compacter gemaakt zodat kop, drie bullets en beide knoppen in het eerste scherm van een telefoon staan (gemeten op 375 bij 812). De "onzichtbare inhoud"-melding gaat over het dichtgeklapte mobiele menu, niet over reveals.
+- Mobiele actiebalk: op iOS Safari stond hij tijdens scrollen midden in beeld. Oorzaak: `backdrop-filter` plus een `transform`-overgang op een `position: fixed`-element, een bekende WebKit-fout. Nu een dekkende achtergrond en een opacity-overgang; niet op een echt iPhone getest (geen Xcode op deze machine), wel op 375 breed in de browser.
+- Bullets: elk opsommingsteken heeft een eigen icoon dat bij de regel past (publiek, bliksem, koptelefoon, microfoon, wereldbol, klok, speld, ster, halter, ticket), in de lime cirkel.
 - DOM van 1072 naar circa 800 elementen door statische equalizers als CSS-achtergrond te tekenen in plaats van vijf losse elementen.
 
 ## Open punten (voor Larz te bevestigen of aan te leveren)
