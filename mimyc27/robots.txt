@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Disallow: /beheer
+Disallow: /api/
+Disallow: /guardian.html
+Disallow: /registered.html
+Disallow: /404.html
+Disallow: /nl/guardian.html
+Disallow: /nl/registered.html
+Disallow: /nl/404.html
+
+Sitemap: https://www.mimyc27.nl/sitemap.xml
