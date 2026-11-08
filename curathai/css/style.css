@@ -597,3 +597,32 @@ footer .socials a { width: 46px; height: 46px; border-radius: 50%; justify-conte
 .fotokaart .lijst-bloem { gap: .55rem; }
 .fotokaart .lijst-bloem li { font-size: .98rem; }
 @media (max-width: 1020px) and (min-width: 861px) { .kaarten.vier { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* ---------- stemmen uit Málaga: citaten van deelnemers met een afspeelknop ---------- */
+.stemmen { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; align-items: start; }
+.stem { grid-template-rows: auto 1fr auto; }
+.stem .dag { display: inline-flex; align-items: center; gap: .45rem; font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--goud-tekst); }
+.stem .dag svg { width: 15px; height: 15px; color: var(--goud); }
+.stem blockquote p { font-family: var(--display); font-size: 1.22rem; line-height: 1.4; color: var(--inkt); }
+.stem .wie { justify-content: space-between; }
+.stem .speel { display: inline-flex; align-items: center; gap: .55rem; min-height: 44px; padding: .45rem 1rem .45rem .5rem; border-radius: 999px; border: 1.5px solid rgba(18, 51, 47, .22); background: var(--wit); font-weight: 700; font-size: .92rem; color: var(--inkt); transition: border-color .2s ease, background .2s ease; }
+.stem .speel:hover { border-color: var(--merk); }
+.stem .speel .rond { position: relative; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--merk); color: #fff; flex: none; overflow: hidden; }
+.stem .speel .rond svg { width: 14px; height: 14px; position: relative; }
+.stem .speel .rond::after { content: ""; position: absolute; inset: 0; background: var(--tweede); transform: scaleX(var(--voortgang, 0)); transform-origin: left; opacity: .85; }
+.stem .speel .pauze { display: none; }
+.stem .speel[aria-pressed="true"] .pauze { display: block; }
+.stem .speel[aria-pressed="true"] .start { display: none; }
+.stem .speel[aria-pressed="true"] { border-color: var(--merk); background: rgba(20, 84, 78, .06); }
+html.js .stem audio { display: none; }
+.stem audio { width: 100%; margin-top: .4rem; }
+.stem.uitgelicht blockquote p { color: #f3f7f5; }
+.stem.uitgelicht .dag { color: var(--bloem); }
+.stem.uitgelicht .dag svg { color: var(--bloem); }
+.stem.uitgelicht .speel { color: #fffdf8; border-color: rgba(245, 231, 174, .45); background: rgba(255, 253, 248, .06); }
+.stem.uitgelicht .speel .rond { background: var(--bloem); color: var(--inkt); }
+@media (max-width: 640px) { .stemmen { grid-template-columns: minmax(0, 1fr); } }
+
+.avatar svg { width: 22px; height: 22px; color: var(--merk); }
+.stem.met-speler audio { display: none; }
+@media (min-width: 1000px) { .stemmen { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
