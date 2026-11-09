@@ -1,9 +1,9 @@
 /* Service worker van de Cura Thai app.
    Shell in de cache, navigaties network-first, API nooit cachen.
    Eigen code (css, js, manifest) network-first zodat een update meteen aankomt; fonts en beeld stale-while-revalidate. */
-const VERSIE = 'curathai-app-v3';
+const VERSIE = 'curathai-app-v4';
 const SHELL = [
-  './', './index.html', './app.css?v=3', './app.js?v=3', './manifest.webmanifest',
+  './', './index.html', './app.css?v=4', './app.js?v=4', './manifest.webmanifest',
   '../assets/iconen.svg', '../assets/img/logo-embleem.webp', '../favicon.svg',
   '../assets/fonts/gloock-regular.woff2', '../assets/fonts/figtree-regular.woff2', '../assets/fonts/figtree-500.woff2', '../assets/fonts/figtree-600.woff2', '../assets/fonts/figtree-700.woff2',
   './icons/icon-192.png', './icons/icon-512.png', './icons/maskable-512.png', './icons/apple-touch-icon.png',
@@ -19,13 +19,16 @@ self.addEventListener('fetch', (e) => {
   const url = new URL(e.request.url);
   if (e.request.method !== 'GET' || url.origin !== location.origin) return;
   if (url.pathname.startsWith('/api/')) return;
+  /* alleen de app zelf, fonts en iconen; foto's en de rest van de site laat de browser gewoon zelf ophalen */
+  const binnenScope = url.pathname.includes('/app/') || /\/assets\/(fonts|iconen\.svg|img\/logo-embleem)/.test(url.pathname) || url.pathname.endsWith('/favicon.svg');
+  if (!binnenScope && e.request.mode !== 'navigate') return;
   if (e.request.mode === 'navigate') {
     e.respondWith(fetch(e.request).then((r) => { const kopie = r.clone(); caches.open(VERSIE).then((c) => c.put('./index.html', kopie)); return r; }).catch(() => caches.match('./index.html')));
     return;
   }
   const eigen = /\.(css|js|webmanifest)$/.test(url.pathname);
   e.respondWith(caches.match(e.request).then((cached) => {
-    const vers = fetch(e.request).then((r) => { if (r.ok) caches.open(VERSIE).then((c) => c.put(e.request, r.clone())); return r; }).catch(() => cached);
+    const vers = fetch(e.request).then((r) => { if (r.ok) caches.open(VERSIE).then((c) => c.put(e.request, r.clone())); return r; }).catch(() => cached || Response.error());
     return eigen ? vers : (cached || vers);
   }));
 });
