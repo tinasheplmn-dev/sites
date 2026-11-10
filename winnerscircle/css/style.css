@@ -234,6 +234,10 @@ html.js:not(.klaar) .manifest blockquote span:not(.aan) { color: rgba(244, 241, 
 /* reviews */
 .reviews .kopregel, .ig .kopregel { display: flex; justify-content: space-between; align-items: end; gap: 1.5rem; flex-wrap: wrap; margin-bottom: clamp(2rem, 4vw, 3rem); }
 .reviews .kopregel .sectie-kop, .ig .kopregel .sectie-kop { margin-bottom: 0; }
+.reviews .score { display: flex; align-items: center; gap: .6rem; margin-top: .9rem; color: var(--dim); font-size: .95rem; max-width: none; }
+.reviews .score .sterren { display: inline-flex; gap: .15rem; color: var(--oranje); }
+.reviews .score .icoon { width: 16px; height: 16px; }
+.reviews .score strong { color: var(--inkt); font-weight: 700; }
 .review-raster { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.2rem; }
 .review { background: var(--inkt-2); border: 1px solid var(--lijn); border-radius: var(--radius); padding: 1.5rem; display: flex; flex-direction: column; gap: .9rem; }
 .review .wie { display: flex; align-items: center; gap: .8rem; }
