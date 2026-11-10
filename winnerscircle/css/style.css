@@ -124,7 +124,10 @@ h3 { font-size: var(--fs-h3); line-height: 1.2; }
 .hero .gloed { position: absolute; width: 60vw; height: 60vw; left: -20vw; bottom: -40vw; border-radius: 50%; background: radial-gradient(circle, rgba(160, 32, 240, .35), rgba(160, 32, 240, 0) 65%); pointer-events: none; }
 .hero .wrap { position: relative; z-index: 2; padding-block: clamp(3rem, 7vw, 6rem); }
 .hero h1 { font-size: var(--fs-hero); line-height: 1; margin-bottom: 1.2rem; }
-.hero .intro { color: var(--dim-op-donker); font-size: 1.1rem; max-width: 46ch; margin-bottom: 1.8rem; }
+.voordelen { display: grid; gap: .7rem; margin-bottom: 2rem; }
+.voordelen li { display: flex; align-items: center; gap: .85rem; font-size: 1.05rem; font-weight: 500; white-space: nowrap; }
+.voordelen .ring { width: 40px; height: 40px; }
+.voordelen .ring .icoon { width: 20px; height: 20px; }
 .hero h1 .regel { display: block; }
 .ring { flex: none; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--oranje) linear-gradient(135deg, var(--cta-van), var(--roze) 70%, var(--paars)); color: var(--inkt); box-shadow: 0 0 0 4px rgba(255, 46, 136, .14), 0 6px 18px rgba(255, 46, 136, .3); }
 .ring .icoon { width: 22px; height: 22px; }
@@ -183,7 +186,7 @@ html.js:not(.klaar) .manifest blockquote span:not(.aan) { color: rgba(244, 241, 
 .rooster .eyebrow { color: #a3105a; }
 .rooster .eyebrow::before { background: linear-gradient(var(--papier), var(--papier)) padding-box, var(--verloop) border-box; }
 .rooster .sectie-kop p { color: var(--dim); }
-.rooster .tarieven { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; margin-top: 1.2rem; }
+.rooster .tarieven { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; margin-top: clamp(2.2rem, 4vw, 3.2rem); }
 .tarief { position: relative; border-radius: var(--radius); padding: 1.5rem 1.4rem; background: #fff; border: 1px solid rgba(18, 15, 28, .1); display: flex; flex-direction: column; gap: .5rem; transition: transform .25s var(--vlot); }
 .tarief:hover { transform: translateY(-4px); }
 .tarief.uitgelicht { background: linear-gradient(#fff, #fff) padding-box, var(--verloop) border-box; border: 2px solid transparent; box-shadow: 0 24px 50px rgba(160, 32, 240, .14); }
@@ -317,7 +320,10 @@ footer .klein { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var
   .hero .film { position: relative; aspect-ratio: 16 / 9; }
   .hero .film::after { background: linear-gradient(0deg, var(--inkt) 0%, rgba(8,7,13,0) 45%); }
   .hero .wrap { padding-block: 0 2.5rem; margin-top: -2rem; }
-  .hero .intro { font-size: 1.02rem; margin-bottom: 1.3rem; }
+  .voordelen { gap: .45rem; margin-bottom: 1.3rem; }
+  .voordelen li { font-size: .95rem; }
+  .voordelen .ring { width: 30px; height: 30px; box-shadow: none; }
+  .voordelen .ring .icoon { width: 16px; height: 16px; }
   .trainen .raster, .team .raster, .keuze { grid-template-columns: 1fr; }
   .spoor .kop-beeld { aspect-ratio: 16 / 7; }
   .spoor .inhoud { gap: .9rem; }
@@ -396,11 +402,11 @@ html.js .hero .ringlijn { position: absolute; left: 50%; top: 50%; width: min(70
 /* weekrooster als tijdlijn */
 .week { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: .6rem; position: relative; padding-top: .5rem; }
 .week::before { content: ""; position: absolute; left: 0; right: 0; top: 2.9rem; height: 2px; background: rgba(18, 15, 28, .1); }
-.kolom { position: relative; display: flex; flex-direction: column; align-items: center; gap: .9rem; min-height: 180px; }
+.kolom { position: relative; display: flex; flex-direction: column; align-items: center; gap: .9rem; min-height: 150px; }
 .kolom .dagnaam { font-family: var(--display); font-weight: 700; text-transform: uppercase; font-size: .95rem; letter-spacing: .05em; color: var(--dim); }
 .kolom::after { content: ""; width: 12px; height: 12px; border-radius: 50%; background: #fff; border: 2px solid rgba(18, 15, 28, .2); position: absolute; top: 2.4rem; }
 .kolom:has(.les)::after { background: var(--verloop); border-color: transparent; width: 16px; height: 16px; top: 2.3rem; box-shadow: 0 0 0 5px rgba(255, 46, 136, .15); }
-.kolom .leeg { margin-top: 1.4rem; font-size: .85rem; color: var(--dim); }
+.kolom .leeg { display: none; }
 .kolom .les { margin-top: 1.2rem; width: 100%; border-radius: 14px; background: #fff; border: 1px solid rgba(18, 15, 28, .1); padding: 1rem .8rem; display: flex; flex-direction: column; align-items: center; text-align: center; gap: .2rem; transition: transform .25s var(--vlot), box-shadow .25s var(--vlot); }
 .kolom .les:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(18, 15, 28, .1); }
 .kolom .tijd { font-family: var(--display); font-weight: 900; font-size: 1.5rem; letter-spacing: -.03em; }
@@ -465,9 +471,10 @@ html.js .hero .ringlijn { position: absolute; left: 50%; top: 50%; width: min(70
   .week::-webkit-scrollbar { display: none; }
   .week::before { display: none; }
   .kolom { flex: 0 0 31%; scroll-snap-align: start; min-height: 0; }
+  .kolom:not(:has(.les)) { display: none; }
+  .kolom:has(.les) { flex: 0 0 44%; }
   .kolom::after { display: none; }
-  .kolom .leeg, .kolom .les { margin-top: 0; }
-  .kolom .leeg { padding: 1rem 0; }
+  .kolom .les { margin-top: 0; }
   .kolom.vandaag .dagnaam::after { content: ""; }
   .kolom.vandaag .dagnaam::before { content: "● "; }
   .schuif { margin-top: 1rem; }

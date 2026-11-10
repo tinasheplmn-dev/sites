@@ -126,7 +126,12 @@
   <div class="wrap">
     <p class="eyebrow" data-hero-item>Boksstudio in Den Bosch</p>
     <h1 data-hero-item><span class="regel">Word <span class="verloop-tekst">beter</span> in boksen.</span> <span class="regel sub">Niet alleen fitter.</span></h1>
-    <p class="intro" data-hero-item>Privé met je eigen trainer, of in een bokszaktraining met hooguit acht mensen. Je eerste training is gratis.</p>
+    <ul class="voordelen" data-hero-item>
+      <li><span class="ring"><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-doel"/></svg></span>Feedback op je techniek, elke ronde</li>
+      <li><span class="ring"><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-groep"/></svg></span>Nooit meer dan 8 in een les</li>
+      <li><span class="ring"><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-beker"/></svg></span>Beginner tot wedstrijdbokser</li>
+      <li><span class="ring"><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-gratis"/></svg></span>Je eerste training is gratis</li>
+    </ul>
     <div class="knoppen" data-hero-item>
       <a class="knop groot" href="proefles.html">Plan je gratis proefles <svg class="icoon icoon-pijl" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-pijl"/></svg></a>
       <a class="knop groot rand" href="#trainen">Zo kun je trainen</a>
@@ -137,15 +142,6 @@
     </div>
   </div>
 </section>
-
-<div class="strook" aria-label="Waarom Winners Circle">
-  <ul class="wrap" data-rev data-stagger>
-    <li><span class="ring"><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-doel"/></svg></span>Feedback op je techniek, elke ronde</li>
-    <li><span class="ring"><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-groep"/></svg></span>Nooit meer dan 8 in een les</li>
-    <li><span class="ring"><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-beker"/></svg></span>Beginner tot wedstrijdbokser</li>
-    <li><span class="ring"><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-gratis"/></svg></span>Eerste training gratis</li>
-  </ul>
-</div>
 
 <section class="sectie trainen" id="trainen" aria-labelledby="trainen-kop" data-cta="Gratis proefles" data-cta-href="proefles.html">
   <div class="wrap">
@@ -192,35 +188,6 @@
       </article>
     </div>
 
-    <div class="keuzehulp" data-keuzehulp data-rev>
-      <button class="keuzehulp-knop" type="button" data-vouw aria-expanded="false" aria-controls="keuzehulp-inhoud" data-alleen-mobiel>Twijfel je? Drie vragen, één advies<svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-pijl"/></svg></button>
-      <div class="keuzehulp-inhoud" id="keuzehulp-inhoud">
-      <div class="vragen">
-        <p class="eyebrow">Twijfel je? Drie vragen</p>
-        <fieldset><legend>Wat wil je vooral?</legend>
-          <label class="pil"><input type="radio" name="kh-doel" value="techniek" checked><span>Beter leren boksen</span></label>
-          <label class="pil"><input type="radio" name="kh-doel" value="fit"><span>Fitter worden</span></label>
-          <label class="pil"><input type="radio" name="kh-doel" value="stok"><span>Een stok achter de deur</span></label>
-        </fieldset>
-        <fieldset><legend>Alleen of samen?</legend>
-          <label class="pil"><input type="radio" name="kh-wie" value="alleen" checked><span>Alleen</span></label>
-          <label class="pil"><input type="radio" name="kh-wie" value="duo"><span>Met een vriend of partner</span></label>
-          <label class="pil"><input type="radio" name="kh-wie" value="groep"><span>In een groep</span></label>
-        </fieldset>
-        <fieldset><legend>Hoe vaak per week?</legend>
-          <label class="pil"><input type="radio" name="kh-vaak" value="1" checked><span>1 keer</span></label>
-          <label class="pil"><input type="radio" name="kh-vaak" value="2"><span>2 keer</span></label>
-          <label class="pil"><input type="radio" name="kh-vaak" value="3"><span>3 keer of vaker</span></label>
-        </fieldset>
-      </div>
-      <div class="advies" aria-live="polite">
-        <p class="eyebrow">Ons advies</p>
-        <h3 data-kh-kop>Personal training</h3>
-        <p data-kh-tekst>Eén op één leer je het snelst: elke stoot wordt gezien en bijgestuurd.</p>
-        <a class="knop" data-kh-knop href="proefles.html#prive">Vraag een privétraining aan <svg class="icoon icoon-pijl" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-pijl"/></svg></a>
-      </div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -237,36 +204,27 @@
     <div class="sectie-kop" data-rev>
       <p class="eyebrow">Bokszaktraining</p>
       <h2 id="rooster-kop">Rooster en tarieven</h2>
-      <p>Drie vaste momenten per week. Je reserveert je plek vooraf, zodat je zeker weet dat je erbij bent.</p>
+      <p>Drie vaste momenten per week, maximaal 8 per les. Privétrainingen plannen we buiten het rooster om.</p>
     </div>
     <div class="week" data-rev data-week aria-label="Weekrooster">
-      <div class="kolom" data-dag="1"><span class="dagnaam">Ma</span><span class="leeg">rust</span></div>
+      <div class="kolom" data-dag="1"><span class="dagnaam">Ma</span><span class="leeg" aria-hidden="true"></span></div>
       <div class="kolom" data-dag="2"><span class="dagnaam">Di</span><div class="les"><span class="tijd">19:45</span><span class="naam"><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-zak"/></svg>Bokszak</span><span class="tot">tot 20:30</span></div></div>
-      <div class="kolom" data-dag="3"><span class="dagnaam">Wo</span><span class="leeg">rust</span></div>
+      <div class="kolom" data-dag="3"><span class="dagnaam">Wo</span><span class="leeg" aria-hidden="true"></span></div>
       <div class="kolom" data-dag="4"><span class="dagnaam">Do</span><div class="les"><span class="tijd">20:00</span><span class="naam"><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-bliksem"/></svg>HIIT</span><span class="tot">tot 20:45</span></div></div>
-      <div class="kolom" data-dag="5"><span class="dagnaam">Vr</span><span class="leeg">rust</span></div>
+      <div class="kolom" data-dag="5"><span class="dagnaam">Vr</span><span class="leeg" aria-hidden="true"></span></div>
       <div class="kolom" data-dag="6"><span class="dagnaam">Za</span><div class="les"><span class="tijd">10:45</span><span class="naam"><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-zak"/></svg>Bokszak</span><span class="tot">tot 11:30</span></div></div>
-      <div class="kolom" data-dag="0"><span class="dagnaam">Zo</span><span class="leeg">rust</span></div>
+      <div class="kolom" data-dag="0"><span class="dagnaam">Zo</span><span class="leeg" aria-hidden="true"></span></div>
     </div>
-    <p class="weeknoot" data-rev>Privétrainingen plannen we buiten het rooster om, ook overdag en op andere dagen.</p>
 
-    <div class="schuif" data-rev data-tariefschuif>
-      <span class="vraag">Hoe vaak train je?</span>
-      <div class="pillen" role="radiogroup" aria-label="Hoe vaak train je">
-        <label class="pil"><input type="radio" name="vaak" value="soms"><span>Af en toe</span></label>
-        <label class="pil"><input type="radio" name="vaak" value="1-2" checked><span>1 à 2 keer per week</span></label>
-        <label class="pil"><input type="radio" name="vaak" value="3"><span>3 keer of vaker</span></label>
-      </div>
-    </div>
     <div class="tarieven" data-rev data-stagger aria-roledescription="carrousel">
-      <article class="tarief" data-plan="1-2"><h3>8x per maand</h3><p class="bedrag">€ 39 <small>per maand</small></p><p>8 lessen per maand, bokszak en HIIT</p></article>
-      <article class="tarief" data-plan="3"><span class="badge">Meest vrijheid</span><h3>Unlimited</h3><p class="bedrag">€ 54 <small>per maand</small></p><p>Onbeperkt groepslessen</p></article>
-      <article class="tarief" data-plan="3"><h3>Unlimited 6 maanden</h3><p class="bedrag">€ 49 <small>per maand</small></p><p>Onbeperkt, voordeliger bij 6 maanden</p></article>
-      <article class="tarief" data-plan="soms"><h3>Strippenkaart</h3><p class="bedrag">€ 84 <small>10 credits</small></p><p>Geen abonnement, kom wanneer het uitkomt</p></article>
+      <article class="tarief"><h3>8x per maand</h3><p class="bedrag">€ 39 <small>per maand</small></p><p>8 lessen per maand, bokszak en HIIT</p></article>
+      <article class="tarief"><span class="badge">Meest vrijheid</span><h3>Unlimited</h3><p class="bedrag">€ 54 <small>per maand</small></p><p>Onbeperkt groepslessen</p></article>
+      <article class="tarief"><h3>Unlimited 6 maanden</h3><p class="bedrag">€ 49 <small>per maand</small></p><p>Onbeperkt, voordeliger bij 6 maanden</p></article>
+      <article class="tarief"><h3>Strippenkaart</h3><p class="bedrag">€ 84 <small>10 credits</small></p><p>Geen abonnement, kom wanneer het uitkomt</p></article>
     </div>
     <div class="onder" data-rev>
       <a class="knop donker" href="https://winnerscircle.virtuagym.com/" target="_blank" rel="noopener" data-app-ingang><svg class="icoon" aria-hidden="true"><use href="assets/iconen.svg?v=3#i-kalender"/></svg>Reserveer je plek</a>
-      <p>Al lid? Log in en kies je les. Nieuw? Je eerste les is gratis, <a href="proefles.html">plan hem hier</a>.</p>
+      <p>Al lid? Log in en kies je les. Nieuw? <a href="proefles.html">Je eerste les is gratis</a>.</p>
     </div>
   </div>
 </section>
