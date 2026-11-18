@@ -220,22 +220,8 @@ strong { font-weight: 600; }
 .chip .stip { width: 10px; height: 10px; border-radius: 50%; background: var(--groen); box-shadow: 0 0 0 3px rgba(20, 97, 46, .18); }
 .chip.dicht .stip { background: var(--merk); box-shadow: 0 0 0 3px rgba(200, 16, 46, .18); }
 
-/* het zwevende showroomkaartje rechts in de hero */
-.showroom { position: relative; aspect-ratio: 1 / .92; }
-.showroom .hoofdkaart { position: absolute; left: 0; top: 9%; width: 92%; border-radius: var(--radius-groot); overflow: hidden; background: var(--wit); box-shadow: var(--schaduw-3); }
-.showroom .hoofdkaart img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
-.showroom .hoofdkaart .info { padding: 1rem 1.2rem 1.2rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
-.showroom .hoofdkaart .naam { font-family: var(--display); font-weight: 700; font-size: 1.35rem; line-height: 1.05; }
-.showroom .hoofdkaart .sub { color: var(--dim); font-size: .95rem; }
-.showroom .prijs { position: absolute; right: 0; top: 2%; background: var(--merk-diep); color: #fff; padding: .9rem 1.2rem; border-radius: var(--radius-groot); box-shadow: var(--schaduw-3); font-family: var(--display); }
-.showroom .prijs .l { display: block; font-family: var(--body); font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; opacity: .9; font-weight: 600; }
-.showroom .prijs .b { font-size: 2rem; font-weight: 800; line-height: 1; }
-.showroom .plaatbadge { position: absolute; right: 4%; bottom: 19%; transform: rotate(-4deg); box-shadow: var(--schaduw-3); }
-.showroom .keur { position: absolute; left: 3%; bottom: 19%; background: var(--wit); border-radius: 999px; padding: .6rem 1rem .6rem .7rem; display: inline-flex; align-items: center; gap: .6rem; font-weight: 600; box-shadow: var(--schaduw-2); }
-.showroom .keur .bol { width: 30px; height: 30px; border-radius: 50%; background: var(--groen); color: #fff; display: grid; place-items: center; }
-.showroom .keur .bol .icoon { width: 16px; height: 16px; }
-@media (max-width: 1020px) { .hero .wrap { grid-template-columns: minmax(0, 1fr); } .hero .wrap > * { min-width: 0; } .showroom { max-width: 560px; margin-inline: auto; width: 100%; } }
-@media (max-width: 640px) { .showroom { aspect-ratio: 1 / 1.05; } .showroom .hoofdkaart { width: 96%; top: 10%; } .showroom .plaatbadge { bottom: 23%; right: 2%; } .showroom .prijs { padding: .7rem .9rem; } .showroom .prijs .b { font-size: 1.5rem; } .showroom .keur { display: none; } }
+/* hero-showcase: zie onderaan */
+@media (max-width: 1020px) { .hero .wrap { grid-template-columns: minmax(0, 1fr); } .hero .wrap > * { min-width: 0; } .showcase { max-width: 620px; margin-inline: auto; width: 100%; } }
 
 /* ---- voorraadband (loper) ---- */
 .band { padding-block: 1.5rem 0; }
@@ -662,3 +648,41 @@ html.js .wegmarkering { animation: markering 2.4s linear infinite; }
 /* sterren altijd op één regel, in elke context */
 .sterren { display: inline-flex; gap: 2px; align-items: center; color: var(--plaat); }
 .quote-blok figcaption .sterren { margin-top: .2rem; }
+
+
+/* ==========================================================================
+   HERO-SHOWCASE: één rustige kaart die door uitgelichte occasions wisselt
+   ========================================================================== */
+.showcase { --sc-duur: 5.5s; position: relative; display: grid; gap: 1rem; }
+.sc-dias { display: grid; border-radius: 20px; overflow: hidden; background: var(--wit); box-shadow: 0 30px 60px -30px rgba(21, 23, 27, .45), 0 0 0 1px var(--lijn); }
+.sc-dia { grid-area: 1 / 1; display: grid; grid-template-rows: auto auto; opacity: 0; visibility: hidden; transition: opacity .8s ease, visibility 0s .8s; }
+.sc-dia.aan { opacity: 1; visibility: visible; transition: opacity .8s ease; z-index: 1; }
+.sc-beeld { display: block; overflow: hidden; aspect-ratio: 4 / 3; background: var(--papier-2); }
+.sc-beeld img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.06); transition: transform 7s cubic-bezier(.2, .6, .2, 1); }
+.sc-dia.aan .sc-beeld img { transform: scale(1); }
+.sc-info { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.1rem 1.4rem 1.2rem; border-top: 3px solid var(--merk); }
+.sc-tekst { display: grid; gap: .15rem; min-width: 0; }
+.sc-naam { font-family: var(--display); font-weight: 800; font-size: clamp(1.4rem, 2vw, 1.75rem); line-height: 1.05; color: var(--inkt); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.sc-sub { color: var(--dim); font-size: .98rem; }
+.sc-prijs { flex: none; display: grid; justify-items: end; font-family: var(--display); font-weight: 800; font-size: clamp(1.6rem, 2.4vw, 2rem); line-height: 1; color: var(--merk); }
+.sc-prijs small { font-family: var(--body); font-size: .72rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--dim); margin-bottom: .3rem; }
+.sc-dia:hover .sc-naam { color: var(--merk-diep); }
+.sc-nav { display: flex; align-items: center; gap: .8rem; }
+.sc-stippen { flex: 1; display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: .4rem; }
+.sc-stip { position: relative; min-height: 32px; display: flex; align-items: center; }
+.sc-stip span { display: block; width: 100%; height: 4px; border-radius: 4px; background: rgba(21, 23, 27, .14); overflow: hidden; position: relative; }
+.sc-stip span::after { content: ""; position: absolute; inset: 0; background: var(--merk); transform: scaleX(0); transform-origin: 0 50%; }
+.sc-stip.gezien span::after { transform: scaleX(1); }
+.sc-stip.aan span::after { transform: scaleX(1); }
+html.js .showcase:not(.stil) .sc-stip.aan span::after { animation: sc-vul var(--sc-duur) linear both; }
+.showcase.gepauzeerd .sc-stip.aan span::after, .showcase.vast .sc-stip.aan span::after { animation-play-state: paused; }
+@keyframes sc-vul { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+.sc-stip:hover span { background: rgba(21, 23, 27, .28); }
+.sc-pauze { flex: none; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; border: 1.5px solid var(--lijn); color: var(--inkt); background: var(--wit); transition: border-color var(--duur) ease, background var(--duur) ease; }
+.sc-pauze:hover { border-color: var(--inkt); }
+.sc-pauze .icoon { width: 16px; height: 16px; }
+.sc-pauze .speel, .sc-pauze[aria-pressed="true"] .pauze { display: none; }
+.sc-pauze[aria-pressed="true"] .speel { display: block; }
+html:not(.js) .sc-nav { display: none; }
+@media (max-width: 640px) { .sc-info { padding: .9rem 1rem 1rem; } .sc-sub { font-size: .9rem; } .sc-stip { min-height: 44px; } .sc-pauze { width: 44px; height: 44px; } }
+@media (prefers-reduced-motion: reduce) { .sc-beeld img { transform: none !important; transition: none !important; } .sc-dia { transition: opacity .3s ease, visibility 0s .3s; } }

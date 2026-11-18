@@ -39,6 +39,65 @@
   var vandaag = document.querySelector('[data-tijden] [data-dag="' + new Date().getDay() + '"]');
   if (vandaag) vandaag.classList.add('vandaag');
 
+  /* ---------- hero-showcase: wisselt door de uitgelichte auto's ----------
+     Fail-open: zonder JavaScript staat de eerste auto er gewoon. Pauzeert bij
+     hover, focus, een verborgen tabblad en via de pauzeknop. */
+  var sc = document.querySelector('[data-showcase]');
+  if (sc) {
+    var dias = [].slice.call(sc.querySelectorAll('.sc-dia'));
+    var stippen = [].slice.call(sc.querySelectorAll('[data-sc-stip]'));
+    var pauzeKnop = sc.querySelector('[data-sc-pauze]');
+    var nu = 0, klok = null, duur = 5500;
+    var kalmte = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function toon(n) {
+      nu = (n + dias.length) % dias.length;
+      dias.forEach(function (d, i) {
+        var aan = i === nu;
+        d.classList.toggle('aan', aan);
+        if (aan) { d.removeAttribute('aria-hidden'); d.removeAttribute('tabindex'); }
+        else { d.setAttribute('aria-hidden', 'true'); d.setAttribute('tabindex', '-1'); }
+      });
+      stippen.forEach(function (s, i) {
+        s.classList.toggle('aan', i === nu);
+        s.classList.toggle('gezien', i < nu);
+        s.setAttribute('aria-selected', String(i === nu));
+        var balk = s.querySelector('span');
+        if (balk) { balk.style.animation = 'none'; void balk.offsetWidth; balk.style.animation = ''; }
+      });
+      var volgende = dias[(nu + 1) % dias.length].querySelector('img');
+      if (volgende) volgende.loading = 'eager';
+    }
+    function stop() { clearInterval(klok); klok = null; }
+    function start() {
+      stop();
+      if (sc.classList.contains('vast') || sc.classList.contains('gepauzeerd') || document.hidden) return;
+      klok = setInterval(function () { toon(nu + 1); }, duur);
+    }
+    stippen.forEach(function (s, i) { s.addEventListener('click', function () { toon(i); start(); }); });
+    if (pauzeKnop) pauzeKnop.addEventListener('click', function () {
+      var vast = !sc.classList.contains('vast');
+      sc.classList.toggle('vast', vast);
+      pauzeKnop.setAttribute('aria-pressed', String(vast));
+      pauzeKnop.setAttribute('aria-label', vast ? "Laat de auto's weer wisselen" : "Pauzeer de wisselende auto's");
+      if (vast) stop(); else { toon(nu); start(); }
+    });
+    ['mouseenter', 'focusin'].forEach(function (ev) { sc.addEventListener(ev, function () { sc.classList.add('gepauzeerd'); stop(); }); });
+    ['mouseleave', 'focusout'].forEach(function (ev) { sc.addEventListener(ev, function () { sc.classList.remove('gepauzeerd'); if (!sc.classList.contains('vast')) { toon(nu); start(); } }); });
+    document.addEventListener('visibilitychange', function () { if (document.hidden) stop(); else start(); });
+    /* swipe op mobiel */
+    var sx = null;
+    sc.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; }, { passive: true });
+    sc.addEventListener('touchend', function (e) {
+      if (sx === null) return;
+      var dx = e.changedTouches[0].clientX - sx;
+      if (Math.abs(dx) > 40) { toon(dx < 0 ? nu + 1 : nu - 1); start(); }
+      sx = null;
+    });
+    if (kalmte) { sc.classList.add('vast'); if (pauzeKnop) { pauzeKnop.setAttribute('aria-pressed', 'true'); pauzeKnop.setAttribute('aria-label', "Laat de auto's wisselen"); } }
+    toon(0);
+    start();
+  }
+
   /* ---------- mobiele filterknop ---------- */
   var fk = document.querySelector('[data-filterknop]');
   if (fk) {

@@ -63,8 +63,9 @@
   <symbol id="i-teller" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.34 19a10 10 0 1 1 17.32 0"/><path d="M12 15l4.2-4.6"/><circle cx="12" cy="15" r="1.4" fill="currentColor"/><path d="M12 6v1.6M6.3 8.3l1.1 1.1M17.7 8.3l-1.1 1.1M4 14h1.6M18.4 14H20"/></symbol>
   <symbol id="i-contract" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6.5A1.5 1.5 0 0 0 5 4.5v15A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5V8z"/><path d="M14 3v5h5"/><path d="M8.5 12.5h7M8.5 16h3"/><path d="M13.5 17.2c.8-1.6 1.6-1.6 2 0 .3 1 .9 1 1.6.2"/></symbol>
   <symbol id="i-schild-nl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l7.5 2.8v5.9c0 4.8-3.3 8.6-7.5 10.3-4.2-1.7-7.5-5.5-7.5-10.3V5.3z"/><path d="M4.6 9h14.8M4.9 13.4h14.2"/></symbol>
+  <symbol id="i-pauze" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1.2"/><rect x="14" y="5" width="4" height="14" rx="1.2"/></symbol>
+  <symbol id="i-afspelen" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.4-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></symbol>
 </svg>
-
 <a class="skip" href="#inhoud">Naar de inhoud</a>
 <div class="topbalk" aria-label="Snel contact">
   <div class="wrap">
@@ -113,15 +114,57 @@
         <span class="chip" data-openstatus><svg class="icoon" aria-hidden="true"><use href="#i-klok"/></svg> <span data-openstatus-tekst>Di-vr 09.00-18.00, za 10.00-14.00</span></span>
       </div>
     </div>
-    <div class="showroom" aria-label="Uitgelichte occasion">
-      <a class="hoofdkaart diepte" href="aanbod/audi-a3-limousine-1-4-2016.html" data-laag style="--laag:8" data-kantel="4">
-        <span class="kantel-glans"></span>
-        <img src="assets/img/voorraad/21749066_1.webp" width="960" height="720" alt="Audi A3 2016" fetchpriority="high" data-hero-beeld>
-        <div class="info"><div><div class="naam">Audi A3</div><div class="sub">2016 · 230.434 km · Handgeschakeld</div></div><svg class="icoon" aria-hidden="true"><use href="#i-pijl"/></svg></div>
-      </a>
-      <div class="prijs" data-laag style="--laag:18" data-zweef="8"><span class="l">Incl. APK</span><span class="b">€ 9.450</span></div>
-      <div class="plaatbadge" data-laag style="--laag:14" data-zweef="6"><span class="plaat plaat-groot" aria-label="Kenteken JR-869-X"><span class="eu">NL</span><span class="nr">JR-869-X</span></span></div>
-      <div class="keur" data-laag style="--laag:10"><span class="bol"><svg class="icoon" aria-hidden="true"><use href="#i-vink"/></svg></span>Gekeurd en afgeleverd</div>
+    <div class="showcase" data-showcase aria-roledescription="carrousel" aria-label="Uitgelichte occasions">
+      <div class="sc-dias">
+        <a class="sc-dia aan" href="aanbod/audi-a3-limousine-1-4-2016.html" role="group" aria-roledescription="dia" aria-label="1 van 6: Audi A3">
+          <span class="sc-beeld"><img src="assets/img/voorraad/21749066_1.webp" width="960" height="720" alt="Audi A3 2016, wit" fetchpriority="high"></span>
+          <span class="sc-info">
+            <span class="sc-tekst"><span class="sc-naam">Audi A3</span><span class="sc-sub">2016 · 230.434 km · Handgeschakeld</span></span>
+            <span class="sc-prijs"><small>Incl. APK</small>€ 9.450</span>
+          </span>
+        </a>
+        <a class="sc-dia" href="aanbod/volvo-v40-2-0-t3-2016.html" role="group" aria-roledescription="dia" aria-label="2 van 6: Volvo V40" aria-hidden="true" tabindex="-1">
+          <span class="sc-beeld"><img src="assets/img/voorraad/21648456_1.webp" width="960" height="720" alt="Volvo V40 2016, blauw" loading="lazy" decoding="async"></span>
+          <span class="sc-info">
+            <span class="sc-tekst"><span class="sc-naam">Volvo V40</span><span class="sc-sub">2016 · 176.738 km · Handgeschakeld</span></span>
+            <span class="sc-prijs"><small>Incl. APK</small>€ 10.900</span>
+          </span>
+        </a>
+        <a class="sc-dia" href="aanbod/porsche-cayenne-3-6-nl-auto-2013.html" role="group" aria-roledescription="dia" aria-label="3 van 6: Porsche Cayenne" aria-hidden="true" tabindex="-1">
+          <span class="sc-beeld"><img src="assets/img/voorraad/21391844_1.webp" width="960" height="720" alt="Porsche Cayenne 2013, grijs" loading="lazy" decoding="async"></span>
+          <span class="sc-info">
+            <span class="sc-tekst"><span class="sc-naam">Porsche Cayenne</span><span class="sc-sub">2013 · 193.262 km · Automaat</span></span>
+            <span class="sc-prijs"><small>Incl. APK</small>€ 19.900</span>
+          </span>
+        </a>
+        <a class="sc-dia" href="aanbod/audi-a1-sportback-1-2-2014.html" role="group" aria-roledescription="dia" aria-label="4 van 6: Audi A1" aria-hidden="true" tabindex="-1">
+          <span class="sc-beeld"><img src="assets/img/voorraad/21673582_1.webp" width="960" height="720" alt="Audi A1 2014, rood" loading="lazy" decoding="async"></span>
+          <span class="sc-info">
+            <span class="sc-tekst"><span class="sc-naam">Audi A1</span><span class="sc-sub">2014 · 172.253 km · Handgeschakeld</span></span>
+            <span class="sc-prijs"><small>Incl. APK</small>€ 7.900</span>
+          </span>
+        </a>
+        <a class="sc-dia" href="aanbod/toyota-rav4-2-0-executive-2015.html" role="group" aria-roledescription="dia" aria-label="5 van 6: Toyota RAV4" aria-hidden="true" tabindex="-1">
+          <span class="sc-beeld"><img src="assets/img/voorraad/21988101_1.webp" width="960" height="720" alt="Toyota RAV4 2015, zwart" loading="lazy" decoding="async"></span>
+          <span class="sc-info">
+            <span class="sc-tekst"><span class="sc-naam">Toyota RAV4</span><span class="sc-sub">2015 · 167.969 km · Automaat</span></span>
+            <span class="sc-prijs"><small>Incl. APK</small>€ 15.900</span>
+          </span>
+        </a>
+        <a class="sc-dia" href="aanbod/bmw-5-serie-touring-528i-2014.html" role="group" aria-roledescription="dia" aria-label="6 van 6: BMW 5 Serie" aria-hidden="true" tabindex="-1">
+          <span class="sc-beeld"><img src="assets/img/voorraad/21907365_1.webp" width="960" height="720" alt="BMW 5 Serie 2014, bruin" loading="lazy" decoding="async"></span>
+          <span class="sc-info">
+            <span class="sc-tekst"><span class="sc-naam">BMW 5 Serie</span><span class="sc-sub">2014 · 217.614 km · Automaat</span></span>
+            <span class="sc-prijs"><small>Incl. APK</small>€ 12.900</span>
+          </span>
+        </a>
+      </div>
+      <div class="sc-nav">
+        <div class="sc-stippen" role="tablist" aria-label="Kies een auto">
+          <button type="button" class="sc-stip aan" data-sc-stip="0" role="tab" aria-selected="true" aria-label="Audi A3"><span></span></button><button type="button" class="sc-stip" data-sc-stip="1" role="tab" aria-selected="false" aria-label="Volvo V40"><span></span></button><button type="button" class="sc-stip" data-sc-stip="2" role="tab" aria-selected="false" aria-label="Porsche Cayenne"><span></span></button><button type="button" class="sc-stip" data-sc-stip="3" role="tab" aria-selected="false" aria-label="Audi A1"><span></span></button><button type="button" class="sc-stip" data-sc-stip="4" role="tab" aria-selected="false" aria-label="Toyota RAV4"><span></span></button><button type="button" class="sc-stip" data-sc-stip="5" role="tab" aria-selected="false" aria-label="BMW 5 Serie"><span></span></button>
+        </div>
+        <button type="button" class="sc-pauze" data-sc-pauze aria-label="Pauzeer de wisselende auto's" aria-pressed="false"><svg class="icoon pauze" aria-hidden="true"><use href="#i-pauze"/></svg><svg class="icoon speel" aria-hidden="true"><use href="#i-afspelen"/></svg></button>
+      </div>
     </div>
   </div>
 </section>
