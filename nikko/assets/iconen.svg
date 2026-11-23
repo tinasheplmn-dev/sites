@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <!-- Eigen iconenset Nikko Sports: lijnstijl 1.8, hoekig, afgeleid van de N-diagonaal. Gebruik: <svg><use href="assets/iconen.svg#i-naam"/></svg> -->
+
+  <!-- de N-streep: bullet en merkteken -->
+  <symbol id="i-streep" viewBox="0 0 16 16"><path d="M3 2h4.2l5.8 12H8.8z" fill="currentColor"/></symbol>
+  <symbol id="i-n" viewBox="0 0 24 24"><path d="M4 21V3h4.5l7.5 12.2V3H20v18h-4.5L8 8.8V21z" fill="currentColor"/></symbol>
+
+  <!-- sporten en producten -->
+  <symbol id="i-handschoen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><path d="M7 11V7a4 4 0 0 1 4-4h3a5 5 0 0 1 5 5v5.5a5.5 5.5 0 0 1-5.5 5.5H9"/><path d="M7 11H5.5A2.5 2.5 0 0 0 3 13.5v2A2.5 2.5 0 0 0 5.5 18H9v3"/><path d="M9 18v-4"/><path d="M13 3v4"/></symbol>
+  <symbol id="i-scheen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><path d="M8 3h8l1 9-2 9H9L7 12z"/><path d="M7.4 8h9.2"/><path d="M7.6 15h8.8"/><path d="M12 3v18"/></symbol>
+  <symbol id="i-zak" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><path d="M12 2v3"/><path d="M8 5h8"/><path d="M8 5v2.5a2 2 0 0 1-1 1.7V19a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9.2a2 2 0 0 1-1-1.7V5"/><path d="M7 13h10"/></symbol>
+  <symbol id="i-shirt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><path d="M8.5 3 12 5l3.5-2L21 6l-2.5 4-2-1V21h-9V9l-2 1L3 6z"/></symbol>
+  <symbol id="i-kids" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><circle cx="12" cy="7" r="3.5"/><path d="M6 21v-4a6 6 0 0 1 12 0v4"/><path d="M4.5 12.5 7 14"/><path d="M19.5 12.5 17 14"/></symbol>
+  <symbol id="i-mma" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><path d="M6 10V8a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/><path d="M4 10h16v3a6 6 0 0 1-6 6h-4a6 6 0 0 1-6-6z"/><path d="M8 10v9"/><path d="M12 10v9"/><path d="M16 10v9"/></symbol>
+  <symbol id="i-hoofd" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><path d="M5 12a7 7 0 0 1 14 0v5a3 3 0 0 1-3 3h-1v-4h-6v4H8a3 3 0 0 1-3-3z"/><path d="M5 12h14"/></symbol>
+  <symbol id="i-pads" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><rect x="4" y="3" width="16" height="18" rx="4"/><circle cx="12" cy="12" r="3.5"/><path d="M12 8.5v7"/><path d="M8.5 12h7"/></symbol>
+  <symbol id="i-touw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><path d="M5 3v6"/><path d="M19 3v6"/><path d="M5 9c0 6 14 6 14 0"/><path d="M5 9c0 8 7 12 7 12s7-4 7-12"/></symbol>
+  <symbol id="i-tas" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><path d="M3 9h18l-1.2 11H4.2z"/><path d="M8 9V7a4 4 0 0 1 8 0v2"/></symbol>
+
+  <!-- service -->
+  <symbol id="i-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><path d="M2 6h12v10H2z"/><path d="M14 10h4l4 4v2h-8z"/><circle cx="6" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></symbol>
+  <symbol id="i-klok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
+  <symbol id="i-retour" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><path d="M9 14 4 9l5-5"/><path d="M4 9h11a5 5 0 0 1 0 10h-4"/></symbol>
+  <symbol id="i-schild" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-winkel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><path d="M4 10 5.5 4h13L20 10"/><path d="M4 10h16"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></symbol>
+  <symbol id="i-advies" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><path d="M4 5h16v10H9l-5 4z"/><path d="M8 9h8"/><path d="M8 12h5"/></symbol>
+  <symbol id="i-ster" viewBox="0 0 24 24"><path d="m12 2.5 2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z" fill="currentColor"/></symbol>
+  <symbol id="i-trustpilot" viewBox="0 0 24 24"><path d="m12 1.5 2.9 7.2 7.6.3-6 4.8 2.1 7.4L12 16.9l-6.6 4.3 2.1-7.4-6-4.8 7.6-.3z" fill="currentColor"/></symbol>
+  <symbol id="i-medal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><circle cx="12" cy="15" r="5.5"/><path d="m8.5 10.5-3-7.5h4l2.5 5"/><path d="m15.5 10.5 3-7.5h-4L12 8"/><path d="m12 12.5.9 1.9 2.1.3-1.5 1.5.4 2.1-1.9-1-1.9 1 .4-2.1-1.5-1.5 2.1-.3z"/></symbol>
+  <symbol id="i-vlag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><path d="M5 21V4"/><path d="M5 4h13l-3 4.5 3 4.5H5"/></symbol>
+  <symbol id="i-euro" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><path d="M18 6.5A7 7 0 0 0 7.3 9H15"/><path d="M18 17.5A7 7 0 0 1 7.3 15H15"/><path d="M5 12h9"/></symbol>
+
+  <!-- interface -->
+  <symbol id="i-zoek" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
+  <symbol id="i-mand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M3 4h2.5l2.2 11h10.8L21 7H7"/><circle cx="9.5" cy="19.5" r="1.5"/><circle cx="17" cy="19.5" r="1.5"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></symbol>
+  <symbol id="i-sluit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 6 12 12"/><path d="M18 6 6 18"/></symbol>
+  <symbol id="i-pijl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M4 12h16"/><path d="m13 5 7 7-7 7"/></symbol>
+  <symbol id="i-pijl-l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M20 12H4"/><path d="m11 5-7 7 7 7"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14"/><path d="M5 12h14"/></symbol>
+  <symbol id="i-min" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/></symbol>
+  <symbol id="i-prullenbak" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><path d="M4 7h16"/><path d="M9 7V4h6v3"/><path d="M6 7l1 14h10l1-14"/></symbol>
+  <symbol id="i-vink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-filter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M4 5h16l-6 8v6l-4-2v-4z"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" stroke-linecap="round"><path d="M4 5h16v11h-8l-5 4v-4H4z"/><path d="M8 9h8"/><path d="M8 12.5h5"/></symbol>
+  <symbol id="i-verstuur" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M21 3 10 14"/><path d="M21 3 14 21l-4-7-7-4z"/></symbol>
+  <symbol id="i-tel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 7 9 6 9-6"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></symbol>
+  <symbol id="i-whatsapp" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.2a9.8 9.8 0 0 0-8.4 14.8L2.3 21.8l4.9-1.3A9.8 9.8 0 1 0 12 2.2m0 1.8a8 8 0 0 1 0 16 8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 0 1 12 4m-3 4.2c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.2 5 4.4 2.5 1 3 .8 3.5.7.5-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3l-2-1c-.3-.1-.5-.2-.7.2l-.9 1.1c-.2.2-.3.2-.6.1a6.6 6.6 0 0 1-3.3-2.9c-.3-.4 0-.5.1-.7l.6-.8.2-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5z"/></symbol>
+  <symbol id="i-insta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-facebook" viewBox="0 0 24 24"><path fill="currentColor" d="M14 8h2.5V4.5h-3A4 4 0 0 0 9.5 8.5V11H7v3.5h2.5V22h3.8v-7.5h2.8l.5-3.5h-3.3V9a1 1 0 0 1 1-1z"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="1"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+  <symbol id="i-gift" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><rect x="3" y="8" width="18" height="5"/><path d="M5 13v8h14v-8"/><path d="M12 8v13"/><path d="M12 8c-2-4-6-4-6-1.5S10 8 12 8c2 0 6-1 6-1.5S14 4 12 8"/></symbol>
+</svg>
