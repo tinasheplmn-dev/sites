@@ -261,3 +261,64 @@ fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
 .afspraak .tussen { flex-wrap: wrap; align-items: center; }
 .badge { white-space: nowrap; }
 .samenvat b .knop-tekst { padding: 0 .3rem; min-height: 0; }
+
+/* ---- uitbreiding 24 november 2026: retraites, code, wachtlijst, abonnementen, online ---- */
+.tegel.breed { min-height: 190px; }
+.tegel.breed h2 { font-size: 1.7rem; }
+@media (min-width: 560px) { .tegel.breed { min-height: 230px; } }
+.tegel.klein { justify-content: flex-start; }
+.tegel.klein.online { background: linear-gradient(150deg, #0d3b37 0%, #14544e 60%, #2f6f5c 120%); }
+.groep-titel { margin-top: .6rem; }
+.groep-tekst { color: var(--dim); margin-top: -.6rem; }
+.punten { display: grid; gap: .3rem; color: var(--tekst); font-size: .95rem; }
+.punten li { display: flex; align-items: center; gap: .45rem; }
+.punten svg { width: 18px; height: 18px; color: var(--merk); }
+.retraite .knop { justify-self: start; }
+.kaart .badge { justify-self: start; }
+
+/* retraitekaarten */
+.retraite > .binnen { padding: 0; gap: 0; overflow: hidden; }
+.retraite .beeld { position: relative; aspect-ratio: 16 / 10; background: var(--papier-2); }
+.retraite .beeld img { width: 100%; height: 100%; object-fit: cover; }
+.retraite .tekst { display: grid; gap: .6rem; padding: 1.15rem 1.15rem 1.3rem; }
+.retraite h2 { font-size: 1.65rem; }
+.retraite .waar { display: flex; gap: .45rem; align-items: flex-start; color: var(--tekst); font-weight: 600; }
+.retraite .waar svg { width: 18px; height: 18px; margin-top: .15rem; color: var(--goud-tekst); }
+.plekken-label { position: absolute; left: .8rem; top: .8rem; padding: .3rem .75rem; border-radius: 999px; background: var(--wit); color: var(--merk-diep); font-weight: 700; font-size: .85rem; }
+.plekken-label.weinig { color: var(--rood); }
+@media (min-width: 680px) {
+  .retraite > .binnen { grid-template-columns: 5fr 6fr; }
+  .retraite .beeld { aspect-ratio: auto; min-height: 100%; }
+}
+.terug { justify-self: start; padding-left: 0; }
+.terug svg { width: 18px; height: 18px; }
+
+/* aantal personen */
+.veld .label { font-weight: 700; color: var(--inkt); font-size: .96rem; }
+.stepper { display: inline-grid; grid-template-columns: 52px minmax(7.5rem, auto) 52px; align-items: center; justify-self: start; border: 1.5px solid rgba(18, 51, 47, .22); border-radius: 999px; background: var(--wit); }
+.stepper button { width: 52px; height: 52px; border-radius: 50%; font-size: 1.5rem; font-weight: 700; color: var(--merk); }
+.stepper button[disabled] { color: #6b7a76; cursor: not-allowed; }
+.stepper output { text-align: center; font-weight: 700; color: var(--inkt); }
+
+/* code-veld */
+.code-rij { display: grid; grid-template-columns: 1fr auto; gap: .5rem; align-items: stretch; }
+.code-rij .knop { min-height: 52px; }
+.code-uitkomst { display: flex; align-items: center; gap: .45rem; padding: .6rem .85rem; border-radius: 12px; background: #dcefe6; color: #0d3b37; font-weight: 700; font-size: .95rem; }
+.code-uitkomst svg { width: 18px; height: 18px; }
+.veld.mis .code-rij input { border-color: #b4233a; }
+.samenvat .aftrek { color: #0d3b37; font-weight: 600; }
+.samenvat .aftrek b { color: #0d3b37; }
+.samenvat .noot { color: var(--dim); font-size: .88rem; max-width: none; }
+
+/* mijn: abonnement en wachtlijst */
+.abo { display: grid; grid-template-columns: auto 1fr auto; gap: .15rem .8rem; align-items: center; padding: .85rem 1rem; border-radius: var(--radius-klein); background: var(--wit); border: 1px solid var(--lijn); }
+.abo .knopje { grid-row: span 2; }
+.abo b { color: var(--inkt); }
+.abo small { grid-column: 2 / -1; color: var(--dim); font-size: .88rem; }
+.factuur.vervallen b { text-decoration: line-through; text-decoration-thickness: 1px; }
+@media (max-width: 420px) {
+  .abo { grid-template-columns: auto 1fr; }
+  .abo small { grid-row: 2; }
+  .abo .knop, .abo .badge { grid-column: 2; grid-row: 3; justify-self: start; margin-top: .3rem; }
+  .abo .knop-tekst { padding-left: 0; }
+}

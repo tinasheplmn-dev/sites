@@ -1,9 +1,9 @@
 /* Service worker van de Cura Thai app.
    Shell in de cache, navigaties network-first, API nooit cachen.
    Eigen code (css, js, manifest) network-first zodat een update meteen aankomt; fonts en beeld stale-while-revalidate. */
-const VERSIE = 'curathai-app-v4';
+const VERSIE = 'curathai-app-v5';
 const SHELL = [
-  './', './index.html', './app.css?v=4', './app.js?v=4', './manifest.webmanifest',
+  './', './index.html', './app.css?v=5', './app.js?v=5', './manifest.webmanifest',
   '../assets/iconen.svg', '../assets/img/logo-embleem.webp', '../favicon.svg',
   '../assets/fonts/gloock-regular.woff2', '../assets/fonts/figtree-regular.woff2', '../assets/fonts/figtree-500.woff2', '../assets/fonts/figtree-600.woff2', '../assets/fonts/figtree-700.woff2',
   './icons/icon-192.png', './icons/icon-512.png', './icons/maskable-512.png', './icons/apple-touch-icon.png',
