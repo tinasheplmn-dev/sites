@@ -73,6 +73,14 @@
   /* ---------- voorvertoning van de open stand: ?preview=open of ?preview=waitlist ---------- */
   var preview = q.get('preview');
   var regForm = document.querySelector('[data-reg-form]');
+  var chiptaKaart = document.querySelector('[data-reg-chipta]');
+  if (preview && !regForm && chiptaKaart && (preview === 'open' || preview === 'waitlist')) {
+    document.querySelectorAll('[data-reg-soon], [data-reg-closed]').forEach(function (el) { el.hidden = true; });
+    chiptaKaart.hidden = false;
+    var kH = document.querySelector('.pagina-kop h1'), kP = document.querySelector('.pagina-kop h1 + p');
+    if (kH) kH.textContent = lang === 'nl' ? 'Schrijf je in voor MIMYC\'27' : 'Register for MIMYC\'27';
+    if (kP) kP.textContent = lang === 'nl' ? 'Voorbeeld van de open stand. De knop gaat naar Chipta zodra de eventlink is ingevuld.' : 'Preview of the open state. The button goes to Chipta once the event link is set.';
+  }
   if (preview && regForm && (preview === 'open' || preview === 'waitlist')) {
     document.querySelectorAll('[data-reg-soon], [data-reg-closed]').forEach(function (el) { el.hidden = true; });
     regForm.hidden = false;

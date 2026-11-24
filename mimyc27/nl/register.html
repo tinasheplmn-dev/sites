@@ -24,7 +24,7 @@
   <link rel="preload" href="../assets/fonts/unbounded-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../assets/fonts/onest-var.woff2" as="font" type="font/woff2" crossorigin>
   
-  <link rel="stylesheet" href="../css/style.css?v=2">
+  <link rel="stylesheet" href="../css/style.css?v=3">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -158,107 +158,29 @@
           </div>
         </div>
 
-        <form class="reg-kaart" id="registratie" data-reg-form data-rev data-state="soon" novalidate hidden>
-          <div class="honing" aria-hidden="true"><label>Laat dit veld leeg<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div><input type="hidden" name="t0" value="">
-          <div class="bericht info" data-hersteld hidden><svg class="icoon" aria-hidden="true"><use href="../assets/iconen.svg#i-info"/></svg><span></span><button type="button" class="knop knop-klein knop-lijn" data-opnieuw style="margin-left:auto">Opnieuw beginnen</button></div>
-          <ol class="stappen" aria-live="polite" aria-label="Stappen">
-            <li aria-current="step" data-stap-tab="1"><i>1</i>Ticket</li>
-            <li data-stap-tab="2"><i>2</i>Je gegevens</li>
-            <li data-stap-tab="3"><i>3</i>Onder 18</li>
-            <li data-stap-tab="4"><i>4</i>Bevestigen</li>
-          </ol>
-
-          <section class="stap" data-stap="1">
-            <h2>Kies je ticket</h2>
-            <div class="keuze">
-              <label><input type="radio" name="ticket" value="full" checked><strong>Volledig kamppas · EUR 149,99</strong><span>Woensdag 14 tot en met zaterdag 17 juli 2027. Deelname, overnachting en maaltijden. Vervoer volgt.</span></label>
-            </div>
-            <div class="veld">
-              <span class="label">Ik schrijf me in als</span>
-              <div class="keuze">
-                <label><input type="radio" name="type" value="cop" checked><strong>COP-lid</strong><span>Lid van The Church of Pentecost. We vragen je district en lokale gemeente.</span></label>
-                <label><input type="radio" name="type" value="guest"><strong>Gast of niet-lid</strong><span>Welkom, ook uit de buurlanden. Geen kerkgegevens nodig.</span></label>
-              </div>
-            </div>
+        <!-- Chipta: de ticketshop. Zichtbaar zodra chiptaUrl is ingevuld en de inschrijving open is (of met ?preview=open). -->
+        <div class="reg-kaart chipta-kaart" id="booking" data-reg-chipta data-rev hidden>
+          <div class="stap">
+            <p class="eyebrow"><svg class="icoon" aria-hidden="true"><use href="../assets/iconen.svg#i-ticket"/></svg>Early Bird-ticket · EUR 149,99</p>
+            <h2>Boek je ticket</h2>
+            <p class="dim">Boeken en betalen gaat via Chipta, onze beveiligde ticketpartner. Betaal met iDEAL, Bancontact of creditcard.</p>
+            <ul class="lijst">
+              <li><span class="merkteken"><svg class="icoon" aria-hidden="true"><use href="../assets/iconen.svg#i-mensen"/></svg></span>Boek voor jezelf of voor meerdere deelnemers in één bestelling</li>
+              <li><span class="merkteken"><svg class="icoon" aria-hidden="true"><use href="../assets/iconen.svg#i-ticket"/></svg></span>Elke deelnemer krijgt een eigen ticket en QR-code</li>
+              <li><span class="merkteken"><svg class="icoon" aria-hidden="true"><use href="../assets/iconen.svg#i-ring"/></svg></span>COP-leden vullen hun district en lokale gemeente in</li>
+              <li><span class="merkteken"><svg class="icoon" aria-hidden="true"><use href="../assets/iconen.svg#i-schild"/></svg></span>Onder de 18: vul per deelnemer een ouder of voogd in</li>
+              <li><span class="merkteken"><svg class="icoon" aria-hidden="true"><use href="../assets/iconen.svg#i-kalender"/></svg></span>Inschrijving sluit 14 juni 2027</li>
+            </ul>
+            
             <div class="stap-knoppen">
-              <button class="knop knop-inkt knop-groot" type="button" data-volgende>Verder <svg class="icoon pijl" aria-hidden="true"><use href="../assets/iconen.svg#i-pijl"/></svg></button>
+              <span class="dim">In termijnen betalen? Regel dat via je jeugdleider.</span>
+              <a class="knop knop-vol knop-groot" href="#booking" target="_blank" rel="noopener" data-chipta-knop data-event="chipta-click">Verder naar veilig boeken <svg class="icoon pijl" aria-hidden="true"><use href="../assets/iconen.svg#i-pijl"/></svg></a>
             </div>
-          </section>
+            <p class="dim" style="font-size:1rem">Het inschrijfgeld wordt niet terugbetaald. Een betaald ticket alleen geeft iemand onder de 18 nog geen toegang; de districtsjeugdleider controleert eerst de toestemming.</p>
+          </div>
+        </div>
 
-          <section class="stap" data-stap="2" hidden>
-            <h2>Je gegevens</h2>
-            <div class="velden-2">
-              <div class="veld"><label for="r-voornaam">Voornaam</label><input id="r-voornaam" name="voornaam" type="text" autocomplete="given-name" required><span class="foutmelding">Vul je voornaam in.</span></div>
-              <div class="veld"><label for="r-achternaam">Achternaam</label><input id="r-achternaam" name="achternaam" type="text" autocomplete="family-name" required><span class="foutmelding">Vul je achternaam in.</span></div>
-            </div>
-            <div class="velden-2">
-              <div class="veld"><label for="r-email">E-mail</label><input id="r-email" name="email" type="email" autocomplete="email" inputmode="email" required><small>Hier komen je bevestiging en de betaalinstructies.</small><span class="foutmelding">Vul een geldig e-mailadres in.</span></div>
-              <div class="veld"><label for="r-telefoon">Mobiel nummer</label><input id="r-telefoon" name="telefoon" type="tel" autocomplete="tel" inputmode="tel" placeholder="+31 6 1234 5678" required><small>Elk land, met landcode.</small><span class="foutmelding">Vul een mobiel nummer met landcode in.</span></div>
-            </div>
-            <div class="velden-2">
-              <div class="veld"><label for="r-land">Land</label>
-                <select id="r-land" name="land" required>
-                  <option value="Netherlands">Nederland</option><option value="Belgium">België</option><option value="Germany">Duitsland</option><option value="United Kingdom">Verenigd Koninkrijk</option><option value="France">Frankrijk</option><option value="Luxembourg">Luxemburg</option><option value="Other">Ander land</option>
-                </select>
-              </div>
-              <div class="veld"><label for="r-woonplaats">Woonplaats</label><input id="r-woonplaats" name="woonplaats" type="text" autocomplete="address-level2" required><span class="foutmelding">Vul je woonplaats in.</span></div>
-            </div>
-            <div data-cop-velden>
-              <div class="velden-2">
-                <div class="veld"><label for="r-district">COP-district</label><input id="r-district" name="district" type="text" required data-cop><span class="foutmelding">Vul je district in.</span></div>
-                <div class="veld"><label for="r-assembly">Lokale gemeente</label><input id="r-assembly" name="assembly" type="text" required data-cop><span class="foutmelding">Vul je lokale gemeente in.</span></div>
-              </div>
-              <div class="veld"><label for="r-leider">Jeugdleider (optioneel)</label><input id="r-leider" name="leider" type="text"><small>Je lokale leider kan helpen bij de toestemming als je onder de 18 bent.</small></div>
-            </div>
-            <div class="veld">
-              <span class="label">Ben je op 14 juli 2027 jonger dan 18?</span>
-              <div class="keuze">
-                <label><input type="radio" name="minderjarig" value="no" checked><strong>Nee, 18 of ouder</strong><span>Gewone route.</span></label>
-                <label><input type="radio" name="minderjarig" value="yes"><strong>Ja, onder de 18</strong><span>Een ouder of voogd bevestigt de toestemming.</span></label>
-              </div>
-            </div>
-            <div class="stap-knoppen">
-              <button class="knop knop-lijn" type="button" data-terug>Terug</button>
-              <button class="knop knop-inkt knop-groot" type="button" data-volgende>Verder <svg class="icoon pijl" aria-hidden="true"><use href="../assets/iconen.svg#i-pijl"/></svg></button>
-            </div>
-          </section>
-
-          <section class="stap" data-stap="3" hidden>
-            <h2>Ouder of voogd</h2>
-            <div class="bericht info"><svg class="icoon" aria-hidden="true"><use href="../assets/iconen.svg#i-schild"/></svg><span>Na je inschrijving krijgt je ouder of voogd een beveiligde link om de toestemming te bevestigen. Betalen alleen geldt niet als toestemming; een inschrijving van iemand onder de 18 is pas definitief als het kampteam de toestemming heeft gecontroleerd.</span></div>
-            <div class="velden-2">
-              <div class="veld"><label for="g-naam">Volledige naam ouder of voogd</label><input id="g-naam" name="voogdNaam" type="text" data-minor><span class="foutmelding">Vul de naam van je ouder of voogd in.</span></div>
-              <div class="veld"><label for="g-relatie">Relatie</label>
-                <select id="g-relatie" name="voogdRelatie" data-minor><option value="">Kies</option><option value="Mother">Moeder</option><option value="Father">Vader</option><option value="Legal guardian">Wettelijk voogd</option><option value="Other">Anders</option></select>
-                <span class="foutmelding">Kies de relatie.</span></div>
-            </div>
-            <div class="velden-2">
-              <div class="veld"><label for="g-email">Hun e-mail</label><input id="g-email" name="voogdEmail" type="email" inputmode="email" data-minor><span class="foutmelding">Vul een geldig e-mailadres in.</span></div>
-              <div class="veld"><label for="g-telefoon">Hun mobiele nummer</label><input id="g-telefoon" name="voogdTelefoon" type="tel" inputmode="tel" placeholder="+31 6 1234 5678" data-minor><small>Het kampteam kan bellen om te controleren.</small><span class="foutmelding">Vul een mobiel nummer in.</span></div>
-            </div>
-            <div class="velden-2">
-              <div class="veld"><label for="n-naam">Noodcontact (als dat iemand anders is)</label><input id="n-naam" name="noodNaam" type="text"></div>
-              <div class="veld"><label for="n-telefoon">Nummer noodcontact</label><input id="n-telefoon" name="noodTelefoon" type="tel" inputmode="tel"></div>
-            </div>
-            <div class="stap-knoppen">
-              <button class="knop knop-lijn" type="button" data-terug>Terug</button>
-              <button class="knop knop-inkt knop-groot" type="button" data-volgende>Verder <svg class="icoon pijl" aria-hidden="true"><use href="../assets/iconen.svg#i-pijl"/></svg></button>
-            </div>
-          </section>
-
-          <section class="stap" data-stap="4" hidden>
-            <h2>Controleren en bevestigen</h2>
-            <dl class="pas" data-overzicht style="color:var(--papier)"></dl>
-            <label class="vink"><input type="checkbox" name="akkoord" required><span>Ik heb de <a href="../terms.html" style="text-decoration:underline">kampvoorwaarden</a> en de <a href="../privacy.html" style="text-decoration:underline">privacyverklaring</a> gelezen. Ik begrijp dat mijn plek definitief is na betaling, en onder de 18 na gecontroleerde toestemming van mijn ouder of voogd.</span></label>
-            <label class="vink"><input type="checkbox" name="media"><span>Optioneel: foto's en video waarop ik sta mogen worden gebruikt in communicatie van MIMYC'27 en de kerk. Je kunt dit later veranderen.</span></label>
-            <div class="bericht info"><svg class="icoon" aria-hidden="true"><use href="../assets/iconen.svg#i-info"/></svg><span>Je betaalt niet op deze website. Je ontvangt betaalinstructies per e-mail zodra het betaalplatform is bevestigd.</span></div>
-            <div class="stap-knoppen">
-              <button class="knop knop-lijn" type="button" data-terug>Terug</button>
-              <button class="knop knop-inkt knop-groot" type="submit" data-verstuur>Verstuur mijn inschrijving <svg class="icoon pijl" aria-hidden="true"><use href="../assets/iconen.svg#i-pijl"/></svg></button>
-            </div>
-            <div class="bericht fout" data-fout hidden><svg class="icoon" aria-hidden="true"><use href="../assets/iconen.svg#i-info"/></svg><span></span></div>
-          </section>
-        </form>
+        
       </div>
 
       <aside class="samenvatting" aria-label="Je ticket">
@@ -270,20 +192,20 @@
             <dt>Data</dt><dd>Woensdag 14 tot en met zaterdag 17 juli 2027</dd>
             <dt>Locatie</dt><dd>De Hoof, Someren</dd>
             <dt>Inbegrepen</dt><dd>Kamp, maaltijden, overnachting</dd>
-            <dt>Vervoer</dt><dd>Volgt</dd>
+            <dt>Vervoer</dt><dd>Niet inbegrepen, via je district</dd>
           </dl>
         </div>
         <div class="volgende" data-rev>
           <h3>Wat er nu gebeurt</h3>
           <ol>
-            <li>Je krijgt meteen een inschrijfnummer.</li>
-            <li>Onder de 18: je ouder of voogd bevestigt via een beveiligde link.</li>
-            <li>Betaalinstructies volgen per e-mail zodra het platform bevestigd is.</li>
-            <li>Je plek is definitief na betaling, en onder de 18 na gecontroleerde toestemming.</li>
+            <li>Je boekt en betaalt in de ticketshop van Chipta. Elke deelnemer krijgt een eigen ticket.</li>
+            <li>Je ontvangt je ticket en QR-code meteen per e-mail.</li>
+            <li>Onder de 18: je districtsjeugdleider bevestigt de toestemming met je ouder of voogd.</li>
+            <li>Op het kamp check je in met je QR-code. Onder de 18 krijgt toegang zodra de toestemming gecontroleerd is.</li>
           </ol>
         </div>
         <figure class="diepte" data-rev="gordijn" style="border-radius:var(--radius-groot);overflow:hidden">
-          <img src="../assets/img/register-side.webp" alt="Een jonge vrouw aanbidt met gesloten ogen in blauw licht" loading="lazy" width="900" height="1350" style="aspect-ratio:4/3;object-fit:cover;width:100%">
+          <img src="../assets/img/register-side.webp" alt="Jongeren vieren samen tijdens de aanbidding op MIM 2023" loading="lazy" width="1000" height="667" style="aspect-ratio:4/3;object-fit:cover;width:100%">
         </figure>
       </aside>
     </div>
@@ -303,9 +225,8 @@
         </a>
         <p>Maximum Impact Makers Youth Camp 2027. Vier dagen in juli voor jongeren uit heel Nederland en daarbuiten, georganiseerd door The Church of Pentecost Netherlands.</p>
         <div class="socials">
-          <a href="https://www.instagram.com/dutchchurchofpentecost/" target="_blank" rel="noopener" aria-label="Instagram"><svg class="icoon" aria-hidden="true"><use href="../assets/iconen.svg#i-instagram"/></svg></a>
-          <a href="https://www.facebook.com/cop.holland/" target="_blank" rel="noopener" aria-label="Facebook"><svg class="icoon" aria-hidden="true"><use href="../assets/iconen.svg#i-facebook"/></svg></a>
-          <a href="https://www.youtube.com/channel/UC5eIet9RgvmDVYDg9PSnjpA" target="_blank" rel="noopener" aria-label="Youtube"><svg class="icoon" aria-hidden="true"><use href="../assets/iconen.svg#i-youtube"/></svg></a>
+          <a href="https://www.instagram.com/copyouthholland/" target="_blank" rel="noopener" aria-label="Instagram"><svg class="icoon" aria-hidden="true"><use href="../assets/iconen.svg#i-instagram"/></svg></a>
+          <a href="https://www.tiktok.com/@copyouthholland" target="_blank" rel="noopener" aria-label="Tiktok"><svg class="icoon" aria-hidden="true"><use href="../assets/iconen.svg#i-tiktok"/></svg></a>
         </div>
       </div>
       <div>
@@ -325,6 +246,7 @@
           <li>Locatie: <a href="https://www.dehoof.nl" target="_blank" rel="noopener">De Hoof</a></li>
           <li>De Hoof 18, 5712 LM Someren</li>
           <li>EUR 149,99 per persoon, alles inbegrepen</li>
+          <li>Inschrijving sluit: 14 juni 2027</li>
           <li><a href="../assets/mimyc27.ics" download="mimyc27.ics"><svg class="icoon" aria-hidden="true"><use href="../assets/iconen.svg#i-download"/></svg>Zet in je agenda</a></li>
         </ul>
       </div>
@@ -350,7 +272,7 @@
     <a class="knop knop-lijn" href="../faq.html"><svg class="icoon" aria-hidden="true"><use href="../assets/iconen.svg#i-info"/></svg>Vragen</a>
   </div>
 
-  <script src="../js/main.js?v=2" defer></script>
-  <script src="../js/register.js?v=2" defer></script>
+  <script src="../js/main.js?v=3" defer></script>
+  <script src="../js/register.js?v=3" defer></script>
 </body>
 </html>

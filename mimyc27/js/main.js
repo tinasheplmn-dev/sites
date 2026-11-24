@@ -440,7 +440,7 @@
     puntjes.className = 'puntjes';
     puntjes.setAttribute('aria-hidden', 'true');
     kinderen.forEach(function (k, i) {
-      var b = document.createElement('button'); b.type = 'button'; b.tabIndex = -1;
+      var b = document.createElement('span'); b.setAttribute('role', 'presentation');
       b.addEventListener('click', function () { k.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' }); });
       puntjes.appendChild(b);
     });
@@ -468,7 +468,7 @@
   var dialoog = document.querySelector('[data-lightbox-dialog]');
   var knoppen = [].slice.call(document.querySelectorAll('[data-lightbox]'));
   if (dialoog && knoppen.length && typeof dialoog.showModal === 'function') {
-    var fotos = knoppen.map(function (b) { return b.querySelector('img').getAttribute('src'); });
+    var fotos = knoppen.map(function (b) { return b.dataset.groot || b.querySelector('img').getAttribute('src'); });
     var img = dialoog.querySelector('[data-lightbox-img]');
     var teller = dialoog.querySelector('[data-lightbox-teller]');
     var index = 0;

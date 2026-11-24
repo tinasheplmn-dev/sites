@@ -519,7 +519,7 @@ strong { font-weight: 700; }
 .accent, .gradient-tekst { background: var(--spectrum); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .wrap { width: var(--wrap); margin-inline: auto; }
 .sectie { padding-block: var(--sectie); position: relative; }
-main > .sectie:not(.hero), .voet { content-visibility: auto; contain-intrinsic-size: auto 720px; }
+
 .sectie.licht-2 { background: var(--inkt-2); }
 .sectie.licht-2::before, .sectie.waarom::before, .sectie.donker-2::before { content: ""; position: absolute; inset: 0; pointer-events: none; }
 .sectie.licht-2::before { background: radial-gradient(45% 55% at 0% 100%, rgba(255, 138, 61, .16), transparent 70%); }
@@ -1061,9 +1061,9 @@ dl.pas dt { color: var(--dim-op-donker); } dl.pas dd { font-weight: 600; }
 .lightbox .icoon { width: 1.4rem; height: 1.4rem; }
 
 .puntjes { display: none; gap: .45rem; justify-content: center; align-items: center; margin-top: .9rem; }
-.puntjes button { width: 10px; height: 10px; border-radius: 999px; background: var(--lijn); transition: width .25s var(--vlot), background .25s; padding: 0; min-width: 0; }
-.puntjes button[aria-current="true"] { width: 26px; background: var(--merk); }
-.puntjes button::after { content: ""; position: absolute; }
+.puntjes span { cursor: pointer; display: block; width: 10px; height: 10px; border-radius: 999px; background: var(--lijn); transition: width .25s var(--vlot), background .25s; padding: 0; min-width: 0; }
+.puntjes span[aria-current="true"] { width: 26px; background: var(--merk); }
+
 .swipe-hint { display: none; align-items: center; gap: .4rem; color: var(--dim); font-size: 1rem; margin-top: .6rem; justify-content: center; }
 .swipe-hint .icoon { animation: swipe 1.6s ease-in-out infinite; }
 @keyframes swipe { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(6px); } }
@@ -1104,3 +1104,14 @@ dl.pas dt { color: var(--dim-op-donker); } dl.pas dd { font-weight: 600; }
   .lightbox-teller { bottom: 1.9rem; }
 }
 @media (prefers-reduced-motion: reduce) { .swipe-hint .icoon { animation: none; } .hero-video { display: none; } }
+
+/* ---- Ronde 5: echte kampfoto's ---- */
+.hero-beeld [data-hero-dia] { width: 100%; height: 100%; object-fit: cover; object-position: 55% 40%; }
+.ouders-foto { margin: 1.4rem 0 0; border-radius: var(--radius-groot); overflow: hidden; aspect-ratio: 3 / 2; }
+.ouders-foto img { width: 100%; height: 100%; object-fit: cover; }
+.ticket-beeld img { object-position: 50% 30%; }
+@media (max-width: 1020px) { .ouders-foto { display: none; } }
+.chipta-embed { border-radius: var(--radius-groot); overflow: hidden; border: 1px solid var(--lijn); background: #fff; }
+.chipta-embed iframe { width: 100%; height: 820px; border: 0; display: block; }
+.chipta-kaart .stap-knoppen { align-items: center; }
+@media (max-width: 640px) { .chipta-embed iframe { height: 960px; } }
