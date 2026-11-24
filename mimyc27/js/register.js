@@ -79,7 +79,7 @@
     chiptaKaart.hidden = false;
     var kH = document.querySelector('.pagina-kop h1'), kP = document.querySelector('.pagina-kop h1 + p');
     if (kH) kH.textContent = lang === 'nl' ? 'Schrijf je in voor MIMYC\'27' : 'Register for MIMYC\'27';
-    if (kP) kP.textContent = lang === 'nl' ? 'Voorbeeld van de open stand. De knop gaat naar Chipta zodra de eventlink is ingevuld.' : 'Preview of the open state. The button goes to Chipta once the event link is set.';
+    if (kP) kP.textContent = lang === 'nl' ? 'Voorbeeld van de open stand. Bezoekers zien dit pas als de inschrijving opengaat.' : 'Preview of the open state. Visitors only see this once registration opens.';
   }
   if (preview && regForm && (preview === 'open' || preview === 'waitlist')) {
     document.querySelectorAll('[data-reg-soon], [data-reg-closed]').forEach(function (el) { el.hidden = true; });
