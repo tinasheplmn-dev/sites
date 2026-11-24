@@ -15,7 +15,8 @@ Fight night. De site is een fight card: het aanbod als affiches, de zes methodes
 - **Hero-kop "Volle matten. Geen giswerk."** Komt uit het voorbeeld in de merkgids. Alternatief: "Elke gym verdient een title shot."
 - **Meerdere pagina's** in plaats van een one-pager, omdat het aanbod te groot is voor een pagina.
 - **Marketing op een pagina** met een vaste methodebalk en de vier advertentiekanalen als uitklappers (eerste open). Alternatief: een pagina per methode.
-- **The Weigh-In is een zelfscan** van negen vragen met score en de drie grootste kansen. Hij draait volledig in de browser en slaat niets op. Alternatief: een echte automatische scan van de site van de gym.
+- **The Weigh-In** vraagt de naam van de gym (met suggesties van Google) en negen vragen. Daarna volgt de weging: een voorstelling van ongeveer 20 seconden met echte gegevens (Google-score, drie reviews, foto's, concurrenten op de kaart met de plek voor "vechtsportschool [plaats]", een screenshot van de site op een telefoon met vier echte Lighthouse-scores en of er een proefles en actieknop op de homepage staan). De score in de uitslag komt uit de eigen antwoorden; de gemeten gegevens staan erboven als tegels. Er is geen slot en er worden geen contactgegevens gevraagd.
+- **Scan-API**: `api/scan.js` (een serverless functie, zie de kop van het bestand). De sleutel staat nooit in deze map: lokaal leest `server.js` `GOOGLE_PLACES_KEY` uit de omgeving of uit de `.env.local` van de Mettafel-site; live zet je hem in Vercel. Zonder API (zoals op GitHub Pages) valt de weging terug op alleen de eigen antwoorden en staan de Google-stappen op "niet gemeten". Test snel met `weigh-in.html?snel=1`.
 - **Knop bij het boekingssysteem heet "Vraag de demo aan"** en gaat naar het formulier, omdat er nog geen demo-link is. In de brontekst staat "Bekijk de demo".
 - **Formulier opent het mailprogramma** met een ingevulde mail, omdat er geen server achter de site zit.
 - **Jouw foto's** staan bescheiden: een portret op home ("Business with a fighter's mindset") en drie foto's onderaan Over ons. Op de bekerfoto is alleen jij in beeld gelaten.
@@ -30,7 +31,8 @@ Fight night. De site is een fight card: het aanbod als affiches, de zes methodes
 4. **Bedrijfsgegevens** (KvK, btw, adres) en privacyverklaring ontbreken in de footer.
 5. **Naam van de oprichter** staat nergens; de foto's dragen het label "Oprichter".
 6. **Demo-link** van het boekingssysteem.
-7. **Formulier**: werkt nu via het mailprogramma. Een echte verzending vraagt een server of formulierdienst.
+7. **Scan live met echte data**: dat vraagt een host met serverfuncties. Zet de map op Vercel en voeg `GOOGLE_PLACES_KEY` toe (zelfde sleutel als Mettafel; Places API (New), PageSpeed Insights API en Maps Static API moeten aanstaan). `vercel.json` zet dan ook de beveiligingsheaders en lange cache. Een scan kost enkele centen aan Google-aanroepen; de API heeft een limiet per bezoeker.
+7b. **Formulier**: werkt nu via het mailprogramma. Een echte verzending vraagt een server of formulierdienst.
 8. **Iconen**: vervangen door de bronbestanden zodra die er zijn.
 9. **Koppen op mobiel**: drie lange paginakoppen (website, boekingssysteem, Weigh-In) staan op 23 pixels om op twee regels te blijven; de merkverhaalkop op Over ons loopt op mobiel over drie regels.
 10. Prijzen en garanties zijn letterlijk uit het concept van 24 november 2026 overgenomen: bevestig ze voor livegang op het eigen domein.

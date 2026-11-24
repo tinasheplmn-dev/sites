@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Weigh-In: free online check for your gym | TitleShot</title>
-<meta name="description" content="How does your martial arts gym score online? Take the free Weigh-In: nine questions, your score right away, your biggest opportunities and what to do about them.">
+<meta name="description" content="How does your martial arts gym score online? Take the free Weigh-In: we weigh your Google profile, your competitors and your website and show your biggest opportunities.">
 <link rel="canonical" href="https://tinasheplmn-dev.github.io/sites/titleshot/en/weigh-in.html">
 <link rel="alternate" hreflang="nl" href="https://tinasheplmn-dev.github.io/sites/titleshot/weigh-in.html">
 <link rel="alternate" hreflang="en" href="https://tinasheplmn-dev.github.io/sites/titleshot/en/weigh-in.html">
@@ -13,7 +13,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="TitleShot">
 <meta property="og:title" content="The Weigh-In: free online check for your gym | TitleShot">
-<meta property="og:description" content="How does your martial arts gym score online? Take the free Weigh-In: nine questions, your score right away, your biggest opportunities and what to do about them.">
+<meta property="og:description" content="How does your martial arts gym score online? Take the free Weigh-In: we weigh your Google profile, your competitors and your website and show your biggest opportunities.">
 <meta property="og:url" content="https://tinasheplmn-dev.github.io/sites/titleshot/en/weigh-in.html">
 <meta property="og:image" content="https://tinasheplmn-dev.github.io/sites/titleshot/assets/og.jpg">
 <meta property="og:image:width" content="1200">
@@ -67,117 +67,142 @@
   <div class="wrap">
     <p class="label" data-hero-item>Free check · 2 minutes</p>
     <h1 data-hero-item><span class="regel">The Weigh-In:</span> <span class="regel goud">does your gym score?</span></h1>
-    <p class="hero-lead" data-hero-item>Nine questions. You immediately see your score, your biggest opportunities and what to do about them.</p>
+    <p class="hero-lead" data-hero-item>Enter your gym and answer nine questions. We put your gym on the scale: Google profile, competitors and your website.</p>
   </div>
   
 </section>
 <div class="touwen" aria-hidden="true"></div>
 
-<section class="sectie papier" aria-label="The Weigh-In">
+<section class="sectie papier weeg-sectie" aria-label="The Weigh-In" data-weeg-sectie>
   <div class="wrap weging">
-    <form data-weging novalidate>
-      <div class="weeg-voortgang"><span>On the scale</span><span data-weeg-teller>0 / 9</span></div>
+    <form data-weging novalidate autocomplete="off">
+      <div class="vraag gymvraag" data-rev>
+        <p class="label kaal">First this</p>
+        <label class="vraagkop" for="w-gym">Which gym are we putting on the scale?</label>
+        <div class="zoekveld">
+          <svg aria-hidden="true" viewBox="0 0 48 48"><use href="../assets/iconen.svg#i-zoek"/></svg>
+          <input id="w-gym" name="gym" type="text" placeholder="Name of your gym and city" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="w-sug" aria-autocomplete="list" required>
+          <ul class="suggesties" id="w-sug" role="listbox" hidden></ul>
+        </div>
+        <p class="gymnoot" data-gymnoot>Pick your gym from the list, or just type the name.</p>
+      </div>
+      <div class="weeg-voortgang"><span>Nine questions</span><span data-weeg-teller>0 / 9</span></div>
       <div class="weeg-balk" aria-hidden="true"><i data-weeg-balk></i></div>
-      <fieldset class="vraag" data-rev>
+      <div class="vraag" role="radiogroup" aria-labelledby="wv0" data-vraag data-rev>
         <p class="label kaal">Question 01</p>
-        <legend><h3>Does someone find your gym at the top when searching for your sport plus your city?</h3></legend>
+        <h3 class="vraagkop" id="wv0">Does someone find your gym at the top when searching for your sport plus your city?</h3>
         <div class="keuzes">
           <label><input type="radio" name="v0" value="2">Yes</label>
           <label><input type="radio" name="v0" value="1">Partly</label>
           <label><input type="radio" name="v0" value="0">No</label>
         </div>
-      </fieldset>
-      <fieldset class="vraag" data-rev>
+      </div>
+      <div class="vraag" role="radiogroup" aria-labelledby="wv1" data-vraag data-rev>
         <p class="label kaal">Question 02</p>
-        <legend><h3>Can a new member book a trial class on your website in a few clicks?</h3></legend>
+        <h3 class="vraagkop" id="wv1">Can a new member book a trial class on your website in a few clicks?</h3>
         <div class="keuzes">
           <label><input type="radio" name="v1" value="2">Yes</label>
           <label><input type="radio" name="v1" value="1">Partly</label>
           <label><input type="radio" name="v1" value="0">No</label>
         </div>
-      </fieldset>
-      <fieldset class="vraag" data-rev>
+      </div>
+      <div class="vraag" role="radiogroup" aria-labelledby="wv2" data-vraag data-rev>
         <p class="label kaal">Question 03</p>
-        <legend><h3>Does every question get an answer within minutes, evenings and weekends too?</h3></legend>
+        <h3 class="vraagkop" id="wv2">Does every question get an answer within minutes, evenings and weekends too?</h3>
         <div class="keuzes">
           <label><input type="radio" name="v2" value="2">Yes</label>
           <label><input type="radio" name="v2" value="1">Partly</label>
           <label><input type="radio" name="v2" value="0">No</label>
         </div>
-      </fieldset>
-      <fieldset class="vraag" data-rev>
+      </div>
+      <div class="vraag" role="radiogroup" aria-labelledby="wv3" data-vraag data-rev>
         <p class="label kaal">Question 04</p>
-        <legend><h3>Are your schedule, bookings, members and payments in one system?</h3></legend>
+        <h3 class="vraagkop" id="wv3">Are your schedule, bookings, members and payments in one system?</h3>
         <div class="keuzes">
           <label><input type="radio" name="v3" value="2">Yes</label>
           <label><input type="radio" name="v3" value="1">Partly</label>
           <label><input type="radio" name="v3" value="0">No</label>
         </div>
-      </fieldset>
-      <fieldset class="vraag" data-rev>
+      </div>
+      <div class="vraag" role="radiogroup" aria-labelledby="wv4" data-vraag data-rev>
         <p class="label kaal">Question 05</p>
-        <legend><h3>Does your gym have one recognisable style, with your own photos and video?</h3></legend>
+        <h3 class="vraagkop" id="wv4">Does your gym have one recognisable style, with your own photos and video?</h3>
         <div class="keuzes">
           <label><input type="radio" name="v4" value="2">Yes</label>
           <label><input type="radio" name="v4" value="1">Partly</label>
           <label><input type="radio" name="v4" value="0">No</label>
         </div>
-      </fieldset>
-      <fieldset class="vraag" data-rev>
+      </div>
+      <div class="vraag" role="radiogroup" aria-labelledby="wv5" data-vraag data-rev>
         <p class="label kaal">Question 06</p>
-        <legend><h3>Do you post on social media every week following a fixed plan?</h3></legend>
+        <h3 class="vraagkop" id="wv5">Do you post on social media every week following a fixed plan?</h3>
         <div class="keuzes">
           <label><input type="radio" name="v5" value="2">Yes</label>
           <label><input type="radio" name="v5" value="1">Partly</label>
           <label><input type="radio" name="v5" value="0">No</label>
         </div>
-      </fieldset>
-      <fieldset class="vraag" data-rev>
+      </div>
+      <div class="vraag" role="radiogroup" aria-labelledby="wv6" data-vraag data-rev>
         <p class="label kaal">Question 07</p>
-        <legend><h3>Do you automatically follow up enquiries and trial members until they join?</h3></legend>
+        <h3 class="vraagkop" id="wv6">Do you automatically follow up enquiries and trial members until they join?</h3>
         <div class="keuzes">
           <label><input type="radio" name="v6" value="2">Yes</label>
           <label><input type="radio" name="v6" value="1">Partly</label>
           <label><input type="radio" name="v6" value="0">No</label>
         </div>
-      </fieldset>
-      <fieldset class="vraag" data-rev>
+      </div>
+      <div class="vraag" role="radiogroup" aria-labelledby="wv7" data-vraag data-rev>
         <p class="label kaal">Question 08</p>
-        <legend><h3>Do you know what a new member costs you and what it brings in?</h3></legend>
+        <h3 class="vraagkop" id="wv7">Do you know what a new member costs you and what it brings in?</h3>
         <div class="keuzes">
           <label><input type="radio" name="v7" value="2">Yes</label>
           <label><input type="radio" name="v7" value="1">Partly</label>
           <label><input type="radio" name="v7" value="0">No</label>
         </div>
-      </fieldset>
-      <fieldset class="vraag" data-rev>
+      </div>
+      <div class="vraag" role="radiogroup" aria-labelledby="wv8" data-vraag data-rev>
         <p class="label kaal">Question 09</p>
-        <legend><h3>Do you actively win back former members and reward members who bring someone along?</h3></legend>
+        <h3 class="vraagkop" id="wv8">Do you actively win back former members and reward members who bring someone along?</h3>
         <div class="keuzes">
           <label><input type="radio" name="v8" value="2">Yes</label>
           <label><input type="radio" name="v8" value="1">Partly</label>
           <label><input type="radio" name="v8" value="0">No</label>
         </div>
-      </fieldset>
-      <div class="weeg-acties">
-        <button class="knop knop-vol knop-groot" type="submit">See your score <svg class="pijl" aria-hidden="true" viewBox="0 0 48 48"><use href="../assets/iconen.svg#i-pijl"/></svg></button>
-        <p data-weeg-fout hidden style="color:var(--rood-diep);font-weight:600;align-self:center">Please answer all questions first.</p>
       </div>
+      <div class="weeg-acties">
+        <button class="knop knop-vol knop-groot" type="submit">Put my gym on the scale <svg class="pijl" aria-hidden="true" viewBox="0 0 48 48"><use href="../assets/iconen.svg#i-pijl"/></svg></button>
+        <p data-weeg-fout hidden class="weeg-fout" role="alert"></p>
+      </div>
+      <p class="weeg-privacy">You do not have to leave any details. We only use public information from Google about your gym.</p>
     </form>
+
+    <div class="show" data-show hidden tabindex="-1" aria-live="polite">
+      <div class="show-kop">
+        <div><p class="label kaal">The Weigh-In</p><p class="show-naam" data-show-naam></p></div>
+        <p class="show-tijd" data-show-tijd></p>
+      </div>
+      <div class="show-grid">
+        <ol class="show-stappen" data-show-stappen></ol>
+        <div class="show-podium" data-show-podium></div>
+      </div>
+      <div class="show-balk" aria-hidden="true"><i data-show-balk></i></div>
+    </div>
+
     <div class="uitslag" data-uitslag hidden tabindex="-1">
       <div class="uitslag-top">
         <div class="gewicht"><b data-score>0</b><span>out of 100</span></div>
-        <div><p class="label">Your weight class</p><h2 data-klasse></h2><p data-oordeel></p></div>
+        <div><p class="label">The verdict</p><p class="uitslag-gym" data-uitslag-gym></p><h2 data-klasse></h2><p data-oordeel></p></div>
       </div>
+      <div class="tape" data-tape hidden></div>
       <h3>Your biggest opportunities</h3>
       <ul class="kansen" data-kansen></ul>
       <div class="knoppen">
         <a class="knop knop-vol knop-groot" href="contact.html">Book your free consult <svg class="pijl" aria-hidden="true" viewBox="0 0 48 48"><use href="../assets/iconen.svg#i-pijl"/></svg></a>
         <button class="knop knop-rand knop-groot" type="button" data-opnieuw>Take the check again</button>
       </div>
-      <p style="margin-top:1.4rem">This is a quick self-scan based on your own answers. In the free consult we do the full scan of your gym.</p>
+      <p class="uitslag-noot">Your score comes from your own answers. The data on Google, your neighbours and your website was measured just now. In the free consult we do the full scan of your gym.</p>
     </div>
-    <script type="application/json" data-weeg-data>{"kansen":[{"t":"Get found in your city","p":"A website that gets found in Google, on Maps and in ChatGPT.","l":"website.html"},{"t":"Trial class in a few clicks","p":"A built-in trial class planner: no more calling or texting.","l":"website.html#pakketten"},{"t":"Front Desk Fighter","p":"An assistant that answers questions on your website and in WhatsApp within seconds.","l":"website.html#front-desk"},{"t":"Everything in one place","p":"A booking system built for martial arts gyms.","l":"booking-system.html"},{"t":"A brand that sticks","p":"Brand book, photo shoot and brand video in one recognisable style.","l":"brand.html"},{"t":"Social Standout System","p":"A content strategy that turns scrollers into lasting members.","l":"marketing.html#social"},{"t":"Inbox to Mat Method","p":"Email follow-up that keeps those in doubt warm until they book.","l":"marketing.html#email"},{"t":"Ads to Athletes Arsenaal","p":"Campaigns with a report in trial classes and new members.","l":"marketing.html#ads"},{"t":"Member Multiplier Method","p":"Win-back, referrals and reviews from your own member base.","l":"marketing.html#leden"}],"klassen":[[0,"Contender","You are in the ring, but you are leaving a lot of members on the table. The good news: that is where your biggest win is."],[45,"Title contender","The basics are in place. With a few targeted combinations you take your city’s belt."],[80,"Undisputed champ","You are doing a lot right. Now it is about fine-tuning and staying ahead of the rest."]],"geenKansen":"You score well everywhere. In a consult we look at where there is still something to win."}</script>
+    <script type="application/json" data-weeg-data>{"taal":"en","api":"../api/scan","kansen":[{"t":"Get found in your city","p":"A website that gets found in Google, on Maps and in ChatGPT.","l":"website.html"},{"t":"Trial class in a few clicks","p":"A built-in trial class planner: no more calling or texting.","l":"website.html#pakketten"},{"t":"Front Desk Fighter","p":"An assistant that answers questions on your website and in WhatsApp within seconds.","l":"website.html#front-desk"},{"t":"Everything in one place","p":"A booking system built for martial arts gyms.","l":"booking-system.html"},{"t":"A brand that sticks","p":"Brand book, photo shoot and brand video in one recognisable style.","l":"brand.html"},{"t":"Social Standout System","p":"A content strategy that turns scrollers into lasting members.","l":"marketing.html#social"},{"t":"Inbox to Mat Method","p":"Email follow-up that keeps those in doubt warm until they book.","l":"marketing.html#email"},{"t":"Ads to Athletes Arsenaal","p":"Campaigns with a report in trial classes and new members.","l":"marketing.html#ads"},{"t":"Member Multiplier Method","p":"Win-back, referrals and reviews from your own member base.","l":"marketing.html#leden"}],"kort":["Found in your city","Booking a trial class","Fast replies","One system","Recognisable brand","Social media","Follow-up","Measuring what works","Member base"],"klassen":[[0,"Contender","You are in the ring, but you are leaving a lot of members on the table. The good news: that is where your biggest win is."],[45,"Title contender","The basics are in place. With a few targeted combinations you take your city’s belt."],[80,"Undisputed champ","You are doing a lot right. Now it is about fine-tuning and staying ahead of the rest."]],"geenKansen":"You score well everywhere. In a consult we look at where there is still something to win.","t":{"stappen":["Google profile","Reviews","Photos","Competitors nearby","Website and quality","Your answers","Scorecard"],"nietGemeten":"not measured","nog":"about {n} seconds left","klaar":"almost done","opDeSchaal":"On the scale","reviews":"{n} reviews on Google","geenReviews":"No Google rating yet","watZeZeggen":"What your members say","fotoKop":"How Google sees you","fotoTel":"{n} photos from your Google profile","kaartKop":"Who else is in the ring?","plek":"Position {n} on Google Maps for “{term}”","geenPlek":"Not in the top 20 on Google Maps for “{term}”","jij":"Your gym","siteKop":"Your website on a phone","normen":["Speed","Ease","Tech","Findable"],"proeflesJa":"Trial class mentioned on the homepage","proeflesNee":"No trial class found on the homepage","boekJa":"Action button to book or sign up","boekNee":"No clear action button found","waJa":"WhatsApp button present","socialKop":"Channels found","geenSite":"No website linked to your Google profile","antwKop":"Your answers on the scorecard","ja":"Yes","deels":"Partly","nee":"No","jury":"The judges are counting","tape":{"score":"Google rating","uit":"from {n} reviews","kaart":"Position on Google Maps","voor":"for “{term}”","buiten":"outside the top 20","buur":"Strongest neighbour","snel":"Speed on mobile","van100":"out of 100"},"foutGym":"Please enter the name of your gym first.","foutVragen":"Please answer all questions first.","kies":"Pick your gym from the list, or just type the name.","gekozen":"Found on Google"}}</script>
   </div>
 </section>
 <section class="sectie slot" aria-label="The Weigh-In and launch offer">
@@ -239,5 +264,6 @@
   <a class="hoofd" href="contact.html">Book a consult <svg aria-hidden="true" viewBox="0 0 48 48"><use href="../assets/iconen.svg#i-pijl"/></svg></a>
 </div>
 <script src="../js/main.js" defer></script>
+<script src="../js/weigh-in.js" defer></script>
 </body>
 </html>
